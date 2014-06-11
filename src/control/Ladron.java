@@ -1,4 +1,4 @@
-package tpfinalalgo3;
+package control;
 
 public class Ladron {
 	private String nombre;
@@ -7,42 +7,53 @@ public class Ladron {
 	private String cabello;
 	private String senia;
 	private String vehiculo;
-	
-	public void setNombre(String nom){
+
+	public void setNombre(String nom) {
 		this.nombre = nom;
 	}
-	public String getNombre(){
+
+	public String getNombre() {
 		return this.nombre;
 	}
-	public void setSexo(String sex){
+
+	public void setSexo(String sex) {
 		this.sexo = sex;
 	}
-	public String getSexo(){
+
+	public String getSexo() {
 		return this.sexo;
 	}
-	public void setHobby(String hob){
+
+	public void setHobby(String hob) {
 		this.hobby = hob;
 	}
-	public String gethobby(){
+
+	public String gethobby() {
 		return this.hobby;
 	}
-	public void setCabello(String pelo){
+
+	public void setCabello(String pelo) {
 		this.cabello = pelo;
 	}
-	public String getCabello(){
+
+	public String getCabello() {
 		return this.cabello;
 	}
-	public void setSenia(String sen){
+
+	public void setSenia(String sen) {
 		this.senia = sen;
 	}
-	public String getSenia(){
+
+	public String getSenia() {
 		return this.senia;
 	}
-	public void setVehiculo(String vehi){
+
+	public void setVehiculo(String vehi) {
 		this.vehiculo = vehi;
 	}
-	public String getVehiculo(){
+
+	public String getVehiculo() {
 		return this.vehiculo;
 	}
-	
+
 }

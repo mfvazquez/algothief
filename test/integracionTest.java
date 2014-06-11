@@ -7,7 +7,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import control.Policia;
+import control.*;
 
 @SuppressWarnings("deprecation")
 public class integracionTest {
@@ -56,22 +56,26 @@ public class integracionTest {
 	@Test
 	public void testIrACiudadYPedirPista() {
 		Policia policia = new Policia("Lucas");
-		Assert.assertTrue(policia.cantidadMisionesResueltas() == 0);
+		assertEquals(policia.cantidadMisionesResueltas(), 0);
 		
-		Mision mision = policia.nuevaMision();
-		Ciudad ciudadActual = mision.obtenerCiudadActual();
-		Puerto puerto = ciudadActual.visitarPuerto(policia);
+		policia.nuevaMision();
+		Ciudad ciudadActual = policia.obtenerCiudadActual();
+		Aeropuerto puerto = ciudadActual.visitarAeropuerto(policia);
 		Pista pista = puerto.obtenerPista(policia);
-		Assert.assertTrue(pista.comoString = "Se fue en un auto con bandera azul, blanca y roja");
+		assertEquals(pista.getPista(), "Se fue en un auto con bandera azul, blanca y roja");
 		Biblioteca biblioteca = ciudadActual.visitarBiblioteca(policia);
 		pista = biblioteca.obtenerPista(policia);
-		Assert.assertTrue(pista.comoString() == "Leyó sobre el imperio de Napoleón Bonaparte");
+		assertEquals(pista.getPista(), "Leyó sobre el imperio de Napoleón Bonaparte");
 		
-		Ciudad[] ciudadesDestino = new Ciudad[5];
+		ArrayList<Ciudad> ciudadesDestino = new ArrayList<Ciudad>();
 		ciudadActual.obtenerDestinos(ciudadesDestino);
-		Ciudad ciudadDestino = ciudadesDestino[1];
-		policia.viajarACiudad(ciudadActual,ciudadDestino);
-		Assert.assertTrue(ciudadActual == ciudadDestino);
+		Ciudad ciudadDestino = ciudadesDestino.get(0);
+		assertEquals(ciudadDestino.getNombre(), "Chascomus");
+		assertEquals(ciudadActual.getNombre(), "Buenos Aires");
+		policia.viajarACiudad(ciudadDestino);
+		ciudadActual = policia.obtenerCiudadActual();
+		assertEquals(ciudadActual.getNombre(), "Chascomus");
+		assertEquals(ciudadActual.getNombre(), ciudadDestino.getNombre());
 	}
 
 }

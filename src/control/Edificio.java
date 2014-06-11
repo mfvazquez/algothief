@@ -1,12 +1,13 @@
-package tpfinalalgo3;
+package control;
 
 public abstract class Edificio {
 	private Pista pista;
-	
-	public void setPista(Pista pist){
+
+	public void setPista(Pista pist) {
 		this.pista = pist;
 	}
-	public Pista pedirPista(){
+
+	public Pista pedirPista() {
 		return this.pista;
 	}
 
