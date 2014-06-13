@@ -11,7 +11,7 @@ public class Ciudad {
 	public Ciudad(String nom) {
 		this.nombre = nom;
 		this.biblio = new Biblioteca();
-		this.puerto = new Aeropuerto();
+		this.puerto = new Aeropuerto(this);
 		this.banco = new Banco();
 	}
 	
@@ -35,9 +35,12 @@ public class Ciudad {
 
 	public void obtenerDestinos(ArrayList<Ciudad> ciudadesDestino) {
 		// TODO Auto-generated method stub
-Ciudad ciudad = new Ciudad("Chascomus");
+Ciudad ciudad0 = new Ciudad("Chascomus");
+Ciudad ciudad1 = new Ciudad("Mar del Plata");
+Ciudad ciudad = new Ciudad("Buenos Aires");
+		ciudadesDestino.add(ciudad0);
+		ciudadesDestino.add(ciudad1);
 		ciudadesDestino.add(ciudad);
-		
 	}
 
 	public Aeropuerto visitarAeropuerto(Policia policia) {
@@ -50,5 +53,9 @@ Ciudad ciudad = new Ciudad("Chascomus");
 		return biblio;
 	}
 	
+	public Banco visitarBanco(Policia policia) {
+		// TODO Auto-generated method stub
+		return banco;
+	}
 
 }

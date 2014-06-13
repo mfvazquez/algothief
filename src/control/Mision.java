@@ -11,12 +11,20 @@ public class Mision {
         
         public Mision(String rango){
         	//objeto = new ObjetoRobado(rango);
-        	ladron = new Ladron();
-        	tiempo = new Tiempo();
         	ruta = new RutaDeEscape(rango);
+        	ladron = new Ladron(this.ruta);
+        	tiempo = new Tiempo();
         }
         
         public Ciudad ciudadComienzo() {
         	return ruta.ciudadComienzo();
+        }
+        
+        public Ladron obtenerLadron() {
+        	return ladron;
+        }
+        
+        public boolean ladronEstaEnCiudad(Ciudad c){
+        	return (ruta.ciudadEnRuta(c));
         }
 }
