@@ -7,7 +7,13 @@ public class Ladron {
 	private String cabello;
 	private String senia;
 	private String vehiculo;
-
+    private RutaDeEscape ruta;
+    
+    public Ladron(RutaDeEscape r) {
+    //La ruta la crea la mision que conoce el rango del policía
+    	this.ruta = r;
+    }
+    
 	public void setNombre(String nom) {
 		this.nombre = nom;
 	}

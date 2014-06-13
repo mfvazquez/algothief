@@ -3,13 +3,13 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 import org.junit.Test;
 
 import control.*;
 
-@SuppressWarnings("deprecation")
+//@SuppressWarnings("deprecation")
 public class integracionTest {
 
 	/*@Test
@@ -58,10 +58,11 @@ public class integracionTest {
 		Policia policia = new Policia("Lucas");
 		assertEquals(policia.cantidadMisionesResueltas(), 0);
 		
-		policia.nuevaMision();
+		Mision mision = policia.nuevaMision();
 		Ciudad ciudadActual = policia.obtenerCiudadActual();
+		
 		Aeropuerto puerto = ciudadActual.visitarAeropuerto(policia);
-		Pista pista = puerto.obtenerPista(policia);
+		Pista pista = puerto.obtenerPista(mision);
 		assertEquals(pista.getPista(), "Se fue en un auto con bandera azul, blanca y roja");
 		Biblioteca biblioteca = ciudadActual.visitarBiblioteca(policia);
 		pista = biblioteca.obtenerPista(policia);
@@ -77,5 +78,37 @@ public class integracionTest {
 		assertEquals(ciudadActual.getNombre(), "Chascomus");
 		assertEquals(ciudadActual.getNombre(), ciudadDestino.getNombre());
 	}
+	
+	@Test
+	public void testViajarPorCiudades() {
+		Policia yuta = new Policia("Pancho Villa");
+		Mision robo = yuta.nuevaMision();
+		Ciudad ciudadActual = yuta.obtenerCiudadActual();
+		ArrayList<Ciudad> ciudadesDestino = new ArrayList<Ciudad>();
+		ciudadActual.obtenerDestinos(ciudadesDestino);
+		Ciudad ciudadDestino = ciudadesDestino.get(1);
+		yuta.viajarACiudad(ciudadDestino);
+		ciudadActual = yuta.obtenerCiudadActual();
+		
+		Aeropuerto puerto = ciudadActual.visitarAeropuerto(yuta);
+		Pista pista = puerto.obtenerPista(robo);
+		assertEquals(pista.getPista(), "Aca no es");
+		assertEquals(ciudadActual.getNombre(), "Mar del Plata");
+		
+		ciudadActual.obtenerDestinos(ciudadesDestino);
+		ciudadDestino = ciudadesDestino.get(2);
+		yuta.viajarACiudad(ciudadDestino);
+		ciudadActual = yuta.obtenerCiudadActual();
+		assertEquals(ciudadActual.getNombre(), "Buenos Aires");
+		ciudadActual.obtenerDestinos(ciudadesDestino);
+		ciudadDestino = ciudadesDestino.get(0);
+		yuta.viajarACiudad(ciudadDestino);
+		ciudadActual = yuta.obtenerCiudadActual();
+		assertEquals(ciudadActual.getNombre(), "Chascomus");
+		assertTrue(robo.ladronEstaEnCiudad(ciudadActual));
+		puerto = ciudadActual.visitarAeropuerto(yuta);
+		pista = puerto.obtenerPista(robo);
+		assertEquals(pista.getPista(), "Se fue en un auto con bandera azul, blanca y roja");
+		}
 
 }
