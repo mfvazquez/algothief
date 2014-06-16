@@ -8,6 +8,15 @@ public class Ladron {
 	private String senia;
 	private String vehiculo;
     private RutaDeEscape ruta;
+
+    public Ladron(){
+    	nombre = new String();
+    	sexo = new String();
+    	hobby = new String();
+    	cabello = new String();
+    	senia = new String();
+    	vehiculo = new String();
+    }
     
     public Ladron(RutaDeEscape r) {
     //La ruta la crea la mision que conoce el rango del policía

@@ -1,6 +1,7 @@
 package control;
 
 import java.lang.String;
+
 import control.Mision;
 
 public class Policia {
@@ -9,11 +10,16 @@ public class Policia {
 	private Ciudad ciudadActual;
 
 	private String rango;
+	private Juego juego;
 
 	public Policia(String n) {
 		nombre = n;
 		casosResueltos = 0;
 		rango = "novato";
+	}
+	
+	public String getNombre(){
+		return this.nombre;
 	}
 
 	public int cantidadMisionesResueltas() {
@@ -33,5 +39,14 @@ public class Policia {
  	public Ciudad obtenerCiudadActual() {
  		return this.ciudadActual;
  	}
+
+	public Juego getJuego() {
+		return this.juego;
+	}
+
+	public void setJuego(Juego jue) {
+		
+		this.juego = jue;
+	}
 	 
 }
