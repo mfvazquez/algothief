@@ -1,6 +1,5 @@
 package control;
 
-import java.util.ArrayList;
 
 public class Tiempo {
 	private int hora;
@@ -8,7 +7,7 @@ public class Tiempo {
 	private int dia;
 	
 	
-Tiempo(){
+public Tiempo(){
 	this.hora=07;
 	this.dias = new String[7];
 	this.dias [0] = "Lunes";
@@ -23,10 +22,7 @@ Tiempo(){
 
 public void consumirTiempo (int tiemp){
 	this.hora = hora + tiemp;
-	if (this.hora >= 21){
-		//policia.dormir;
-	}
-	else if (this.hora >= 24){
+	if (this.hora >= 24){
 		this.hora = this.hora - 24;
 		this.aumentoDia();
 	}
@@ -49,6 +45,11 @@ public String getDia(){
 
 public int getHora(){
 	return this.hora;
+}
+
+public String fecha(){
+	String cadena = this.getDia()+" "+this.getHora()+"hs";
+	return cadena;
 }
 
 }

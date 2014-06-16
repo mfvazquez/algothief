@@ -35,16 +35,16 @@ public class Ciudad {
 
 	public void obtenerDestinos(ArrayList<Ciudad> ciudadesDestino) {
 		// TODO Auto-generated method stub
-Ciudad ciudad0 = new Ciudad("Chascomus");
-Ciudad ciudad1 = new Ciudad("Mar del Plata");
-Ciudad ciudad = new Ciudad("Buenos Aires");
+		Ciudad ciudad0 = new Ciudad("Chascomus");
+		Ciudad ciudad1 = new Ciudad("Mar del Plata");
+		Ciudad ciudad = new Ciudad("Buenos Aires");
 		ciudadesDestino.add(ciudad0);
 		ciudadesDestino.add(ciudad1);
 		ciudadesDestino.add(ciudad);
 	}
 
 	public Aeropuerto visitarAeropuerto(Policia policia) {
-		// TODO Auto-generated method stub
+		
 		return puerto;
 	}
 

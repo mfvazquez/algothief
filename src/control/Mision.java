@@ -27,4 +27,13 @@ public class Mision {
         public boolean ladronEstaEnCiudad(Ciudad c){
         	return (ruta.ciudadEnRuta(c));
         }
+
+		public String fecha(){ 
+			return tiempo.fecha();
+		}
+
+		public void crearOrdenDeArresto() {
+			tiempo.consumirTiempo(3);
+		}
+		
 }
