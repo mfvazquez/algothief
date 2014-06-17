@@ -9,9 +9,9 @@ public class Mision {
         private Tiempo tiempo;
         private RutaDeEscape ruta;
         
-        public Mision(String rango){
+        public Mision(Mapa mapa, int rango){
         	//objeto = new ObjetoRobado(rango);
-        	ruta = new RutaDeEscape(rango);
+        	ruta = new RutaDeEscape(mapa, rango);
         	ladron = new Ladron(this.ruta);
         	tiempo = new Tiempo();
         }
