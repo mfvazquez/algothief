@@ -8,6 +8,8 @@ public class Policia {
 	public String nombre;
 	private int casosResueltos;
 	private Ciudad ciudadActual;
+	Mision mision;
+	int velocidad;
 
 	private String rango;
 	private Juego juego;
@@ -16,6 +18,7 @@ public class Policia {
 		nombre = n;
 		casosResueltos = 0;
 		rango = "novato";
+		velocidad = 1; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
 	}
 	
 	public String getNombre(){
@@ -27,12 +30,16 @@ public class Policia {
 	}
 	
  	public Mision nuevaMision() { 
-	    Mision mision = new Mision(this.rango); 
+	    this.mision = new Mision(this.rango); 
 	    this.ciudadActual = mision.ciudadComienzo();
 	    return mision;
 	}
  	
  	public void viajarACiudad(Ciudad nuevaCiudad) {
+ 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
+ 		Tiempo tiempo = this.mision.getTiempo();
+ 		Double demora = new Double(distancia/velocidad);
+ 		tiempo.consumirTiempo(demora.intValue());
  		this.ciudadActual = nuevaCiudad;
  	}
  	

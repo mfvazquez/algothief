@@ -8,7 +8,7 @@ public class Juego {
 	private ArrayList<Policia> policias;
 	
 	public Juego(){
-		mapa = new Mapa("Archivo inexistente"); // luego hay que poner la direccin del archivo con paises
+		mapa = new Mapa("Archivo inexistente"); // luego hay que poner la direccion del archivo con paises
 		policias = new ArrayList<Policia>();
 		ladrones= new ArrayList<Ladron>();
 	    Ladron ladron1 = new Ladron();
@@ -36,16 +36,20 @@ public class Juego {
 	    ladrones.add(ladron1);
 	    ladrones.add(ladron3);
 	}
+	
 	public ArrayList<Ladron> getLadrones(){
 		return ladrones;
 	}
+	
 	public Mapa getMapa() {
 		return this.mapa;
 	}
+	
 	public ArrayList<Policia> getPolicias() {
 		
 		return this.policias;
 	}
+	
 	public void agregarPolicia(Policia poli) {
 		poli.setJuego(this);
 		this.policias.add(poli);
