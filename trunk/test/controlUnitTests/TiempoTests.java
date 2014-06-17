@@ -35,7 +35,18 @@ public class TiempoTests {
 		assertEquals(tiempo.getDia(), "Lunes");
 		tiempo.consumirTiempo(24);
 		assertEquals(tiempo.getDia(), "Martes");
-		tiempo.aumentoDia();
+		tiempo.consumirTiempo(30);
+		assertEquals(tiempo.getDia(), "Miercoles");
+	}
+	
+	@Test
+	public void testAgregarMuchasHoras(){
+		Tiempo tiempo = new Tiempo();
+		tiempo.consumirTiempo(72);
+		assertEquals(tiempo.getDia(), "Jueves");
+		tiempo.consumirTiempo(72);
+		assertEquals(tiempo.getDia(), "Domingo");
+		tiempo.consumirTiempo(72);
 		assertEquals(tiempo.getDia(), "Miercoles");
 	}
 	

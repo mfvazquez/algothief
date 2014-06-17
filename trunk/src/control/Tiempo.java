@@ -1,6 +1,5 @@
 package control;
 
-
 public class Tiempo {
 	private int hora;
 	private String[] dias;  
@@ -22,13 +21,12 @@ public Tiempo(){
 
 public void consumirTiempo (int tiemp){
 	this.hora = hora + tiemp;
-	if (this.hora >= 24){
-		this.hora = this.hora - 24;
-		this.aumentoDia();
-	}
+	this.aumentoDia();
+	this.hora = this.hora % 24;
 }
 public void aumentoDia(){
-	this.dia = this.dia +1;
+	this.dia = this.dia + this.hora / 24;
+	this.dia = this.dia % 7;
 }
 
 public boolean terminoTiempo(){

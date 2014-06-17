@@ -3,16 +3,18 @@ package control;
 import java.util.ArrayList;
 
 public class Ciudad {
-	public String nombre;
+	private String nombre;
 	private Biblioteca biblio;
 	private Aeropuerto puerto;
 	private Banco banco;
+	private Coordenada coordenadas;
 	
-	public Ciudad(String nom) {
+	public Ciudad(String nom, int latitud, int longitud) {
 		this.nombre = nom;
 		this.biblio = new Biblioteca();
 		this.puerto = new Aeropuerto(this);
 		this.banco = new Banco();
+		this.coordenadas = new Coordenada(latitud, longitud);
 	}
 	
 /*	private LinkedList<Edificio> edificios;
@@ -56,6 +58,10 @@ public class Ciudad {
 	public Banco visitarBanco(Policia policia) {
 		// TODO Auto-generated method stub
 		return banco;
+	}
+	
+	public double distancia(Ciudad ciudad){
+		return this.coordenadas.distancia(ciudad.coordenadas);
 	}
 
 }

@@ -28,8 +28,8 @@ public class Arbol<E> {
 	
 	public E verPadre(E hijo){
 		Node<E> nodo = arbol.findNode(arbol.getRoot(), hijo);
-	    if (nodo == null) return null;
-		return nodo.getParent().getData();
+	    if (nodo == null || nodo.getParent() == null) return null;
+	    return nodo.getParent().getData();
 	}
 	
 	public List<E> verHijos(E padre){
@@ -40,6 +40,10 @@ public class Arbol<E> {
 			hijos.add(nodo_hijo.getData());
 		}
 		return hijos;
+	}
+	
+	public boolean existe(E elemento){
+		return arbol.exists(elemento);
 	}
 	
 }

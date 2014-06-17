@@ -3,7 +3,6 @@ package controlUnitTests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import control.*;
-import java.util.List;
 import java.util.ArrayList;
 
 public class ArbolTests {
@@ -87,5 +86,27 @@ public class ArbolTests {
 		hijos.add("122");
 		hijos.add("123");
 		assertEquals(arbol.verHijos("12"), hijos);
+	}
+	
+	@Test
+	public void verPadreDeRaiz() {
+		Arbol<String> arbol = new Arbol<String>("1");
+		assertEquals(arbol.verPadre("1"), null);
+	}
+	
+	@Test
+	public void verSiExisteElementoAgregado() {
+		Arbol<String> arbol = new Arbol<String>("1");
+		arbol.agregarHijo("1", "11");
+		assertTrue(arbol.existe("11"));
+		assertTrue(arbol.existe("1"));
+	}
+	
+	@Test
+	public void verSiNoExisteElementoNoAgregado() {
+		Arbol<String> arbol = new Arbol<String>("1");
+		arbol.agregarHijo("1", "11");
+		assertFalse(arbol.existe("2"));
+		assertFalse(arbol.existe("22"));
 	}
 }
