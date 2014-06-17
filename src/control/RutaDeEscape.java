@@ -1,21 +1,22 @@
 package control;
 
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class RutaDeEscape {
 	private ArrayList<Ciudad> ciudades;
 	
-	public RutaDeEscape(String rango) {
-//Tiene que ser aleatorio, con el mapa o archivo
-		this.ciudades = new ArrayList<Ciudad>( );
-Ciudad ciudad = new Ciudad("Buenos Aires");
-Ciudad ciudad0 = new Ciudad("Chascomus");
-Ciudad ciudad1 = new Ciudad("Bahia Blanca");
-Ciudad ciudad2 = new Ciudad("Villa Gesell");
-		(this.ciudades).add(ciudad);
-		(this.ciudades).add(ciudad0);
-		(this.ciudades).add(ciudad1);
-		(this.ciudades).add(ciudad2);
+	public RutaDeEscape(Mapa mapa, int rango) {
+		ciudades = new ArrayList<Ciudad>();
+		Ciudad actual = mapa.verCiudadInicial();
+		
+		for(int i = 0; i < rango; i++){
+			ciudades.add(actual);
+			List<Ciudad> destinos = mapa.ciudadesDestino(actual);
+			Double subindice = Math.floor(Math.random()*destinos.size());
+			actual = destinos.get(subindice.intValue());
+		}
 	}
 	
 	public Ciudad ciudadComienzo() {
@@ -28,5 +29,13 @@ Ciudad ciudad2 = new Ciudad("Villa Gesell");
 			if ((ciudades.get(i)).getNombre() == nombre) return true;
 		};
 		return false;
+	}
+	
+	public Ciudad getCiudad(int index){
+		return ciudades.get(index);
+	}
+	
+	public int size(){
+		return ciudades.size();
 	}
 }

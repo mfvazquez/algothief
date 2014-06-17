@@ -4,7 +4,6 @@ import java.util.List;
 
 public class Mapa {
 	private Arbol<Ciudad> arbol;
-	Ciudad actual;
 	
 	public Mapa(String doc){
 		this.cargarCiudades(doc);
@@ -56,6 +55,14 @@ public class Mapa {
 		arbol.agregarHijo(hijo22, hijo221);
 		arbol.agregarHijo(hijo22, hijo222);
 		arbol.agregarHijo(hijo22, hijo223);
+	}
+	
+	public Ciudad ciudadAnterior(Ciudad ciudad){
+		return arbol.verPadre(ciudad);
+	}
+	
+	public List<Ciudad> ciudadesDestino(Ciudad ciudad){
+		return arbol.verHijos(ciudad);
 	}
 		
 	public List<Ciudad> ciudadesAdyacentes(Ciudad ciudad){

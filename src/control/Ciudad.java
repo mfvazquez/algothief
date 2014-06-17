@@ -35,11 +35,12 @@ public class Ciudad {
 		return this.nombre;
 	}
 
+	// ESTO SE DEBERIA PEDIRSE AL MAPA
 	public void obtenerDestinos(ArrayList<Ciudad> ciudadesDestino) {
 		// TODO Auto-generated method stub
-		Ciudad ciudad0 = new Ciudad("Chascomus");
-		Ciudad ciudad1 = new Ciudad("Mar del Plata");
-		Ciudad ciudad = new Ciudad("Buenos Aires");
+		Ciudad ciudad0 = new Ciudad("Chascomus", 1, 1);
+		Ciudad ciudad1 = new Ciudad("Mar del Plata", 0, 1);
+		Ciudad ciudad = new Ciudad("Buenos Aires", 2, 2);
 		ciudadesDestino.add(ciudad0);
 		ciudadesDestino.add(ciudad1);
 		ciudadesDestino.add(ciudad);

@@ -36,4 +36,8 @@ public class Mision {
 			tiempo.consumirTiempo(3);
 		}
 		
+		public Tiempo getTiempo(){
+			return this.tiempo;
+		}
+		
 }
