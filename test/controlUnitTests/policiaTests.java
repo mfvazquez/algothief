@@ -25,7 +25,7 @@ public class policiaTests {
 	@Test
 	public void testViajarACiudad() {
 		Policia poli = new Policia("Harle");
-		Ciudad ciudad = new Ciudad("Chascomus");
+		Ciudad ciudad = new Ciudad("Chascomus",0,0);
 		poli.viajarACiudad(ciudad);
 		Ciudad ciudadActual = poli.obtenerCiudadActual();
 		assertEquals(ciudad, ciudadActual);

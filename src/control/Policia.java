@@ -29,8 +29,9 @@ public class Policia {
 		return this.casosResueltos;
 	}
 	
- 	public Mision nuevaMision() { 
-	    this.mision = new Mision(this.rango); 
+ 	public Mision nuevaMision() {
+ 		Mapa map = new Mapa("archivo inexistente");
+	    this.mision = new Mision(map); 
 	    this.ciudadActual = mision.ciudadComienzo();
 	    return mision;
 	}
