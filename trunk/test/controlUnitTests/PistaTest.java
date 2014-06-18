@@ -11,7 +11,7 @@ public class PistaTest {
 	@Test
 	public void pistaPorDefectotest() {
 		Pista pist = new Pista();
-		assertEquals("No se vio a esa persona poc aca", pist.getPista());
+		assertEquals("No se vio a esa persona por aca", pist.getPista());
 	}
 	
 	@Test

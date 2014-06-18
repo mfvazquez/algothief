@@ -4,7 +4,7 @@ public class Pista {
 	private String pista;
 
 	public Pista(){
-		this.pista = "No se vio a esa persona poc aca";
+		this.pista = "No se vio a esa persona por aca";
 	}
 	public Pista(String pist){
 		this.pista = pist;

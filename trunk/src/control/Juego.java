@@ -56,6 +56,12 @@ public class Juego {
 		
 	}
 	
+	public Mision nuevaMision(Policia policia) {
+ 		Mapa map = new Mapa("archivo inexistente");
+	    Mision mision = new Mision(map,policia.getRango()); 
+	    policia.asignarMision(mision);
+	    return mision;
+	}
 	
 
 }

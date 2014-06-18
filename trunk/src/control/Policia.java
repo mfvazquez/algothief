@@ -11,13 +11,13 @@ public class Policia {
 	Mision mision;
 	int velocidad;
 
-	private String rango;
+	private int rango;
 	private Juego juego;
 
 	public Policia(String n) {
 		nombre = n;
 		casosResueltos = 0;
-		rango = "novato";
+		rango = 3;
 		velocidad = 1; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
 	}
 	
@@ -29,12 +29,18 @@ public class Policia {
 		return this.casosResueltos;
 	}
 	
- 	public Mision nuevaMision() {
- 		Mapa map = new Mapa("archivo inexistente");
-	    this.mision = new Mision(map); 
-	    this.ciudadActual = mision.ciudadComienzo();
-	    return mision;
+	public void asignarMision(Mision m) {
+		this.mision = m;
+		this.ciudadActual = m.ciudadComienzo();
 	}
+
+//este metodo tal vez pueda removerse y usarse que el juego cree la mision
+public Mision nuevaMision() {
+	Mapa map = new Mapa("archivo inexistente");
+    this.mision = new Mision(map,rango); 
+    this.ciudadActual = mision.ciudadComienzo();
+    return mision;
+}
  	
  	public void viajarACiudad(Ciudad nuevaCiudad) {
  		double distancia = this.ciudadActual.distancia(nuevaCiudad);
@@ -56,5 +62,16 @@ public class Policia {
 		
 		this.juego = jue;
 	}
-	 
+	
+	public int getRango() {
+		return rango;
+	}
+	
+	public Mision getMision() {
+		return this.mision;
+	}
+	
+	public void misionResuelta(boolean atrapoLadron) {
+		if (atrapoLadron) this.casosResueltos = this.casosResueltos +1;
+	}
 }
