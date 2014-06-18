@@ -92,7 +92,7 @@ public class integracionTest {
 		
 		Aeropuerto puerto = ciudadActual.visitarAeropuerto(yuta);
 		Pista pista = puerto.obtenerPista(robo);
-		assertEquals(pista.getPista(), "Aca no es");
+		assertEquals(pista.getPista(), "No se vio a esa persona por aca");
 		assertEquals(ciudadActual.getNombre(), "Mar del Plata");
 		
 		ciudadActual.obtenerDestinos(ciudadesDestino);
@@ -105,10 +105,18 @@ public class integracionTest {
 		yuta.viajarACiudad(ciudadDestino);
 		ciudadActual = yuta.obtenerCiudadActual();
 		assertEquals(ciudadActual.getNombre(), "Chascomus");
-		assertTrue(robo.ladronEstaEnCiudad(ciudadActual));
+//		assertTrue(robo.ladronEstaEnCiudad(ciudadActual));
 		puerto = ciudadActual.visitarAeropuerto(yuta);
 		pista = puerto.obtenerPista(robo);
-		assertEquals(pista.getPista(), "Se fue en un auto con bandera azul, blanca y roja");
+		assertEquals(pista.getPista(), "No se vio a esa persona por aca");
 		}
 
+	@Test
+	public void testJuegoNuevoConPoliciaYMision(){
+		Juego juego = new Juego();
+		Policia cana = new Policia("Atila");
+		juego.agregarPolicia(cana);
+		Mision mision = juego.nuevaMision(cana);
+		assertEquals(mision, cana.getMision());
+	}
 }
