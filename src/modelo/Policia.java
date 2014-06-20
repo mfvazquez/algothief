@@ -1,8 +1,8 @@
-package control;
+package modelo;
 
 import java.lang.String;
 
-import control.Mision;
+import modelo.Mision;
 
 public class Policia {
 	public String nombre;

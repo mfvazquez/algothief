@@ -1,4 +1,4 @@
-package control;
+package modelo;
 
 public abstract class Edificio {
 	private Pista pista;

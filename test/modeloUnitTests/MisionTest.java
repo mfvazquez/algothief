@@ -1,4 +1,4 @@
-package controlUnitTests;
+package modeloUnitTests;
 
 import static org.junit.Assert.*;
 

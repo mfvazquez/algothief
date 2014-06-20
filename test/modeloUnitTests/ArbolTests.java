@@ -1,8 +1,8 @@
-package controlUnitTests;
+package modeloUnitTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
-import control.*;
+import modelo.*;
 import java.util.ArrayList;
 
 public class ArbolTests {

@@ -1,7 +1,7 @@
-package control;
+package modelo;
 
-import control.Tiempo;
-import control.Ladron;
+import modelo.Tiempo;
+import modelo.Ladron;
 
 public class Mision {
         private ObjetoRobado objeto;

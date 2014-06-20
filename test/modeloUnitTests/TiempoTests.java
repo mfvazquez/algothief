@@ -1,10 +1,10 @@
-package controlUnitTests;
+package modeloUnitTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import control.Tiempo;
+import modelo.Tiempo;
 
 
 public class TiempoTests {
