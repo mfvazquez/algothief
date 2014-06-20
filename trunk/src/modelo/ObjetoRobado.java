@@ -1,4 +1,4 @@
-package control;
+package modelo;
 
 public abstract class ObjetoRobado {
 	private String objeto;

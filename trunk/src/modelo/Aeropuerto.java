@@ -1,4 +1,4 @@
-package control;
+package modelo;
 
 public class Aeropuerto extends Edificio {
 	private Ciudad ciudad;

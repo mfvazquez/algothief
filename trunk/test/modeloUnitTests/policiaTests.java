@@ -1,8 +1,8 @@
-package controlUnitTests;
+package modeloUnitTests;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import control.*;
+import modelo.*;
 
 public class policiaTests {
 	

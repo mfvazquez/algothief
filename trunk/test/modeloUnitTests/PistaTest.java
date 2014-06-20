@@ -1,10 +1,10 @@
-package controlUnitTests;
+package modeloUnitTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import control.Pista;
+import modelo.Pista;
 
 public class PistaTest {
 

@@ -1,4 +1,4 @@
-package control;
+package modelo;
 
 import com.c05mic.generictree.*;
 import java.util.List;
