@@ -10,6 +10,7 @@ public class Policia {
 	private Ciudad ciudadActual;
 	Mision mision;
 	int velocidad;
+	private OrdenDeArresto orden;
 
 	private int rango;
 	private Juego juego;

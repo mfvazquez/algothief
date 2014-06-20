@@ -12,6 +12,7 @@ public class RutaDeEscape {
 		Ciudad actual = mapa.verCiudadInicial();
 		
 		for(int i = 0; i < rango; i++){
+			actual.generarPistas();
 			ciudades.add(actual);
 			List<Ciudad> destinos = mapa.ciudadesDestino(actual);
 			Double subindice = Math.floor(Math.random()*destinos.size());

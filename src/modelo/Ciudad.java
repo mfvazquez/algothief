@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 public class Ciudad {
 	private String nombre;
-	private Biblioteca biblio;
-	private Aeropuerto puerto;
-	private Banco banco;
+	private ArrayList<Edificio> edificios;
 	private Coordenada coordenadas;
+	private int edificiosVisitados;
 	
 	public Ciudad(String nom, int latitud, int longitud) {
 		this.nombre = nom;
-		this.biblio = new Biblioteca();
-		this.puerto = new Aeropuerto(this);
-		this.banco = new Banco();
+		this.edificios = new ArrayList<Edificio>();
+		this.edificios.add(new Banco());
+		this.edificios.add(new Aeropuerto());
+		this.edificios.add(new Biblioteca());
 		this.coordenadas = new Coordenada(latitud, longitud);
+		this.edificiosVisitados = 0;
 	}
+	
 	
 /*	private LinkedList<Edificio> edificios;
 
@@ -46,23 +48,22 @@ public class Ciudad {
 		ciudadesDestino.add(ciudad);
 	}
 
-	public Aeropuerto visitarAeropuerto(Policia policia) {
-		
-		return puerto;
+	public Edificio visitarEdificio(Policia policia, int edi) {
+		this.edificiosVisitados += 1;
+		policia.getMision().getTiempo().consumirTiempo(1*edificiosVisitados);
+		return edificios.get(edi);
 	}
 
-	public Biblioteca visitarBiblioteca(Policia policia) {
-		// TODO Auto-generated method stub
-		return biblio;
-	}
-	
-	public Banco visitarBanco(Policia policia) {
-		// TODO Auto-generated method stub
-		return banco;
-	}
 	
 	public double distancia(Ciudad ciudad){
 		return this.coordenadas.distancia(ciudad.coordenadas);
+	}
+
+	public void generarPistas() {
+		this.edificios.get(1).setPista(new Pista("Se fue en un avion con bandera azul y blanca"));
+		this.edificios.get(0).setPista(new Pista("Tenia pelo rubio"));
+		this.edificios.get(2).setPista(new Pista("Estuvo leyendo sobre la revolucion de mayo"));
+		
 	}
 
 }

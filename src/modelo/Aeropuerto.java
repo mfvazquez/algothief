@@ -4,8 +4,7 @@ public class Aeropuerto extends Edificio {
 	private Ciudad ciudad;
 	private Pista pista;
 	
-	public Aeropuerto(Ciudad c) {
-		ciudad = c;
+	public Aeropuerto() {
 		pista = new Pista();
 	}
 	
@@ -14,7 +13,7 @@ public class Aeropuerto extends Edificio {
 	 * */
 		
 		if (mision.ladronEstaEnCiudad(this.ciudad)) {
-			this.pista.setPista("Se fue en un auto con bandera azul, blanca y roja");
+			this.pista= new Pista("Se fue en un auto con bandera azul, blanca y roja");
 		}		
 		return this.pista;
 	}
