@@ -13,19 +13,19 @@ public class MapaTests {
 	
 	@Test
 	public void crearMapa() {
-		Mapa mapa = new Mapa("archivo inexistente");
+		Mapa mapa = Mapa.getInstance();
 		assertFalse(mapa == null);
 	}
 	
 	@Test
 	public void verCiudadInicial() {
-		Mapa mapa = new Mapa("archivo inexistente");
+		Mapa mapa = Mapa.getInstance();
 		assertEquals(mapa.verCiudadInicial().getNombre(), "Buenos Aires");
 	}
 	
 	@Test
 	public void verAdyacentes() {
-		Mapa mapa = new Mapa("archivo inexistente");
+		Mapa mapa = Mapa.getInstance();
 		List<Ciudad> adyacentes = mapa.ciudadesAdyacentes(mapa.verCiudadInicial());
 		assertEquals(adyacentes.get(0).getNombre(), "Berlin");
 		assertEquals(adyacentes.get(1).getNombre(), "Tokio");
@@ -34,7 +34,7 @@ public class MapaTests {
 	
 	@Test
 	public void verAdyacentesMasProfundos() {
-		Mapa mapa = new Mapa("archivo inexistente");
+		Mapa mapa = Mapa.getInstance();
 		List<Ciudad> adyacentes = mapa.ciudadesAdyacentes(mapa.verCiudadInicial());
 		adyacentes = mapa.ciudadesAdyacentes(adyacentes.get(0));
 		adyacentes = mapa.ciudadesAdyacentes(adyacentes.get(0));
@@ -43,6 +43,14 @@ public class MapaTests {
 		assertEquals(adyacentes.get(2).getNombre(), "Viena");
 		assertEquals(adyacentes.get(3).getNombre(), "Berlin");
 		assertEquals(adyacentes.size(), 4);
+	}
+	
+	@Test
+	public void singletoneTest(){
+		Mapa mapa = Mapa.getInstance();
+		Mapa mapa2= Mapa.getInstance();
+		assertTrue(mapa == mapa2);
+		
 	}
 	
 }

@@ -50,8 +50,8 @@ public class Ciudad {
 
 	public Edificio visitarEdificio(Policia policia, int edi) {
 		this.edificiosVisitados += 1;
-		policia.getMision().getTiempo().consumirTiempo(1*edificiosVisitados);
-		return edificios.get(edi);
+		policia.getMision().consumirTiempo(edificiosVisitados);
+		return this.edificios.get(edi);
 	}
 
 	
