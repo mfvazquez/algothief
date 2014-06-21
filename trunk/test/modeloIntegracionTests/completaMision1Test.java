@@ -1,4 +1,4 @@
-package controlIntegracionTests;
+package modeloIntegracionTests;
 
 import static org.junit.Assert.*;
 

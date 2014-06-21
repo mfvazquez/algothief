@@ -8,8 +8,8 @@ public class Policia {
 	public String nombre;
 	private int casosResueltos;
 	private Ciudad ciudadActual;
-	Mision mision;
-	int velocidad;
+	private Mision mision;
+	private int velocidad;
 	private OrdenDeArresto orden;
 
 	private int rango;
@@ -37,17 +37,15 @@ public class Policia {
 
 //este metodo tal vez pueda removerse y usarse que el juego cree la mision
 public Mision nuevaMision() {
-	Mapa map = new Mapa("archivo inexistente");
-    this.mision = new Mision(map,rango); 
+    this.mision = new Mision(rango); 
     this.ciudadActual = mision.ciudadComienzo();
     return mision;
 }
  	
  	public void viajarACiudad(Ciudad nuevaCiudad) {
- 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
- 		Tiempo tiempo = this.mision.getTiempo();
- 		Double demora = new Double(distancia/velocidad);
- 		tiempo.consumirTiempo(demora.intValue());
+ 		//double distancia = this.ciudadActual.distancia(nuevaCiudad);
+ 		//Double demora = new Double(distancia/velocidad);
+ 		//this.mision.consumirTiempo(demora.intValue());
  		this.ciudadActual = nuevaCiudad;
  	}
  	

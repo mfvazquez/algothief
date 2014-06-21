@@ -9,9 +9,9 @@ public class Mision {
         private Tiempo tiempo;
         private RutaDeEscape ruta;
         
-        public Mision(Mapa mapa, int rango){
+        public Mision(int rango){
         	//objeto = new ObjetoRobado(rango);
-        	ruta = new RutaDeEscape(mapa, rango);
+        	ruta = new RutaDeEscape(rango);
         	ladron = new Ladron(this.ruta);
         	tiempo = new Tiempo();
         }
@@ -39,5 +39,15 @@ public class Mision {
 		public Tiempo getTiempo(){
 			return this.tiempo;
 		}
-		
+
+		public void consumirTiempo(int tiemp){
+			this.tiempo.consumirTiempo(tiemp);
+			if (this.tiempo.terminoTiempo()){
+				this.perdioMision();
+			}
+		}
+
+		private void perdioMision() {
+			
+		}
 }

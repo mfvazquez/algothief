@@ -4,12 +4,26 @@ import java.util.List;
 
 public class Mapa {
 	private Arbol<Ciudad> arbol;
+	private static Mapa INSTANCE = null;
 	
-	public Mapa(String doc){
-		this.cargarCiudades(doc);
+	private Mapa(){
+		this.cargarCiudades();
+	}
+
+	private synchronized static void createInstance() {
+		if (INSTANCE == null) { 
+	       INSTANCE = new Mapa();
+	    }
+	}
+
+	public static Mapa getInstance() {
+	    if (INSTANCE == null) 
+	    	createInstance();
+	    return INSTANCE;
 	}
 	
-	private void cargarCiudades(String doc){
+	
+	private void cargarCiudades(){
 		
 		//ESTE METODO DEBERIA LEER LAS CIUDADES CON SUS COORDENADAS DE UN XML
 		

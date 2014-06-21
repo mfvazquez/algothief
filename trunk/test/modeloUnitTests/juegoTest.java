@@ -13,7 +13,6 @@ public class juegoTest {
 	public void crearJuegoTest() {
 		Juego juego= new Juego();
 		assertTrue(juego.getLadrones().size() == 3);
-		assertTrue(juego.getMapa() instanceof Mapa);
 		assertTrue(juego.getPolicias().size() == 0);
 	}
 	

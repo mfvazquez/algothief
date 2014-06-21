@@ -3,12 +3,10 @@ package modelo;
 import java.util.*;
 
 public class Juego {
-	private Mapa mapa;
 	private ArrayList<Ladron> ladrones;
 	private ArrayList<Policia> policias;
 	
 	public Juego(){
-		mapa = new Mapa("Archivo inexistente"); // luego hay que poner la direccion del archivo con paises
 		policias = new ArrayList<Policia>();
 		ladrones= new ArrayList<Ladron>();
 	    Ladron ladron1 = new Ladron();
@@ -41,9 +39,6 @@ public class Juego {
 		return ladrones;
 	}
 	
-	public Mapa getMapa() {
-		return this.mapa;
-	}
 	
 	public ArrayList<Policia> getPolicias() {
 		
@@ -57,8 +52,7 @@ public class Juego {
 	}
 	
 	public Mision nuevaMision(Policia policia) {
- 		Mapa map = new Mapa("archivo inexistente");
-	    Mision mision = new Mision(map,policia.getRango()); 
+	    Mision mision = new Mision(policia.getRango()); 
 	    policia.asignarMision(mision);
 	    return mision;
 	}
