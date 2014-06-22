@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import control.*;
+import modelo.*;
 
 //@SuppressWarnings("deprecation")
 public class integracionTest {

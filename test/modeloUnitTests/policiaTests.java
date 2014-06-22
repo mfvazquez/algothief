@@ -13,16 +13,6 @@ public class policiaTests {
 	}
 	
 	@Test
-	public void testNuevaMision() {
-		Policia poli = new Policia("Harle");
-		poli.nuevaMision();
-		assertEquals("Buenos Aires", (poli.obtenerCiudadActual()).getNombre());
-		/*Tiempo tiempo;
-		assertEquals(tiempo.getHora(), 0700);
-		assertEquals(tiempo.getDia(), "lunes");*/
-	}
-	
-	@Test
 	public void testViajarACiudad() {
 		Policia poli = new Policia("Harle");
 		Ciudad ciudad = new Ciudad("Chascomus",0,0);
@@ -30,5 +20,12 @@ public class policiaTests {
 		Ciudad ciudadActual = poli.obtenerCiudadActual();
 		assertEquals(ciudad, ciudadActual);
 		assertEquals(ciudadActual.getNombre(), "Chascomus");
+	}
+	
+	@Test
+	public void testPoliciaIgualAOtro(){
+		Policia poli1 = new Policia("Pedro");
+		Policia poli2 = new Policia("Pedro");
+		assertEquals(poli1, poli2);
 	}
 }

@@ -11,14 +11,14 @@ public class TiempoTests {
 
 	@Test
 	public void testTiempo() {
-		Tiempo tiempo = new Tiempo();
+		Tiempo tiempo = Tiempo.getInstance();
 		assertEquals(tiempo.getDia(), "Lunes");
 		assertEquals(tiempo.getHora(), 07);
 	}		
 	
 	@Test
 	public void testAumentarHora(){
-		Tiempo tiempo = new Tiempo();
+		Tiempo tiempo = Tiempo.getInstance();
 		assertEquals(tiempo.getHora(), 07);
 		tiempo.consumirTiempo(10);
 		assertEquals(tiempo.getHora(), 17);
@@ -31,7 +31,7 @@ public class TiempoTests {
 	
 	@Test
 	public void testCambiaDia(){
-		Tiempo tiempo = new Tiempo();
+		Tiempo tiempo = Tiempo.getInstance();
 		assertEquals(tiempo.getDia(), "Lunes");
 		tiempo.consumirTiempo(24);
 		assertEquals(tiempo.getDia(), "Martes");
@@ -41,7 +41,7 @@ public class TiempoTests {
 	
 	@Test
 	public void testAgregarMuchasHoras(){
-		Tiempo tiempo = new Tiempo();
+		Tiempo tiempo = Tiempo.getInstance();
 		tiempo.consumirTiempo(72);
 		assertEquals(tiempo.getDia(), "Jueves");
 		tiempo.consumirTiempo(72);
@@ -52,7 +52,7 @@ public class TiempoTests {
 	
 	@Test
 	public void testFecha(){
-		Tiempo tiempo = new Tiempo();
+		Tiempo tiempo = Tiempo.getInstance();
 		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
 	}
 	

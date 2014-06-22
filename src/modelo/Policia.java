@@ -4,16 +4,14 @@ import java.lang.String;
 
 import modelo.Mision;
 
-public class Policia {
+public class Policia{
 	public String nombre;
 	private int casosResueltos;
 	private Ciudad ciudadActual;
 	private Mision mision;
 	private int velocidad;
 	private OrdenDeArresto orden;
-
 	private int rango;
-	private Juego juego;
 
 	public Policia(String n) {
 		nombre = n;
@@ -34,33 +32,17 @@ public class Policia {
 		this.mision = m;
 		this.ciudadActual = m.ciudadComienzo();
 	}
-
-//este metodo tal vez pueda removerse y usarse que el juego cree la mision
-public Mision nuevaMision() {
-    this.mision = new Mision(rango); 
-    this.ciudadActual = mision.ciudadComienzo();
-    return mision;
-}
  	
  	public void viajarACiudad(Ciudad nuevaCiudad) {
- 		//double distancia = this.ciudadActual.distancia(nuevaCiudad);
- 		//Double demora = new Double(distancia/velocidad);
- 		//this.mision.consumirTiempo(demora.intValue());
+ 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
+ 		Double demora = new Double(distancia/velocidad);
+ 		Tiempo.getInstance().consumirTiempo(demora.intValue());
  		this.ciudadActual = nuevaCiudad;
  	}
  	
  	public Ciudad obtenerCiudadActual() {
  		return this.ciudadActual;
  	}
-
-	public Juego getJuego() {
-		return this.juego;
-	}
-
-	public void setJuego(Juego jue) {
-		
-		this.juego = jue;
-	}
 	
 	public int getRango() {
 		return rango;
@@ -72,5 +54,16 @@ public Mision nuevaMision() {
 	
 	public void misionResuelta(boolean atrapoLadron) {
 		if (atrapoLadron) this.casosResueltos = this.casosResueltos +1;
+	}
+	
+	@Override
+	public boolean equals(Object objeto){
+		Policia otro = (Policia) objeto;
+		return this.nombre.equals(otro.nombre);
+	}
+	
+	public Pista visitarEdificio(Edificio edificio){
+		Tiempo.getInstance().consumirTiempo(3);
+		return edificio.pedirPista();
 	}
 }
