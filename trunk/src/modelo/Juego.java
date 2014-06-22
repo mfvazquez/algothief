@@ -33,29 +33,36 @@ public class Juego {
 	    ladrones.add(ladron1);
 	    ladrones.add(ladron1);
 	    ladrones.add(ladron3);
+	    
+	    Mapa.getInstance();
 	}
 	
 	public ArrayList<Ladron> getLadrones(){
 		return ladrones;
 	}
-	
-	
-	public ArrayList<Policia> getPolicias() {
-		
-		return this.policias;
+
+	public boolean policiaExistente(String nombre){
+		return policias.contains(new Policia(nombre));
 	}
 	
-	public void agregarPolicia(Policia poli) {
-		poli.setJuego(this);
-		this.policias.add(poli);
-		
+	public Policia agregarPolicia(String nombre) {
+		Policia poli = new Policia(nombre);
+		if (policias.contains(poli)){
+			int indice = policias.indexOf(poli);
+			poli = policias.get(indice);
+		}else{
+			policias.add(poli);
+		}
+		return poli;
 	}
 	
 	public Mision nuevaMision(Policia policia) {
-	    Mision mision = new Mision(policia.getRango()); 
+	    Mision mision = new Mision(policia); 
 	    policia.asignarMision(mision);
 	    return mision;
 	}
 	
-
+	public int cantidadPolicias(){
+		return policias.size();
+	}
 }

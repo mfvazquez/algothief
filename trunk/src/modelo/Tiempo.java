@@ -60,4 +60,8 @@ public class Tiempo {
 		String cadena = this.getDia()+" "+this.getHora()+"hs";
 		return cadena;
 	}
+	
+	public String toString(){
+		return this.fecha() + Integer.toString(this.hora);
+	}
 }
