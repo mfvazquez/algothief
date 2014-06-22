@@ -41,19 +41,14 @@ public class Juego {
 		return ladrones;
 	}
 
-	public boolean policiaExistente(String nombre){
-		return policias.contains(new Policia(nombre));
+	public boolean policiaExistente(Policia poli){
+		return policias.contains(poli);
 	}
 	
-	public Policia agregarPolicia(String nombre) {
-		Policia poli = new Policia(nombre);
-		if (policias.contains(poli)){
-			int indice = policias.indexOf(poli);
-			poli = policias.get(indice);
-		}else{
+	public void agregarPolicia(Policia poli) {
+		if (!policias.contains(poli)){
 			policias.add(poli);
 		}
-		return poli;
 	}
 	
 	public Mision nuevaMision(Policia policia) {

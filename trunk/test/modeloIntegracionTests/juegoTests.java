@@ -11,11 +11,11 @@ public class juegoTests {
 	@Test
 	public void crearPoliciaYaCreadoTest(){
 		Juego juego = new Juego();
-		juego.agregarPolicia("Pedro");
-		juego.agregarPolicia("Juan");
-		juego.agregarPolicia("Pedro");
-		assertTrue(juego.policiaExistente("Pedro"));
-		assertTrue(juego.policiaExistente("Juan"));
+		juego.agregarPolicia(new Policia("Pedro"));
+		juego.agregarPolicia(new Policia("Juan"));
+		juego.agregarPolicia(new Policia("Pedro"));
+		assertTrue(juego.policiaExistente(new Policia("Pedro")));
+		assertTrue(juego.policiaExistente(new Policia("Juan")));
 		assertEquals(juego.cantidadPolicias(), 2);
 	}
 	
@@ -24,7 +24,8 @@ public class juegoTests {
 	@Test
 	public void policiaVisitaEdificios(){
 		Juego juego = new Juego();
-		Policia policia = juego.agregarPolicia("Pedro");
+		Policia policia = new Policia("Pedro");
+		juego.agregarPolicia(policia);
 		juego.nuevaMision(policia);
 		
 		Ciudad actual = policia.obtenerCiudadActual();
@@ -40,6 +41,10 @@ public class juegoTests {
 			
 			edificio = actual.getAeropuerto();
 			pista = policia.visitarEdificio(edificio);
+			if (policia.ladronCapturado()){
+				System.out.format("SE CAPTURO AL LADRON\n");
+				return;
+			}
 			System.out.format(Tiempo.getInstance().toString()+ '\n');
 			System.out.format(pista.getPista() + '\n');
 			

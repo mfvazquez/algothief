@@ -71,7 +71,7 @@ public class Ciudad {
 		return this.coordenadas.distancia(ciudad.coordenadas);
 	}
 
-	public void generarPistas() {
+	public void generarPistas(Ciudad destino) {
 		this.aeropuerto.setPista(new Pista("Se fue en un avion con bandera azul y blanca"));
 		this.banco.setPista(new Pista("Tenia pelo rubio"));
 		this.biblioteca.setPista(new Pista("Estuvo leyendo sobre la revolucion de mayo"));

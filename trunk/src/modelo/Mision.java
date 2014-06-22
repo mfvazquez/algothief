@@ -12,7 +12,7 @@ public class Mision {
         	//objeto = new ObjetoRobado(poli.getRango());
         	ruta = new RutaDeEscape(poli.getRango());
         	ladron = new Ladron(this.ruta);
-        	Tiempo.getInstance();
+        	ruta.agregarLadron(ladron);
         }
         
         public Ciudad ciudadComienzo() {
