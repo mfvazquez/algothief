@@ -2,11 +2,13 @@ package modelo;
 
 public class Edificio {
 	private Pista pista;
+	private Ladron ladron;
 	//private EdificioStrategy strategy;
 	
 	
 	public Edificio(){
 		pista = new Pista();
+		ladron = null;
 	}
 
 	public void setPista(Pista pist) {
@@ -17,4 +19,16 @@ public class Edificio {
 		return this.pista;
 	}
 
+	public void setLadron(Ladron ladri){
+		ladron = ladri;
+	}
+	
+	public boolean ladronEncontrado(){
+		return ladron != null;
+	}
+	
+	public Ladron getLadron(){
+		return ladron;
+	}
+	
 }
