@@ -3,7 +3,9 @@ package modeloIntegracionTests;
 import modelo.*;
 
 import java.util.List;
+
 import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 public class juegoTests {
@@ -33,14 +35,22 @@ public class juegoTests {
 		Pista pista;
 		List<Ciudad> destinos;
 		
-		for(int n = 0; n < 3; n++){
+		while(true){
 			edificio = actual.getBanco();
 			pista = policia.visitarEdificio(edificio);
+			if (Tiempo.getInstance().terminoTiempo()){
+				System.out.format("SE ACABO EL TIEMPO\n");
+				return;
+			}
 			System.out.format(Tiempo.getInstance().toString()+ '\n');
 			System.out.format(pista.getPista() + '\n');
 			
 			edificio = actual.getAeropuerto();
 			pista = policia.visitarEdificio(edificio);
+			if (Tiempo.getInstance().terminoTiempo()){
+				System.out.format("SE ACABO EL TIEMPO\n");
+				return;
+			}
 			if (policia.ladronCapturado()){
 				System.out.format("SE CAPTURO AL LADRON\n");
 				return;
@@ -50,6 +60,10 @@ public class juegoTests {
 			
 			edificio = actual.getBiblioteca();
 			pista = policia.visitarEdificio(edificio);
+			if (Tiempo.getInstance().terminoTiempo()){
+				System.out.format("SE ACABO EL TIEMPO\n");
+				return;
+			}
 			System.out.format(Tiempo.getInstance().toString() + '\n');
 			System.out.format(pista.getPista() + '\n');
 			
@@ -57,8 +71,15 @@ public class juegoTests {
 			for (int i = 0; i < destinos.size(); i++){
 				System.out.format(destinos.get(i).getNombre() + '\n');
 			}
-			policia.viajarACiudad(destinos.get(0));
-			actual = policia.obtenerCiudadActual();
+			
+			Double subindice = Math.floor(Math.random()*destinos.size());
+			actual = destinos.get(subindice.intValue());
+			
+			policia.viajarACiudad(actual);
+			if (Tiempo.getInstance().terminoTiempo()){
+				System.out.format("SE ACABO EL TIEMPO\n");
+				return;
+			}
 			System.out.format("Viajando a " + destinos.get(0).getNombre() + " Tiempo = " + Tiempo.getInstance().toString() + "\n\n");
 		}
 	}
