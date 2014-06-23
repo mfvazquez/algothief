@@ -7,7 +7,7 @@ public class Edificio {
 	
 	
 	public Edificio(){
-		pista = new Pista();
+		pista = new PistaFacil();//POR AHORA LO DEJO ASI
 		ladron = null;
 	}
 

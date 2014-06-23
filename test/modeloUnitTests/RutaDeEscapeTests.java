@@ -13,7 +13,8 @@ public class RutaDeEscapeTests {
 	@Test
 	public void crearRuta() {
 		Mapa mapa = Mapa.getInstance();
-		RutaDeEscape ruta = new RutaDeEscape(3);
-		assertEquals(ruta.size(),3);
+		RangoNovatoStrategy rango = new RangoNovatoStrategy();
+		RutaDeEscape ruta = new RutaDeEscape(rango);
+		assertEquals(ruta.size(),4);
 	}
 }

@@ -11,14 +11,14 @@ public class Policia{
 	private Mision mision;
 	private int velocidad;
 	private OrdenDeArresto orden;
-	private int rango;
+	private RangoStrategy rango;
 	private Ladron capturado;
 	private int edificiosVisitados;
 
 	public Policia(String n) {
 		nombre = n;
 		casosResueltos = 0;
-		rango = 3;
+		rango = new RangoNovatoStrategy();
 		velocidad = 900; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
 		capturado = null;
 		ciudadActual = null;
@@ -47,14 +47,18 @@ public class Policia{
 	}
  	
  	public void viajarACiudad(Ciudad nuevaCiudad){
- 		if (ciudadActual == null){
+ 	/*	if (ciudadActual == null){
  			ciudadActual = nuevaCiudad;
  		}else{
 	 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
 	 		Double demora = new Double(distancia/velocidad);
 	 		Tiempo.getInstance().consumirTiempo(demora.intValue());
 	 		this.ciudadActual = nuevaCiudad;
-	 	}
+	 	}*/
+ 		
+ 		this.rango.viajarACiudad(this.ciudadActual, nuevaCiudad);
+ 		this.ciudadActual = nuevaCiudad;
+ 		
  		edificiosVisitados = 0;
  	}
  	
@@ -62,7 +66,7 @@ public class Policia{
  		return this.ciudadActual;
  	}
 	
-	public int getRango() {
+	public RangoStrategy getRango() {
 		return rango;
 	}
 	
