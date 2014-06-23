@@ -20,6 +20,7 @@ public class Policia{
 		rango = 3;
 		velocidad = 1; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
 		capturado = null;
+		ciudadActual = null;
 	}
 	
 	public String getNombre(){
@@ -32,14 +33,26 @@ public class Policia{
 	
 	public void asignarMision(Mision m) {
 		this.mision = m;
-		this.ciudadActual = m.ciudadComienzo();
+		this.asignarCiudad(m.ciudadComienzo());
+	}
+	
+	public void asignarCiudad(Ciudad city){
+		ciudadActual = city;
+	}
+	
+	public boolean ciudadAsignada(){
+		return ciudadActual != null;
 	}
  	
- 	public void viajarACiudad(Ciudad nuevaCiudad) {
- 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
- 		Double demora = new Double(distancia/velocidad);
- 		Tiempo.getInstance().consumirTiempo(demora.intValue());
- 		this.ciudadActual = nuevaCiudad;
+ 	public void viajarACiudad(Ciudad nuevaCiudad){
+ 		if (ciudadActual == null){
+ 			ciudadActual = nuevaCiudad;
+ 		}else{
+	 		double distancia = this.ciudadActual.distancia(nuevaCiudad);
+	 		Double demora = new Double(distancia/velocidad);
+	 		Tiempo.getInstance().consumirTiempo(demora.intValue());
+	 		this.ciudadActual = nuevaCiudad;
+	 	}
  	}
  	
  	public Ciudad obtenerCiudadActual() {

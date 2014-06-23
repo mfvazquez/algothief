@@ -15,10 +15,12 @@ public class policiaTests {
 	@Test
 	public void testViajarACiudad() {
 		Policia poli = new Policia("Harle");
-		Ciudad ciudad = new Ciudad("Chascomus",0,0);
-		poli.viajarACiudad(ciudad);
+		Ciudad destino = new Ciudad("Chascomus",0,0);
+		Ciudad origen = new Ciudad("Buenos Aires", 1, 0);
+		poli.asignarCiudad(origen);
+		poli.viajarACiudad(destino);
 		Ciudad ciudadActual = poli.obtenerCiudadActual();
-		assertEquals(ciudad, ciudadActual);
+		assertEquals(destino, ciudadActual);
 		assertEquals(ciudadActual.getNombre(), "Chascomus");
 	}
 	

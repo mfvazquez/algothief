@@ -36,16 +36,17 @@ public class Tiempo {
 		this.aumentoDia();
 		this.hora = this.hora % 24;
 	}
+	
 	public void aumentoDia(){
 		this.dia = this.dia + this.hora / 24;
-		this.dia = this.dia % 7;
 	}
 	
 	public boolean terminoTiempo(){
-		if (this.dia == 6 && hora >=17){
+		if ((this.dia == 6 && hora >=17) || this.dia > 6){
 			return true;
+		}else{
+			return false;
 		}
-			else return false;
 	}
 	
 	public String getDia(){
@@ -63,5 +64,10 @@ public class Tiempo {
 	
 	public String toString(){
 		return this.fecha() + Integer.toString(this.hora);
+	}
+	
+	public void reiniciar(){
+		dia = 0;
+		hora = 7;
 	}
 }

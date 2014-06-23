@@ -50,14 +50,27 @@ public class Juego {
 			policias.add(poli);
 		}
 	}
-	
-	public Mision nuevaMision(Policia policia) {
-	    Mision mision = new Mision(policia); 
-	    policia.asignarMision(mision);
-	    return mision;
-	}
-	
+		
 	public int cantidadPolicias(){
 		return policias.size();
+	}
+	
+	public Policia obtenerPolicia(String nombre){
+		Policia poli_aux = new Policia(nombre);
+		if (!this.policiaExistente(poli_aux)) return null;
+		int indice = policias.indexOf(poli_aux);
+		return policias.get(indice);
+	}
+	
+	private Ladron ladronAleatorio(){
+		Double subindice = Math.random()*ladrones.size();
+		return ladrones.get(subindice.intValue());
+	}
+	
+	public Mision nuevaMision(Policia policia) {
+		Ladron ladron = this.ladronAleatorio();
+		Mision mision = new Mision(policia, ladron); 
+	    policia.asignarMision(mision);
+	    return mision;
 	}
 }
