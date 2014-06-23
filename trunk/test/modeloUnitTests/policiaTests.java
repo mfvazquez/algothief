@@ -30,4 +30,13 @@ public class policiaTests {
 		Policia poli2 = new Policia("Pedro");
 		assertEquals(poli1, poli2);
 	}
+	
+	@Test
+	public void dormirTest(){
+		Policia poli = new Policia("Carlos");
+		Tiempo.getInstance().reiniciar();
+		assertEquals("Lunes 7hs", Tiempo.getInstance().fecha());
+		poli.dormir();
+		assertEquals("Lunes 15hs", Tiempo.getInstance().fecha());
+	}
 }

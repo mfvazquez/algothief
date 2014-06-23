@@ -105,5 +105,9 @@ public class Policia{
 	public boolean ladronCapturado(){
 		return capturado != null;
 	}
+
+	public void dormir() {
+		Tiempo.getInstance().consumirTiempo(8);
+	}
 	
 }
