@@ -23,11 +23,8 @@ public class Mision {
         	return ladron;
         }
         
-        public boolean ladronEstaEnCiudad(Ciudad c) {
-        	return (ruta.ciudadEnRuta(c));
-        }
-
-		public String fecha() { 
+        // Posiblemente haya que sacar este metodo, a menos que mision sea el encargado de manejar el tiempo
+        public String fecha() { 
 			return Tiempo.getInstance().fecha();
 		}
 

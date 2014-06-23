@@ -42,7 +42,7 @@ public class juegoTests {
 				System.out.format("SE ACABO EL TIEMPO\n");
 				return;
 			}
-			System.out.format(Tiempo.getInstance().toString()+ '\n');
+			System.out.format(Tiempo.getInstance().fecha()+ '\n');
 			System.out.format(pista.getPista() + '\n');
 			
 			edificio = actual.getAeropuerto();
@@ -55,7 +55,7 @@ public class juegoTests {
 				System.out.format("SE CAPTURO AL LADRON\n");
 				return;
 			}
-			System.out.format(Tiempo.getInstance().toString()+ '\n');
+			System.out.format(Tiempo.getInstance().fecha()+ '\n');
 			System.out.format(pista.getPista() + '\n');
 			
 			edificio = actual.getBiblioteca();
@@ -64,7 +64,7 @@ public class juegoTests {
 				System.out.format("SE ACABO EL TIEMPO\n");
 				return;
 			}
-			System.out.format(Tiempo.getInstance().toString() + '\n');
+			System.out.format(Tiempo.getInstance().fecha() + '\n');
 			System.out.format(pista.getPista() + '\n');
 			
 			destinos = Mapa.getInstance().ciudadesAdyacentes(actual);
@@ -80,7 +80,7 @@ public class juegoTests {
 				System.out.format("SE ACABO EL TIEMPO\n");
 				return;
 			}
-			System.out.format("Viajando a " + destinos.get(0).getNombre() + " Tiempo = " + Tiempo.getInstance().toString() + "\n\n");
+			System.out.format("Viajando a " + destinos.get(0).getNombre() + " Tiempo = " + Tiempo.getInstance().fecha() + "\n\n");
 		}
 	}
 }
