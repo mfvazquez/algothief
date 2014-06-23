@@ -13,14 +13,16 @@ public class Policia{
 	private OrdenDeArresto orden;
 	private int rango;
 	private Ladron capturado;
+	private int edificiosVisitados;
 
 	public Policia(String n) {
 		nombre = n;
 		casosResueltos = 0;
 		rango = 3;
-		velocidad = 1; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
+		velocidad = 900; // MODIFICAR LUEGO LA VELOCIDAD RESPECTO AL NIVEL
 		capturado = null;
 		ciudadActual = null;
+		edificiosVisitados = 0;
 	}
 	
 	public String getNombre(){
@@ -53,6 +55,7 @@ public class Policia{
 	 		Tiempo.getInstance().consumirTiempo(demora.intValue());
 	 		this.ciudadActual = nuevaCiudad;
 	 	}
+ 		edificiosVisitados = 0;
  	}
  	
  	public Ciudad obtenerCiudadActual() {
@@ -78,7 +81,10 @@ public class Policia{
 	}
 	
 	public Pista visitarEdificio(Edificio edificio){
-		Tiempo.getInstance().consumirTiempo(3);
+		if (edificiosVisitados < 3){
+			edificiosVisitados = edificiosVisitados + 1;
+		}
+		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
 			this.capturar(edificio.getLadron());
 			return null;

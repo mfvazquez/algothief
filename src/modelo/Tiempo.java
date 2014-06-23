@@ -62,10 +62,6 @@ public class Tiempo {
 		return cadena;
 	}
 	
-	public String toString(){
-		return this.fecha() + Integer.toString(this.hora);
-	}
-	
 	public void reiniciar(){
 		dia = 0;
 		hora = 7;
