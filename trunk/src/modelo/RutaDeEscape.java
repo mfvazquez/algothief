@@ -7,11 +7,11 @@ import java.util.List;
 public class RutaDeEscape {
 	private ArrayList<Ciudad> ciudades;
 	
-	public RutaDeEscape(int rango) {
+	public RutaDeEscape(RangoStrategy rango) {
 		ciudades = new ArrayList<Ciudad>();
 		Ciudad actual = Mapa.getInstance().verCiudadInicial();
 		
-		for(int i = 0; i < rango; i++){
+		for(int i = 0; i < rango.cantidadCiudadesRutaDeEscape(); i++){
 			ciudades.add(actual);
 			List<Ciudad> destinos = Mapa.getInstance().ciudadesDestino(actual);
 			Double subindice = Math.floor(Math.random()*destinos.size());

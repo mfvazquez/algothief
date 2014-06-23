@@ -42,9 +42,13 @@ public class Ciudad {
 	}
 
 	public void generarPistas(Ciudad destino) {
-		this.aeropuerto.setPista(new Pista("Se fue en un avion con bandera azul y blanca"));
-		this.banco.setPista(new Pista("Tenia pelo rubio"));
-		this.biblioteca.setPista(new Pista("Estuvo leyendo sobre la revolucion de mayo"));
+		Pista pista = new PistaFacil();
+		pista.setPista("Se fue en un avion con bandera azul y blanca");
+		this.aeropuerto.setPista(pista);
+		pista.setPista("Tenia pelo rubio");
+		this.banco.setPista(pista);
+		pista.setPista("Estuvo leyendo sobre la revolucion de mayo");
+		this.biblioteca.setPista(pista);
 	}
 
 }

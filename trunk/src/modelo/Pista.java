@@ -1,6 +1,6 @@
 package modelo;
 
-public class Pista {
+public abstract class Pista {
 	private String pista;
 
 	public Pista(){
@@ -16,5 +16,9 @@ public class Pista {
 	public String getPista() {
 		return this.pista;
 	}
+
+	public abstract boolean esPistaFacil();
+   	public abstract boolean esPistaMedia();
+    public abstract boolean esPistaDificil();
 
 }
