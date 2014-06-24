@@ -93,7 +93,7 @@ public class Policia{
 			this.capturar(edificio.getLadron());
 			return null;
 		}
-		return edificio.pedirPista();
+		return rango.pedirPista(edificio);
 	}
 	
 	public void capturar(Ladron ladron){
