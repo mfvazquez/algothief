@@ -1,7 +1,7 @@
 package modelo;
 
 public abstract class Pista {
-	private String pista;
+	protected String pista;
 
 	public Pista(){
 		this.pista = "No se vio a esa persona por aca";

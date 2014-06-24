@@ -24,10 +24,10 @@ public class CiudadTests {
 	@Test
 	public void generadorDePistasTest(){
 		Ciudad ciudad = new Ciudad("Pekin", 0,1);
-		ciudad.generarPistas(null);
-		assertEquals("Tenia pelo rubio", ciudad.getBanco().pedirPista().getPista());
-		assertEquals("Se fue en un avion con bandera azul y blanca", ciudad.getAeropuerto().pedirPista().getPista());
-		assertEquals("Estuvo leyendo sobre la revolucion de mayo", ciudad.getBiblioteca().pedirPista().getPista());
+		ciudad.generarPistas(ciudad, new RangoNovatoStrategy());
+		assertEquals("Tenia pelo rubio", ciudad.getBanco().obtenerPistaFacil().getPista());
+		assertEquals("Se fue en un avion con bandera azul y blanca", ciudad.getAeropuerto().obtenerPistaFacil().getPista());
+		assertEquals("Estuvo leyendo sobre la revolucion de mayo", ciudad.getBiblioteca().obtenerPistaFacil().getPista());
 		
 	}
 }

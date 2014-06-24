@@ -1,8 +1,8 @@
 package modelo;
 
-public class Edificio {
+public abstract class Edificio {
 	protected Ciudad ciudad;
-	protected Pista pista;
+	protected String tipo;
 	protected Ladron ladron;
 	//private EdificioStrategy strategy;
 	
@@ -10,8 +10,8 @@ public class Edificio {
 	protected Pista pistaM;
 	protected Pista pistaD;
 	
-	public Edificio(){
-		pista = new PistaFacil();//POR AHORA LO DEJO ASI
+	public Edificio(Ciudad c){
+		ciudad = c;
 		ladron = null;
 		
 		pistaF = new PistaFacil();
@@ -19,11 +19,8 @@ public class Edificio {
 		pistaD = new PistaDificil();
 	}
 	
-	public Pista pedirPista() {
-		return this.pista;
-	}
-	
 	public Pista obtenerPistaFacil(){
+		//PistaFacil pistaFacil = new PistaFacil(this.tipo, ladron.siguienteCiudadEnRuta(ciudad));
 		return pistaF;
 	}
 	
@@ -45,10 +42,6 @@ public class Edificio {
 	
 	public void setPistaD(Pista pist) {
 		this.pistaD = pist;
-	}
-
-	public void setPista(Pista pist) {
-		this.pista = pist;
 	}
 
 	public void setLadron(Ladron ladri){

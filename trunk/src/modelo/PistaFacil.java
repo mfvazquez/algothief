@@ -6,6 +6,10 @@ public class PistaFacil extends Pista {
 		super();
 	}
 	
+	public PistaFacil(String edificio, String ciudad){
+		this.pista = "del archivo";
+	}
+	
 	public boolean esPistaFacil() {
 	 	return true;
 	}

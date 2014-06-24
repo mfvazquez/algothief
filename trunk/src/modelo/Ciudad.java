@@ -10,9 +10,9 @@ public class Ciudad {
 	
 	public Ciudad(String nom, double latitud, double longitud) {
 		this.nombre = nom;
-		this.aeropuerto = new Aeropuerto();
-		this.biblioteca = new Biblioteca();
-		this.banco = new Banco();		
+		this.aeropuerto = new Aeropuerto(this);
+		this.biblioteca = new Biblioteca(this);
+		this.banco = new Banco(this);		
 		this.coordenadas = new Coordenada(latitud, longitud);
 		this.edificiosVisitados = 0;
 	}
@@ -44,29 +44,35 @@ public class Ciudad {
 	public void generarPistas(Ciudad destino, RangoStrategy rango) {
 //actualmente se cargan las pistas antes
 //después podría cambiarlo para que se carguen cuando se pidan
-		Pista pistaF = new PistaFacil();
-		pistaF.setPista("Se fue en un avion con bandera azul y blanca");
-		this.aeropuerto.setPista(pistaF);
-		pistaF.setPista("Tenia pelo rubio");
-		this.banco.setPista(pistaF);
-		pistaF.setPista("Estuvo leyendo sobre la revolucion de mayo");
-		this.biblioteca.setPista(pistaF);
+		Pista pistaFA = new PistaFacil();
+		pistaFA.setPista("Se fue en un avion con bandera azul y blanca");
+		this.aeropuerto.setPistaF(pistaFA);
+		Pista pistaFB = new PistaFacil();
+		pistaFB.setPista("Tenia pelo rubio");
+		this.banco.setPistaF(pistaFB);
+		Pista pistaFBi = new PistaFacil();
+		pistaFBi.setPista("Estuvo leyendo sobre la revolucion de mayo");
+		this.biblioteca.setPistaF(pistaFBi);
 		
-		Pista pistaM = new PistaMedia();
-		pistaM.setPista("Se fue en un avion con bandera azul y blanca");
-		this.aeropuerto.setPista(pistaM);
-		pistaM.setPista("Tenia pelo rubio");
-		this.banco.setPista(pistaM);
-		pistaM.setPista("Estuvo leyendo sobre la revolucion de mayo");
-		this.biblioteca.setPista(pistaM);
+		Pista pistaMA = new PistaMedia();
+		pistaMA.setPista("Se fue en un avion con bandera azul y blanca(media)");
+		this.aeropuerto.setPistaM(pistaMA);
+		Pista pistaMB = new PistaMedia();
+		pistaMB.setPista("Tenia pelo rubio(media)");
+		this.banco.setPistaM(pistaMB);
+		Pista pistaMBi = new PistaMedia();
+		pistaMBi.setPista("Estuvo leyendo sobre la revolucion de mayo(media)");
+		this.biblioteca.setPistaM(pistaMBi);
 		
-		Pista pistaD = new PistaDificil();
-		pistaD.setPista("Se fue en un avion con bandera azul y blanca");
-		this.aeropuerto.setPista(pistaD);
-		pistaD.setPista("Tenia pelo rubio");
-		this.banco.setPista(pistaD);
-		pistaD.setPista("Estuvo leyendo sobre la revolucion de mayo");
-		this.biblioteca.setPista(pistaD);
+		Pista pistaDA = new PistaDificil();
+		pistaDA.setPista("Se fue en un avion con bandera azul y blanca(dificil)");
+		this.aeropuerto.setPistaD(pistaDA);
+		Pista pistaDB = new PistaDificil();
+		pistaDB.setPista("Tenia pelo rubio(dificil)");
+		this.banco.setPistaD(pistaDB);
+		Pista pistaDBi = new PistaDificil();
+		pistaDBi.setPista("Estuvo leyendo sobre la revolucion de mayo(dificil)");
+		this.biblioteca.setPistaD(pistaDBi);
 		
 	}
 
