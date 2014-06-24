@@ -60,10 +60,11 @@ public class vistacConsolaTest {
 	
 	public void viajar(Policia poli){
 		Scanner entradaScanner = new Scanner(System.in);
-		List<Ciudad> destinos = Mapa.getInstance().ciudadesDestino(poli.obtenerCiudadActual());
+		List<Ciudad> destinos = Mapa.getInstance().ciudadesAdyacentes(poli.obtenerCiudadActual());
 		System.out.println("A donde desea viajar");
-		System.out.println("1." + destinos.get(0).getNombre());
-		System.out.println("2." + destinos.get(1).getNombre());
+		for (int i = 0; i< destinos.size(); i++){
+		System.out.println(destinos.get(i).getNombre());
+		}
 		String entrada = entradaScanner.nextLine();
 		int dest = Integer.parseInt(entrada) -1;
 		poli.viajarACiudad(destinos.get(dest));

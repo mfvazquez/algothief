@@ -12,7 +12,6 @@ public class juegoTest {
 	@Test
 	public void crearJuegoTest() {
 		Juego juego= new Juego();
-		assertTrue(juego.getLadrones().size() == 3);
 		assertTrue(juego.cantidadPolicias() == 0);
 	}
 	

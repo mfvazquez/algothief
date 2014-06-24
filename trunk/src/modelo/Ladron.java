@@ -18,6 +18,15 @@ public class Ladron {
     	vehiculo = new String();
     }
     
+    public Ladron(String nombre, String sexo, String hobby, String cabello, String senia, String vehiculo){
+    	this.nombre = nombre;
+    	this.sexo = sexo;
+    	this.hobby = hobby;
+    	this.cabello = cabello;
+    	this.senia = senia;
+    	this.vehiculo = vehiculo;
+    }
+    
     public Ladron(RutaDeEscape r) {
     //La ruta la crea la mision que conoce el rango del policía
     	this.ruta = r;
