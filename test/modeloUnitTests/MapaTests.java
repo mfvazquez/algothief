@@ -25,4 +25,11 @@ public class MapaTests {
 		
 	}
 	
+	@Test
+	public void ciudadesDetinoTest(){
+		List<Ciudad> destinos = Mapa.getInstance().ciudadesDestino(Mapa.getInstance().verCiudadInicial());
+		for (int i = 0; i< destinos.size(); i++){
+		System.out.println(destinos.get(i).getNombre());
+		}
+	}
 }

@@ -17,17 +17,17 @@ public class RutaDeEscape {
 			Double subindice = Math.floor(Math.random()*destinos.size());
 			actual = destinos.get(subindice.intValue());
 		}
-		this.generarPistas();
+		this.generarPistas(rango);
 	}
 	
-	private void generarPistas(){
+	private void generarPistas(RangoStrategy rango){
 		for(int i = 0; i < ciudades.size(); i++){
 			Ciudad actual = ciudades.get(i);
 			if (i == ciudades.size()-1){
-				actual.generarPistas(ciudades.get(i));
+				actual.generarPistas(ciudades.get(i), rango);
 				// poner pistas de qeu el ladron esta en la ciudad
 			}else{
-				actual.generarPistas(ciudades.get(i+1));
+				actual.generarPistas(ciudades.get(i+1), rango);
 			}
 		}
 	}

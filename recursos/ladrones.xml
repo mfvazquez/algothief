@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ladrones>
+<ladron><nombre>Nick Brunch</nombre><sexo>Masculino</sexo><hobby>Alpinismo</hobby><cabello>Negro</cabello><senia>Anillo</senia><vehiculo>Moto</vehiculo></ladron>
+<ladron><nombre>Len Bulk</nombre><sexo>Masculino</sexo><hobby>Alpinismo</hobby><cabello>Rojo</cabello><senia>Tatuaje</senia><vehiculo>Descapotable</vehiculo></ladron>
+<ladron><nombre>Ihor Ihorovitch</nombre><sexo>Masculino</sexo><hobby>Croquet</hobby><cabello>Rubio</cabello><senia>Tatuaje</senia><vehiculo>Limusina</vehiculo></ladron>
+<ladron><nombre>Fast Eddi B.</nombre><sexo>Masculino</sexo><hobby>Croquet</hobby><cabello>Negro</cabello><senia>Joyas</senia><vehiculo>Descapotable</vehiculo></ladron>
+<ladron><nombre>Scar Graynolt</nombre><sexo>Masculino</sexo><hobby>Croquet</hobby><cabello>Rojo</cabello><senia>Anillo</senia><vehiculo>Limusina</vehiculo></ladron>
+<ladron><nombre>Merey Laroc</nombre><sexo>Femenino</sexo><hobby>Alpinismo</hobby><cabello>Castanio</cabello><senia>Joyas</senia><vehiculo>Limusina</vehiculo></ladron>
+<ladron><nombre>Lady Agatha</nombre><sexo>Femenino</sexo><hobby>Tenis</hobby><cabello>Rojo</cabello><senia>Anillo</senia><vehiculo>Descapotable</vehiculo></ladron>
+<ladron><nombre>Katherine Drib</nombre><sexo>Femenino</sexo><hobby>Alpinismo</hobby><cabello>Castanio</cabello><senia>Tatuaje</senia><vehiculo>Moto</vehiculo></ladron>
+<ladron><nombre>Dazzle Annie</nombre><sexo>Femenino</sexo><hobby>Tenis</hobby><cabello>Rubio</cabello><senia>Tatuaje</senia><vehiculo>Limusina</vehiculo></ladron>
+<ladron><nombre>Carmen Sandiego</nombre><sexo>Femenino</sexo><hobby>Tenis</hobby><cabello>Castanio</cabello><senia>Joyas</senia><vehiculo>Deportivo</vehiculo></ladron>
+</ladrones>

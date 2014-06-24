@@ -39,6 +39,7 @@ public class Mapa {
 	}
 	
 	public List<Ciudad> ciudadesDestino(Ciudad ciudad){
+		 
 		return arbol.verHijos(ciudad);
 	}
 		

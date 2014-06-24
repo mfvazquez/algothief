@@ -41,14 +41,44 @@ public class Ciudad {
 		return this.coordenadas.distancia(ciudad.coordenadas);
 	}
 
-	public void generarPistas(Ciudad destino) {
-		Pista pista = new PistaFacil();
-		pista.setPista("Se fue en un avion con bandera azul y blanca");
-		this.aeropuerto.setPista(pista);
-		pista.setPista("Tenia pelo rubio");
-		this.banco.setPista(pista);
-		pista.setPista("Estuvo leyendo sobre la revolucion de mayo");
-		this.biblioteca.setPista(pista);
+	public void generarPistas(Ciudad destino, RangoStrategy rango) {
+		
+		Pista pistaF = new PistaFacil();
+		pistaF.setPista("Se fue en un avion con bandera azul y blanca");
+		this.aeropuerto.setPista(pistaF);
+		pistaF.setPista("Tenia pelo rubio");
+		this.banco.setPista(pistaF);
+		pistaF.setPista("Estuvo leyendo sobre la revolucion de mayo");
+		this.biblioteca.setPista(pistaF);
+		
+		Pista pistaM = new PistaMedia();
+		//setear para edificios
+		Pista pistaD = new PistaDificil();
+		//setear para edificios
+		
+		
+		
+		
+		if (rango.nivelDePistaCorrecto(new PistaFacil())) {
+			// if (rango.esNovato())
+			Pista pista = new PistaFacil();
+			pista.setPista("Se fue en un avion con bandera azul y blanca");
+			this.aeropuerto.setPista(pista);
+			pista.setPista("Tenia pelo rubio");
+			this.banco.setPista(pista);
+			pista.setPista("Estuvo leyendo sobre la revolucion de mayo");
+			this.biblioteca.setPista(pista);
+		}
+		else {
+			if (rango.nivelDePistaCorrecto(new PistaMedia())) {
+				
+			}
+			else {
+				if (rango.nivelDePistaCorrecto(new PistaDificil())){
+					
+				}
+			}
+		}
 	}
 
 }
