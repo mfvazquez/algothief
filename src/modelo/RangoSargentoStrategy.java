@@ -32,6 +32,11 @@ public class RangoSargentoStrategy implements RangoStrategy {
 	}
 
 	@Override
+	public  Pista pedirPista(Edificio edificio){
+		return edificio.obtenerPistaDificil();
+	}
+	
+	@Override
 	public boolean nivelDePistaCorrecto(Pista pista) {
 		return pista.esPistaDificil();
 	}

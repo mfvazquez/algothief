@@ -30,6 +30,11 @@ public class RangoNovatoStrategy implements RangoStrategy {
 	public boolean esSargento() {
 		return false;
 	}
+	
+	@Override
+	public  Pista pedirPista(Edificio edificio){
+		return edificio.obtenerPistaFacil();
+	}
 
 	@Override
 	public boolean nivelDePistaCorrecto(Pista pista) {
