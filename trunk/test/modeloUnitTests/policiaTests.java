@@ -1,6 +1,9 @@
 package modeloUnitTests;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 import modelo.*;
 
@@ -39,4 +42,14 @@ public class policiaTests {
 		poli.dormir();
 		assertEquals("Lunes 15hs", Tiempo.getInstance().fecha());
 	}
+	
+	@Test
+	public void crearOdenDeArrestoTest(){
+		Policia cobani = new Policia("Carlos");
+		String sospechoso = cobani.crearOrdenDeArresto("Masculino", "Alpinismo", "", "", "");
+		assertEquals("Sospechosos: Nick Brunch Len Bulk", sospechoso);
+		
+		
+	}
+	
 }
