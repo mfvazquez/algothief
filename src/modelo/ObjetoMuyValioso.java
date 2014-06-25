@@ -2,9 +2,9 @@ package modelo;
 
 public class ObjetoMuyValioso extends ObjetoRobado {
 
-	public ObjetoMuyValioso(RangoStrategy rango) {
-		super(rango);
-		// TODO Auto-generated constructor stub
+	public ObjetoMuyValioso(String ciudad) {
+		//buscar en archivo por ciudad
+		this.objeto = "objeto muy valioso de " + ciudad;
 	}
 
 	@Override

@@ -2,8 +2,9 @@ package modelo;
 
 public class ObjetoComun extends ObjetoRobado {
 
-	public ObjetoComun(RangoStrategy rango) {
-		super(rango);
+	public ObjetoComun(String ciudad) {
+		//busca en archivo
+		this.objeto = "objeto comun de" + ciudad;
 	}
 
 	@Override

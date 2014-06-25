@@ -9,8 +9,8 @@ public class Mision {
         private RutaDeEscape ruta;
         
         public Mision(Policia poli, Ladron ladri){
-        	//objeto = new ObjetoRobado(poli.getRango());
         	ruta = new RutaDeEscape(poli.getRango());
+        	objeto = poli.getRango().elegirObjetoRobado(ruta.ciudadComienzo().getNombre());
         	ladron = ladri;
         	ruta.agregarLadron(ladron);
         }

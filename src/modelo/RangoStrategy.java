@@ -10,5 +10,6 @@ public interface RangoStrategy {
 	public abstract Pista pedirPista(Edificio edificio);
 	public abstract boolean nivelDePistaCorrecto(Pista pista);
 	public abstract int cantidadCiudadesRutaDeEscape();
+	public abstract ObjetoRobado elegirObjetoRobado(String ciudad);
 	public abstract boolean nivelObjetoRobadoCorrecto(ObjetoRobado objeto);
 }
