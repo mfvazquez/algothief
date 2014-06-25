@@ -1,9 +1,9 @@
 package modelo;
 
 public abstract class ObjetoRobado {
-	private String objeto;
+	protected String objeto;
 	
-	public ObjetoRobado(RangoStrategy rango) {
+	public ObjetoRobado() {
 	//el objeto se lee de un archivo
 	}
 	

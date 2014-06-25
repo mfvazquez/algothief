@@ -46,6 +46,10 @@ public class RangoNovatoStrategy implements RangoStrategy {
 		return 4;
 	}
 	
+	public ObjetoRobado elegirObjetoRobado(String ciudad) {
+		return new ObjetoComun(ciudad);
+	}
+	
 	@Override
 	public boolean nivelObjetoRobadoCorrecto(ObjetoRobado objeto) {
 		return objeto.esObjetoComun();

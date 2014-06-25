@@ -47,6 +47,11 @@ public class RangoInvestigadorStrategy implements RangoStrategy {
 	}
 	
 	@Override
+	public ObjetoRobado elegirObjetoRobado(String ciudad) {
+		return new ObjetoValioso(ciudad);
+	}
+	
+	@Override
 	public boolean nivelObjetoRobadoCorrecto(ObjetoRobado objeto) {
 		return objeto.esObjetoValioso();
 	}
