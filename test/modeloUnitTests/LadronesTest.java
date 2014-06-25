@@ -1,6 +1,9 @@
 package modeloUnitTests;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import modelo.Ladron;
 import modelo.Ladrones;
 
@@ -20,4 +23,9 @@ public class LadronesTest {
 		System.out.println(ladri.getVehiculo());
 	}
 
+	@Test
+	public void sospechososTest(){
+		ArrayList<Ladron> sospechosos = Ladrones.getInstance().getLadronesConCaracteristicas("Masculino", "Alpinismo","" , "", "");
+		assertEquals(2, sospechosos.size());
+	}
 }

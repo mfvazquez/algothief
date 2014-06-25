@@ -1,6 +1,7 @@
 package modelo;
 
 import java.lang.String;
+import java.util.ArrayList;
 
 import modelo.Mision;
 
@@ -108,6 +109,28 @@ public class Policia{
 
 	public void dormir() {
 		Tiempo.getInstance().consumirTiempo(8);
+	}
+
+	public String crearOrdenDeArresto(String sexo, String hobby,
+			String cabello, String senia, String vehiculo) {
+		Tiempo.getInstance().consumirTiempo(3);
+		ArrayList<Ladron> sospechosos = Ladrones.getInstance().getLadronesConCaracteristicas(sexo, hobby, cabello, senia, vehiculo);
+		String sospe= "";
+		if (sospechosos.size()> 1){
+			sospe = "Sospechosos:";
+			for (int i = 0; i<sospechosos.size(); i++){
+				sospe = sospe + " " + sospechosos.get(i).getNombre();
+			}	
+		}
+		else if (sospechosos.size() == 1 ){
+			sospe = "Se emitio una orden de arresto para: " + sospechosos.get(0).getNombre();
+			this.orden = new OrdenDeArresto(sospechosos.get(0).getNombre());
+		}
+		else if (sospechosos.size() == 0){
+			sospe = "No se encontraron sospechosos que respondan a esas carcteristicas";
+			
+		}
+		return sospe; 
 	}
 	
 }

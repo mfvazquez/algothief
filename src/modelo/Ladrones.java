@@ -73,6 +73,49 @@ public class Ladrones {
 	public ArrayList<Ladron> getLadrones(){
 		return this.ladrones;
 	}
+
+	public ArrayList<Ladron> getLadronesConCaracteristicas(String sexo,
+			String hobby, String cabello, String senia, String vehiculo) {
+		ArrayList<Ladron> sospechosos = (ArrayList<Ladron>) this.ladrones.clone();
+		
+		if (!(sexo.equals(""))){
+			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
+				if (! (l.getSexo().equals(sexo))){
+					sospechosos.remove(l);
+				}
+			}
+		}
+		
+		if (!(hobby.equals(""))){
+			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
+				if (! (l.gethobby().equals(hobby))){
+					sospechosos.remove(l);
+				}
+			}
+		}
+		if (!(cabello.equals(""))){
+			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
+				if (! (l.getCabello().equals(cabello))){
+					sospechosos.remove(l);
+				}
+			}
+		}
+		if (!(senia.equals(""))){
+			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
+				if (! (l.getSenia().equals(senia))){
+					sospechosos.remove(l);
+				}
+			}
+		}
+		if (!(vehiculo.equals(""))){
+			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
+				if (! (l.getVehiculo().equals(vehiculo))){
+					sospechosos.remove(l);
+				}
+			}
+		}
+		return sospechosos;
+	}
 	
 	
 }
