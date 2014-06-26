@@ -92,7 +92,9 @@ public class Policia{
 		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
 			this.capturar(edificio.getLadron());
-			return null;
+			Pista pist = new PistaFacil();
+			pist.setPista("Atrapaste al ladron: " + capturado.getNombre());
+			return pist;
 		}
 		return rango.pedirPista(edificio);
 	}
@@ -133,4 +135,7 @@ public class Policia{
 		return sospe; 
 	}
 	
+	public Ladron getLadron(){
+		return this.capturado;
+	}
 }

@@ -56,5 +56,14 @@ public class RutaDeEscape {
 		Ciudad destino = ciudades.get(ciudades.size()-1);
 		Edificio edificio = destino.getAeropuerto();
 		edificio.setLadron(ladron);
+		Pista pist = new PistaDificil();
+		pist.setPista("Cuidado, estas muy serca");
+		destino.getBanco().setPistaD(pist);
+		destino.getBanco().setPistaF(pist);
+		destino.getBanco().setPistaM(pist);
+		destino.getBiblioteca().setPistaD(pist);
+		destino.getBiblioteca().setPistaF(pist);
+		destino.getBiblioteca().setPistaM(pist);
+		
 	}
 }

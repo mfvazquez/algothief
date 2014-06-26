@@ -43,6 +43,7 @@ public class vistacConsolaTest {
 			else if (entradaTeclado.equals("4"))
 				salir = true;
 		}
+	
 	}
 	
 	public void visitarEdificio(Policia poli){
@@ -55,7 +56,7 @@ public class vistacConsolaTest {
 		if (entradaTeclado.equals("1"))
 			System.out.println(poli.visitarEdificio(poli.obtenerCiudadActual().getBanco()).getPista());
 		else if (entradaTeclado.equals("2"))
-			System.out.println(poli.visitarEdificio(poli.obtenerCiudadActual().getAeropuerto()).getPista());
+			System.out.println(poli.visitarEdificio(poli.obtenerCiudadActual().getAeropuerto()).getPista());	
 		else if (entradaTeclado.equals("3"))
 			System.out.println(poli.visitarEdificio(poli.obtenerCiudadActual().getBiblioteca()).getPista());
 		System.out.println(Tiempo.getInstance().fecha());
