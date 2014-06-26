@@ -25,9 +25,9 @@ public class TiempoTests {
 		tiempo.consumirTiempo(10);
 		assertEquals(tiempo.getHora(), 17);
 		tiempo.consumirTiempo(12);
-		assertEquals(tiempo.getHora(), 05);
+		assertEquals(tiempo.getHora(), 13);
 		tiempo.consumirTiempo(24);
-		assertEquals(tiempo.getHora(), 05);
+		assertEquals(tiempo.getHora(), 21);
 		assertEquals(tiempo.getDia(), "Miercoles");
 	}
 	
@@ -39,7 +39,7 @@ public class TiempoTests {
 		tiempo.consumirTiempo(24);
 		assertEquals(tiempo.getDia(), "Martes");
 		tiempo.consumirTiempo(30);
-		assertEquals(tiempo.getDia(), "Miercoles");
+		assertEquals(tiempo.getDia(), "Jueves");
 	}
 	
 	@Test
@@ -59,6 +59,16 @@ public class TiempoTests {
 		Tiempo tiempo = Tiempo.getInstance();
 		tiempo.reiniciar();
 		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
+	}
+	
+	@Test
+	public void duermeDespuesDeLas11Test(){
+		Tiempo tiempo = Tiempo.getInstance();
+		tiempo.reiniciar();
+		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
+		tiempo.consumirTiempo(16);
+		assertTrue("Martes 7hs".equals(tiempo.fecha()));
+		
 	}
 	
 	

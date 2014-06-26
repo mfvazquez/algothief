@@ -2,6 +2,8 @@ package modelo;
 
 public abstract class Pista {
 	protected String pista;
+	protected String ciudad;
+	protected String edificio;
 
 	public Pista(){
 		this.pista = "No se vio a esa persona por aca";
@@ -20,5 +22,9 @@ public abstract class Pista {
 	public abstract boolean esPistaFacil();
    	public abstract boolean esPistaMedia();
     public abstract boolean esPistaDificil();
+    
+   // public boolean esPistaDeEdificio(Edificio edi){
+   // 	return (this.edificio.equals(edi.getTipo()));
+   // }
 
 }

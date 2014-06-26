@@ -33,6 +33,7 @@ public class Tiempo {
 	
 	public void consumirTiempo (int tiemp){
 		this.hora = hora + tiemp;
+		this.veoSiDuerme();
 		this.aumentoDia();
 		this.hora = this.hora % 24;
 	}
@@ -41,6 +42,11 @@ public class Tiempo {
 		this.dia = this.dia + this.hora / 24;
 	}
 	
+	public void veoSiDuerme(){
+		if (this.hora >=23){
+			this.hora += 8;
+		}
+	}
 	public boolean terminoTiempo(){
 		if ((this.dia == 6 && hora >=17) || this.dia > 6){
 			return true;

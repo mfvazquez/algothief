@@ -2,6 +2,7 @@ package modelo;
 
 public abstract class ObjetoRobado {
 	protected String objeto;
+	protected String ciudad;
 	
 	public ObjetoRobado() {
 	//el objeto se lee de un archivo
