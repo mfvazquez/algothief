@@ -80,7 +80,7 @@ public class Ladrones {
 		
 		if (!(sexo.equals(""))){
 			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
-				if (! (l.getSexo().equals(sexo))){
+				if (! (l.suSexoEs(sexo))){
 					sospechosos.remove(l);
 				}
 			}
@@ -88,28 +88,28 @@ public class Ladrones {
 		
 		if (!(hobby.equals(""))){
 			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
-				if (! (l.gethobby().equals(hobby))){
+				if (! (l.suHobbyEs(hobby))){
 					sospechosos.remove(l);
 				}
 			}
 		}
 		if (!(cabello.equals(""))){
 			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
-				if (! (l.getCabello().equals(cabello))){
+				if (! (l.suCabelloEs(cabello))){
 					sospechosos.remove(l);
 				}
 			}
 		}
 		if (!(senia.equals(""))){
 			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
-				if (! (l.getSenia().equals(senia))){
+				if (! (l.suSeniaEs(senia))){
 					sospechosos.remove(l);
 				}
 			}
 		}
 		if (!(vehiculo.equals(""))){
 			for (Ladron l : new ArrayList<Ladron>(sospechosos)){
-				if (! (l.getVehiculo().equals(vehiculo))){
+				if (! (l.suVehiculoEs(vehiculo))){
 					sospechosos.remove(l);
 				}
 			}

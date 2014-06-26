@@ -13,14 +13,11 @@ public class LadronesTest {
 
 	@Test
 	public void creacionTest() {
-		Ladron ladri = Ladrones.getInstance().getLadrones().get(5);
+		Ladrones.getInstance();
+		for(Ladron l : Ladrones.getInstance().getLadrones()){
+			System.out.println(l.getNombre());
+		}
 		
-		System.out.println(ladri.getNombre());
-		System.out.println(ladri.getCabello());
-		System.out.println(ladri.gethobby());
-		System.out.println(ladri.getSenia());
-		System.out.println(ladri.getSexo());
-		System.out.println(ladri.getVehiculo());
 	}
 
 	@Test

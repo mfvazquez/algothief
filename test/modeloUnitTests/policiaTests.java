@@ -45,10 +45,14 @@ public class policiaTests {
 	
 	@Test
 	public void crearOdenDeArrestoTest(){
-		Policia cobani = new Policia("Carlos");
-		String sospechoso = cobani.crearOrdenDeArresto("Masculino", "Alpinismo", "", "", "");
+		Policia poli = new Policia("Carlos");
+		String sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "", "", "");
 		assertEquals("Sospechosos: Nick Brunch Len Bulk", sospechoso);
-		
+		sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "Rubio", "", "");
+		assertEquals("No se encontraron sospechosos que respondan a esas carcteristicas", sospechoso);
+		sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "Negro", "", "");
+		assertEquals("Se emitio una orden de arresto para: Nick Brunch", sospechoso);
+	
 		
 	}
 	
