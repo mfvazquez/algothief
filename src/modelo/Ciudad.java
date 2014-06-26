@@ -6,7 +6,7 @@ public class Ciudad {
 	private Aeropuerto aeropuerto;
 	private Biblioteca biblioteca;	
 	private Coordenada coordenadas;
-	private int edificiosVisitados;
+
 	
 	public Ciudad(String nom, double latitud, double longitud) {
 		this.nombre = nom;
@@ -14,7 +14,7 @@ public class Ciudad {
 		this.biblioteca = new Biblioteca(this);
 		this.banco = new Banco(this);		
 		this.coordenadas = new Coordenada(latitud, longitud);
-		this.edificiosVisitados = 0;
+
 	}
 	
 	public void setNombre(String nom) {
