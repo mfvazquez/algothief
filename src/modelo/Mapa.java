@@ -20,7 +20,7 @@ public class Mapa {
 	private int cantHijos;
 	
 	private Mapa(){
-		cantHijos = 3;
+		cantHijos = 2;
 		ciudades = this.cargarCiudades();
 		this.agregarCiudadesIniciales();
 	}
