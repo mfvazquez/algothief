@@ -1,197 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coordenadas>
-<ciudad><nombre>Kabul </nombre><latitud>34.28 </latitud><longitud>69.11</longitud></ciudad>
-<ciudad><nombre>Tirane </nombre><latitud>41.18 </latitud><longitud>19.49</longitud></ciudad>
-<ciudad><nombre>Algiers </nombre><latitud>36.42 </latitud><longitud>03.08</longitud></ciudad>
-<ciudad><nombre>Pago Pago </nombre><latitud>-14.16 </latitud><longitud>-170.43</longitud></ciudad>
-<ciudad><nombre>Andorra la Vella </nombre><latitud>42.31 </latitud><longitud>01.32</longitud></ciudad>
-<ciudad><nombre>Luanda </nombre><latitud>-08.50 </latitud><longitud>13.15</longitud></ciudad>
-<ciudad><nombre>West Indies </nombre><latitud>17.20 </latitud><longitud>-61.48</longitud></ciudad>
-<ciudad><nombre>Buenos Aires </nombre><latitud>-36.30 </latitud><longitud>-60.00</longitud></ciudad>
-<ciudad><nombre>Yerevan </nombre><latitud>-40.10 </latitud><longitud>44.31</longitud></ciudad>
-<ciudad><nombre>Oranjestad </nombre><latitud>12.32 </latitud><longitud>-70.02</longitud></ciudad>
-<ciudad><nombre>Canberra </nombre><latitud>-35.15 </latitud><longitud>149.08</longitud></ciudad>
-<ciudad><nombre>Vienna </nombre><latitud>48.12 </latitud><longitud>16.22</longitud></ciudad>
-<ciudad><nombre>Baku </nombre><latitud>40.29 </latitud><longitud>49.56</longitud></ciudad>
-<ciudad><nombre>Nassau </nombre><latitud>25.05 </latitud><longitud>-77.20</longitud></ciudad>
-<ciudad><nombre>Manama </nombre><latitud>26.10 </latitud><longitud>50.30</longitud></ciudad>
-<ciudad><nombre>Dhaka </nombre><latitud>23.43 </latitud><longitud>90.26</longitud></ciudad>
-<ciudad><nombre>Bridgetown </nombre><latitud>13.05 </latitud><longitud>-59.30</longitud></ciudad>
-<ciudad><nombre>Minsk </nombre><latitud>53.52 </latitud><longitud>27.30</longitud></ciudad>
-<ciudad><nombre>Brussels </nombre><latitud>50.51 </latitud><longitud>04.21</longitud></ciudad>
-<ciudad><nombre>Belmopan </nombre><latitud>17.18 </latitud><longitud>-88.30</longitud></ciudad>
-<ciudad><nombre>Thimphu </nombre><latitud>27.31 </latitud><longitud>89.45</longitud></ciudad>
-<ciudad><nombre>Sarajevo </nombre><latitud>43.52 </latitud><longitud>18.26</longitud></ciudad>
-<ciudad><nombre>Gaborone </nombre><latitud>-24.45 </latitud><longitud>25.57</longitud></ciudad>
-<ciudad><nombre>Brasilia </nombre><latitud>-15.47 </latitud><longitud>-47.55</longitud></ciudad>
-<ciudad><nombre>Road Town </nombre><latitud>18.27 </latitud><longitud>-64.37</longitud></ciudad>
-<ciudad><nombre>Bandar Seri Begawan </nombre><latitud>04.52 </latitud><longitud>115.00</longitud></ciudad>
-<ciudad><nombre>Sofia </nombre><latitud>42.45 </latitud><longitud>23.20</longitud></ciudad>
-<ciudad><nombre>Ouagadougou </nombre><latitud>12.15 </latitud><longitud>-01.30</longitud></ciudad>
-<ciudad><nombre>Bujumbura </nombre><latitud>-03.16 </latitud><longitud>29.18</longitud></ciudad>
-<ciudad><nombre>Phnom Penh </nombre><latitud>11.33 </latitud><longitud>104.55</longitud></ciudad>
-<ciudad><nombre>Yaounde </nombre><latitud>03.50 </latitud><longitud>11.35</longitud></ciudad>
-<ciudad><nombre>Ottawa </nombre><latitud>45.27 </latitud><longitud>-75.42</longitud></ciudad>
-<ciudad><nombre>Praia </nombre><latitud>15.02 </latitud><longitud>-23.34</longitud></ciudad>
-<ciudad><nombre>George Town </nombre><latitud>19.20 </latitud><longitud>-81.24</longitud></ciudad>
-<ciudad><nombre>Bangui </nombre><latitud>04.23 </latitud><longitud>18.35</longitud></ciudad>
-<ciudad><nombre>N'Djamena </nombre><latitud>12.10 </latitud><longitud>14.59</longitud></ciudad>
-<ciudad><nombre>Santiago </nombre><latitud>-33.24 </latitud><longitud>-70.40</longitud></ciudad>
-<ciudad><nombre>Beijing </nombre><latitud>39.55 </latitud><longitud>116.20</longitud></ciudad>
-<ciudad><nombre>Bogota </nombre><latitud>04.34 </latitud><longitud>-74.00</longitud></ciudad>
-<ciudad><nombre>Moroni </nombre><latitud>-11.40 </latitud><longitud>43.16</longitud></ciudad>
-<ciudad><nombre>Brazzaville </nombre><latitud>-04.09 </latitud><longitud>15.12</longitud></ciudad>
-<ciudad><nombre>San Jose </nombre><latitud>09.55 </latitud><longitud>-84.02</longitud></ciudad>
-<ciudad><nombre>Yamoussoukro </nombre><latitud>06.49 </latitud><longitud>-05.17</longitud></ciudad>
-<ciudad><nombre>Zagreb </nombre><latitud>45.50 </latitud><longitud>15.58</longitud></ciudad>
-<ciudad><nombre>Havana </nombre><latitud>23.08 </latitud><longitud>-82.22</longitud></ciudad>
-<ciudad><nombre>Nicosia </nombre><latitud>35.10 </latitud><longitud>33.25</longitud></ciudad>
-<ciudad><nombre>Prague </nombre><latitud>50.05 </latitud><longitud>14.22</longitud></ciudad>
-<ciudad><nombre>Kinshasa </nombre><latitud>-04.20 </latitud><longitud>15.15</longitud></ciudad>
-<ciudad><nombre>Copenhagen </nombre><latitud>55.41 </latitud><longitud>12.34</longitud></ciudad>
-<ciudad><nombre>Djibouti </nombre><latitud>11.08 </latitud><longitud>42.20</longitud></ciudad>
-<ciudad><nombre>Roseau </nombre><latitud>15.20 </latitud><longitud>-61.24</longitud></ciudad>
-<ciudad><nombre>Santo Domingo </nombre><latitud>18.30 </latitud><longitud>-69.59</longitud></ciudad>
-<ciudad><nombre>Dili </nombre><latitud>-08.29 </latitud><longitud>125.34</longitud></ciudad>
-<ciudad><nombre>Quito </nombre><latitud>-00.15 </latitud><longitud>-78.35</longitud></ciudad>
-<ciudad><nombre>Cairo </nombre><latitud>30.01 </latitud><longitud>31.14</longitud></ciudad>
-<ciudad><nombre>San Salvador </nombre><latitud>13.40 </latitud><longitud>-89.10</longitud></ciudad>
-<ciudad><nombre>Malabo </nombre><latitud>03.45 </latitud><longitud>08.50</longitud></ciudad>
-<ciudad><nombre>Asmara </nombre><latitud>15.19 </latitud><longitud>38.55</longitud></ciudad>
-<ciudad><nombre>Tallinn </nombre><latitud>59.22 </latitud><longitud>24.48</longitud></ciudad>
-<ciudad><nombre>Addis Ababa </nombre><latitud>09.02 </latitud><longitud>38.42</longitud></ciudad>
-<ciudad><nombre>Stanley </nombre><latitud>-51.40 </latitud><longitud>-59.51</longitud></ciudad>
-<ciudad><nombre>Torshavn </nombre><latitud>62.05 </latitud><longitud>-06.56</longitud></ciudad>
-<ciudad><nombre>Suva </nombre><latitud>-18.06 </latitud><longitud>178.30</longitud></ciudad>
-<ciudad><nombre>Helsinki </nombre><latitud>60.15 </latitud><longitud>25.03</longitud></ciudad>
-<ciudad><nombre>Paris </nombre><latitud>48.50 </latitud><longitud>02.20</longitud></ciudad>
-<ciudad><nombre>Cayenne </nombre><latitud>05.05 </latitud><longitud>-52.18</longitud></ciudad>
-<ciudad><nombre>Papeete </nombre><latitud>-17.32 </latitud><longitud>-149.34</longitud></ciudad>
-<ciudad><nombre>Libreville </nombre><latitud>00.25 </latitud><longitud>09.26</longitud></ciudad>
-<ciudad><nombre>Banjul </nombre><latitud>13.28 </latitud><longitud>-16.40</longitud></ciudad>
-<ciudad><nombre>T'bilisi </nombre><latitud>41.43 </latitud><longitud>44.50</longitud></ciudad>
-<ciudad><nombre>Berlin </nombre><latitud>52.30 </latitud><longitud>13.25</longitud></ciudad>
-<ciudad><nombre>Accra </nombre><latitud>05.35 </latitud><longitud>-00.06</longitud></ciudad>
-<ciudad><nombre>Athens </nombre><latitud>37.58 </latitud><longitud>23.46</longitud></ciudad>
-<ciudad><nombre>Nuuk </nombre><latitud>64.10 </latitud><longitud>-51.35</longitud></ciudad>
-<ciudad><nombre>Basse-Terre </nombre><latitud>16.00 </latitud><longitud>-61.44</longitud></ciudad>
-<ciudad><nombre>Guatemala </nombre><latitud>14.40 </latitud><longitud>-90.22</longitud></ciudad>
-<ciudad><nombre>St. Peter Port </nombre><latitud>49.26 </latitud><longitud>-02.33</longitud></ciudad>
-<ciudad><nombre>Conakry </nombre><latitud>09.29 </latitud><longitud>-13.49</longitud></ciudad>
-<ciudad><nombre>Bissau </nombre><latitud>11.45 </latitud><longitud>-15.45</longitud></ciudad>
-<ciudad><nombre>Georgetown </nombre><latitud>06.50 </latitud><longitud>-58.12</longitud></ciudad>
-<ciudad><nombre>Port-au-Prince </nombre><latitud>18.40 </latitud><longitud>-72.20</longitud></ciudad>
-<ciudad><nombre>Tegucigalpa </nombre><latitud>14.05 </latitud><longitud>-87.14</longitud></ciudad>
-<ciudad><nombre>Budapest </nombre><latitud>47.29 </latitud><longitud>19.05</longitud></ciudad>
-<ciudad><nombre>Reykjavik </nombre><latitud>64.10 </latitud><longitud>-21.57</longitud></ciudad>
-<ciudad><nombre>New Delhi </nombre><latitud>28.37 </latitud><longitud>77.13</longitud></ciudad>
-<ciudad><nombre>Jakarta </nombre><latitud>-06.09 </latitud><longitud>106.49</longitud></ciudad>
-<ciudad><nombre>Tehran </nombre><latitud>35.44 </latitud><longitud>51.30</longitud></ciudad>
-<ciudad><nombre>Baghdad </nombre><latitud>33.20 </latitud><longitud>44.30</longitud></ciudad>
-<ciudad><nombre>Dublin </nombre><latitud>53.21 </latitud><longitud>-06.15</longitud></ciudad>
-<ciudad><nombre>Jerusalem </nombre><latitud>31.71 </latitud><longitud>-35.10</longitud></ciudad>
-<ciudad><nombre>Rome </nombre><latitud>41.54 </latitud><longitud>12.29</longitud></ciudad>
-<ciudad><nombre>Kingston </nombre><latitud>18.00 </latitud><longitud>-76.50</longitud></ciudad>
-<ciudad><nombre>Amman </nombre><latitud>31.57 </latitud><longitud>35.52</longitud></ciudad>
-<ciudad><nombre>Astana </nombre><latitud>51.10 </latitud><longitud>71.30</longitud></ciudad>
-<ciudad><nombre>Nairobi </nombre><latitud>-01.17 </latitud><longitud>36.48</longitud></ciudad>
-<ciudad><nombre>Tarawa </nombre><latitud>01.30 </latitud><longitud>173.00</longitud></ciudad>
-<ciudad><nombre>Kuwait </nombre><latitud>29.30 </latitud><longitud>48.00</longitud></ciudad>
-<ciudad><nombre>Bishkek </nombre><latitud>42.54 </latitud><longitud>74.46</longitud></ciudad>
-<ciudad><nombre>Vientiane </nombre><latitud>17.58 </latitud><longitud>102.36</longitud></ciudad>
-<ciudad><nombre>Riga </nombre><latitud>56.53 </latitud><longitud>24.08</longitud></ciudad>
-<ciudad><nombre>Beirut </nombre><latitud>33.53 </latitud><longitud>35.31</longitud></ciudad>
-<ciudad><nombre>Maseru </nombre><latitud>-29.18 </latitud><longitud>27.30</longitud></ciudad>
-<ciudad><nombre>Monrovia </nombre><latitud>06.18 </latitud><longitud>-10.47</longitud></ciudad>
-<ciudad><nombre>Tripoli </nombre><latitud>32.49 </latitud><longitud>13.07</longitud></ciudad>
-<ciudad><nombre>Vaduz </nombre><latitud>47.08 </latitud><longitud>09.31</longitud></ciudad>
-<ciudad><nombre>Vilnius </nombre><latitud>54.38 </latitud><longitud>25.19</longitud></ciudad>
-<ciudad><nombre>Luxembourg </nombre><latitud>49.37 </latitud><longitud>06.09</longitud></ciudad>
-<ciudad><nombre>Macau </nombre><latitud>22.12 </latitud><longitud>113.33</longitud></ciudad>
-<ciudad><nombre>Antananarivo </nombre><latitud>-18.55 </latitud><longitud>47.31</longitud></ciudad>
-<ciudad><nombre>Skopje </nombre><latitud>42.01 </latitud><longitud>21.26</longitud></ciudad>
-<ciudad><nombre>Lilongwe </nombre><latitud>-14.00 </latitud><longitud>33.48</longitud></ciudad>
-<ciudad><nombre>Kuala Lumpur </nombre><latitud>03.09 </latitud><longitud>101.41</longitud></ciudad>
-<ciudad><nombre>Male </nombre><latitud>04.00 </latitud><longitud>73.28</longitud></ciudad>
-<ciudad><nombre>Bamako </nombre><latitud>12.34 </latitud><longitud>-07.55</longitud></ciudad>
-<ciudad><nombre>Valletta </nombre><latitud>35.54 </latitud><longitud>14.31</longitud></ciudad>
-<ciudad><nombre>Fort-de-France </nombre><latitud>14.36 </latitud><longitud>-61.02</longitud></ciudad>
-<ciudad><nombre>Nouakchott </nombre><latitud>-20.10 </latitud><longitud>57.30</longitud></ciudad>
-<ciudad><nombre>Mamoudzou </nombre><latitud>-12.48 </latitud><longitud>45.14</longitud></ciudad>
-<ciudad><nombre>Mexico </nombre><latitud>19.20 </latitud><longitud>-99.10</longitud></ciudad>
-<ciudad><nombre>Palikir </nombre><latitud>06.55 </latitud><longitud>158.09</longitud></ciudad>
-<ciudad><nombre>Chisinau </nombre><latitud>47.02 </latitud><longitud>28.50</longitud></ciudad>
-<ciudad><nombre>Maputo </nombre><latitud>-25.58 </latitud><longitud>32.32</longitud></ciudad>
-<ciudad><nombre>Yangon </nombre><latitud>16.45 </latitud><longitud>96.20</longitud></ciudad>
-<ciudad><nombre>Windhoek </nombre><latitud>-22.35 </latitud><longitud>17.04</longitud></ciudad>
-<ciudad><nombre>Kathmandu </nombre><latitud>27.45 </latitud><longitud>85.20</longitud></ciudad>
-<ciudad><nombre>Willemstad </nombre><latitud>12.05 </latitud><longitud>-69.00</longitud></ciudad>
-<ciudad><nombre>Noumea </nombre><latitud>-22.17 </latitud><longitud>166.30</longitud></ciudad>
-<ciudad><nombre>Wellington </nombre><latitud>-41.19 </latitud><longitud>174.46</longitud></ciudad>
-<ciudad><nombre>Managua </nombre><latitud>12.06 </latitud><longitud>-86.20</longitud></ciudad>
-<ciudad><nombre>Niamey </nombre><latitud>13.27 </latitud><longitud>02.06</longitud></ciudad>
-<ciudad><nombre>Abuja </nombre><latitud>09.05 </latitud><longitud>07.32</longitud></ciudad>
-<ciudad><nombre>Kingston </nombre><latitud>-45.20 </latitud><longitud>168.43</longitud></ciudad>
-<ciudad><nombre>Pyongyang </nombre><latitud>39.09 </latitud><longitud>125.30</longitud></ciudad>
-<ciudad><nombre>Saipan </nombre><latitud>15.12 </latitud><longitud>145.45</longitud></ciudad>
-<ciudad><nombre>Oslo </nombre><latitud>59.55 </latitud><longitud>10.45</longitud></ciudad>
-<ciudad><nombre>Masqat </nombre><latitud>23.37 </latitud><longitud>58.36</longitud></ciudad>
-<ciudad><nombre>Islamabad </nombre><latitud>33.40 </latitud><longitud>73.10</longitud></ciudad>
-<ciudad><nombre>Koror </nombre><latitud>07.20 </latitud><longitud>134.28</longitud></ciudad>
-<ciudad><nombre>Panama </nombre><latitud>09.00 </latitud><longitud>-79.25</longitud></ciudad>
-<ciudad><nombre>Port Moresby </nombre><latitud>-09.24 </latitud><longitud>147.08</longitud></ciudad>
-<ciudad><nombre>Asuncion </nombre><latitud>-25.10 </latitud><longitud>-57.30</longitud></ciudad>
-<ciudad><nombre>Lima </nombre><latitud>-12.00 </latitud><longitud>-77.00</longitud></ciudad>
-<ciudad><nombre>Manila </nombre><latitud>14.40 </latitud><longitud>121.03</longitud></ciudad>
-<ciudad><nombre>Warsaw </nombre><latitud>52.13 </latitud><longitud>21.00</longitud></ciudad>
-<ciudad><nombre>Lisbon </nombre><latitud>38.42 </latitud><longitud>-09.10</longitud></ciudad>
-<ciudad><nombre>San Juan </nombre><latitud>18.28 </latitud><longitud>-66.07</longitud></ciudad>
-<ciudad><nombre>Doha </nombre><latitud>25.15 </latitud><longitud>51.35</longitud></ciudad>
-<ciudad><nombre>Seoul </nombre><latitud>37.31 </latitud><longitud>126.58</longitud></ciudad>
-<ciudad><nombre>Bucuresti </nombre><latitud>44.27 </latitud><longitud>26.10</longitud></ciudad>
-<ciudad><nombre>Moskva </nombre><latitud>55.45 </latitud><longitud>37.35</longitud></ciudad>
-<ciudad><nombre>Kigali </nombre><latitud>-01.59 </latitud><longitud>30.04</longitud></ciudad>
-<ciudad><nombre>Basseterre </nombre><latitud>17.17 </latitud><longitud>-62.43</longitud></ciudad>
-<ciudad><nombre>Castries </nombre><latitud>14.02 </latitud><longitud>-60.58</longitud></ciudad>
-<ciudad><nombre>Saint-Pierre </nombre><latitud>46.46 </latitud><longitud>-56.12</longitud></ciudad>
-<ciudad><nombre>Kingstown </nombre><latitud>13.10 </latitud><longitud>-61.10</longitud></ciudad>
-<ciudad><nombre>Apia </nombre><latitud>-13.50 </latitud><longitud>-171.50</longitud></ciudad>
-<ciudad><nombre>San Marino </nombre><latitud>43.55 </latitud><longitud>12.30</longitud></ciudad>
-<ciudad><nombre>Sao Tome </nombre><latitud>00.10 </latitud><longitud>06.39</longitud></ciudad>
-<ciudad><nombre>Riyadh </nombre><latitud>24.41 </latitud><longitud>46.42</longitud></ciudad>
-<ciudad><nombre>Dakar </nombre><latitud>14.34 </latitud><longitud>-17.29</longitud></ciudad>
-<ciudad><nombre>Freetown </nombre><latitud>08.30 </latitud><longitud>-13.17</longitud></ciudad>
-<ciudad><nombre>Bratislava </nombre><latitud>48.10 </latitud><longitud>17.07</longitud></ciudad>
-<ciudad><nombre>Ljubljana </nombre><latitud>46.04 </latitud><longitud>14.33</longitud></ciudad>
-<ciudad><nombre>Honiara </nombre><latitud>-09.27 </latitud><longitud>159.57</longitud></ciudad>
-<ciudad><nombre>Mogadishu </nombre><latitud>02.02 </latitud><longitud>45.25</longitud></ciudad>
-<ciudad><nombre>Madrid </nombre><latitud>40.25 </latitud><longitud>-03.45</longitud></ciudad>
-<ciudad><nombre>Khartoum </nombre><latitud>15.31 </latitud><longitud>32.35</longitud></ciudad>
-<ciudad><nombre>Paramaribo </nombre><latitud>05.50 </latitud><longitud>-55.10</longitud></ciudad>
-<ciudad><nombre>Stockholm </nombre><latitud>59.20 </latitud><longitud>18.03</longitud></ciudad>
-<ciudad><nombre>Bern </nombre><latitud>46.57 </latitud><longitud>07.28</longitud></ciudad>
-<ciudad><nombre>Damascus </nombre><latitud>33.30 </latitud><longitud>36.18</longitud></ciudad>
-<ciudad><nombre>Dushanbe </nombre><latitud>38.33 </latitud><longitud>68.48</longitud></ciudad>
-<ciudad><nombre>Bangkok </nombre><latitud>13.45 </latitud><longitud>100.35</longitud></ciudad>
-<ciudad><nombre>Lome </nombre><latitud>06.09 </latitud><longitud>01.20</longitud></ciudad>
-<ciudad><nombre>Nuku'alofa </nombre><latitud>-21.10 </latitud><longitud>-174.00</longitud></ciudad>
-<ciudad><nombre>Tunis </nombre><latitud>36.50 </latitud><longitud>10.11</longitud></ciudad>
-<ciudad><nombre>Ankara </nombre><latitud>39.57 </latitud><longitud>32.54</longitud></ciudad>
-<ciudad><nombre>Ashgabat </nombre><latitud>38.00 </latitud><longitud>57.50</longitud></ciudad>
-<ciudad><nombre>Funafuti </nombre><latitud>-08.31 </latitud><longitud>179.13</longitud></ciudad>
-<ciudad><nombre>Kampala </nombre><latitud>00.20 </latitud><longitud>32.30</longitud></ciudad>
-<ciudad><nombre>Kiev (Russia) </nombre><latitud>50.30 </latitud><longitud>30.28</longitud></ciudad>
-<ciudad><nombre>Abu Dhabi </nombre><latitud>24.28 </latitud><longitud>54.22</longitud></ciudad>
-<ciudad><nombre>London </nombre><latitud>51.36 </latitud><longitud>-00.05</longitud></ciudad>
-<ciudad><nombre>Dodoma </nombre><latitud>-06.08 </latitud><longitud>35.45</longitud></ciudad>
-<ciudad><nombre>Washington DC </nombre><latitud>39.91 </latitud><longitud>-77.02</longitud></ciudad>
-<ciudad><nombre>Charlotte Amalie </nombre><latitud>18.21 </latitud><longitud>-64.56</longitud></ciudad>
-<ciudad><nombre>Montevideo </nombre><latitud>-34.50 </latitud><longitud>-56.11</longitud></ciudad>
-<ciudad><nombre>Tashkent </nombre><latitud>41.20 </latitud><longitud>69.10</longitud></ciudad>
-<ciudad><nombre>Port-Vila </nombre><latitud>-17.45 </latitud><longitud>168.18</longitud></ciudad>
-<ciudad><nombre>Caracas </nombre><latitud>10.30 </latitud><longitud>-66.55</longitud></ciudad>
-<ciudad><nombre>Hanoi </nombre><latitud>21.05 </latitud><longitud>105.55</longitud></ciudad>
-<ciudad><nombre>Belgrade </nombre><latitud>44.50 </latitud><longitud>20.37</longitud></ciudad>
-<ciudad><nombre>Lusaka </nombre><latitud>-15.28 </latitud><longitud>28.16</longitud></ciudad>
-<ciudad><nombre>Harare </nombre><latitud>-17.43 </latitud><longitud>31.02</longitud></ciudad>
+<ciudad><nombre>Port Moresby</nombre><latitud>-09.24 </latitud><longitud>147.08</longitud></ciudad>
+<ciudad><nombre>Lima</nombre><latitud>-12.00 </latitud><longitud>-77.00</longitud></ciudad>
+<ciudad><nombre>Buenos Aires</nombre><latitud>-36.30 </latitud><longitud>-60.00</longitud></ciudad>
+<ciudad><nombre>Rio de Janeiro</nombre><latitud>-15.47 </latitud><longitud>-47.55</longitud></ciudad>
+<ciudad><nombre>Beijing</nombre><latitud>39.55 </latitud><longitud>116.20</longitud></ciudad>
+<ciudad><nombre>Moroni</nombre><latitud>-11.40 </latitud><longitud>43.16</longitud></ciudad>
+<ciudad><nombre>El Cairo</nombre><latitud>30.01 </latitud><longitud>31.14</longitud></ciudad>
+<ciudad><nombre>Paris</nombre><latitud>48.50 </latitud><longitud>02.20</longitud></ciudad>
+<ciudad><nombre>Atenas</nombre><latitud>37.58 </latitud><longitud>23.46</longitud></ciudad>
+<ciudad><nombre>Budapest</nombre><latitud>47.29 </latitud><longitud>19.05</longitud></ciudad>
+<ciudad><nombre>Reykjavik</nombre><latitud>64.10 </latitud><longitud>-21.57</longitud></ciudad>
+<ciudad><nombre>Nueva Delhi</nombre><latitud>28.37 </latitud><longitud>77.13</longitud></ciudad>
+<ciudad><nombre>Bagdad</nombre><latitud>33.20 </latitud><longitud>44.30</longitud></ciudad>
+<ciudad><nombre>Roma</nombre><latitud>41.54 </latitud><longitud>12.29</longitud></ciudad>
+<ciudad><nombre>Bamako</nombre><latitud>12.34 </latitud><longitud>-07.55</longitud></ciudad>
+<ciudad><nombre>Oslo</nombre><latitud>59.55 </latitud><longitud>10.45</longitud></ciudad>
+<ciudad><nombre>Nueva York</nombre><latitud>39.91 </latitud><longitud>-77.02</longitud></ciudad>
+<ciudad><nombre>Londres</nombre><latitud>51.36 </latitud><longitud>-00.05</longitud></ciudad>
+<ciudad><nombre>Moscu</nombre><latitud>55.44 </latitud><longitud>37.37</longitud></ciudad>
+<ciudad><nombre>Bangkok</nombre><latitud>13.45 </latitud><longitud>100.35</longitud></ciudad>
+<ciudad><nombre>Kigali</nombre><latitud>-01.59 </latitud><longitud>30.04</longitud></ciudad>
+<ciudad><nombre>San Marino</nombre><latitud>43.55 </latitud><longitud>12.30</longitud></ciudad>
+<ciudad><nombre>Katmandu</nombre><latitud>27.45 </latitud><longitud>85.20</longitud></ciudad>
+<ciudad><nombre>Mexico</nombre><latitud>19.20 </latitud><longitud>-99.10</longitud></ciudad>
+<ciudad><nombre>Estambul</nombre><latitud>39.57 </latitud><longitud>32.54</longitud></ciudad>
+<ciudad><nombre>Montreal</nombre><latitud>45.27 </latitud><longitud>-75.42</longitud></ciudad>
+<ciudad><nombre>Colombo</nombre><latitud>6.92</latitud><longitud>79.83</longitud></ciudad>
+<ciudad><nombre>Singapur</nombre><latitud>1.22</latitud><longitud>103.48</longitud></ciudad>
+<ciudad><nombre>Sydney</nombre><latitud>-35.15 </latitud><longitud>149.08</longitud></ciudad>
+<ciudad><nombre>Tokio</nombre><latitud>35.41</latitud><longitud>139.46</longitud></ciudad>
 </coordenadas>
