@@ -1,11 +1,8 @@
 package modeloIntegracionTests;
 
 import modelo.*;
-
 import java.util.List;
-
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class juegoTests {
@@ -36,6 +33,7 @@ public class juegoTests {
 		List<Ciudad> destinos;
 		
 		while(true){
+			System.out.format("cantidad de ciudades en el mapa = %d\n",Mapa.getInstance().cantidadCiudades());
 			edificio = actual.getBanco();
 			pista = policia.visitarEdificio(edificio);
 			if (Tiempo.getInstance().terminoTiempo()){
