@@ -52,7 +52,7 @@ public class Mapa {
 		List<Ciudad> destinos = arbol.verHijos(ciudad);
 		if (destinos == null) return null;
 		if (destinos.isEmpty()){
-			this.agregarDestinos(ciudad);
+			this.agregarDestinos(cantHijos, ciudad);
 			destinos = arbol.verHijos(ciudad);
 		}
 		return destinos;
@@ -100,11 +100,11 @@ public class Mapa {
 		Double subindice = Math.floor(Math.random()*ciudades.size());
 		Ciudad raiz = ciudades.remove(subindice.intValue());
 		arbol = new Arbol<Ciudad>(raiz);
-		this.agregarDestinos(raiz);
+		this.agregarDestinos(cantHijos + 1, raiz);
 	}
 	
-	private void agregarDestinos(Ciudad origen){
-		for (int i = 0; i < cantHijos && ciudades.size() > 0; i++){
+	private void agregarDestinos(int cantidad, Ciudad origen){
+		for (int i = 0; i < cantidad && ciudades.size() > 0; i++){
 			Double subindice = Math.floor(Math.random()*ciudades.size());
 			Ciudad hijo = ciudades.remove(subindice.intValue());
 			arbol.agregarHijo(origen, hijo);
