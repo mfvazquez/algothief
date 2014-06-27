@@ -24,6 +24,7 @@ public class Policia{
 		capturado = null;
 		ciudadActual = null;
 		edificiosVisitados = 0;
+		orden = new OrdenDeArresto();
 	}
 	
 	public String getNombre(){
@@ -91,18 +92,26 @@ public class Policia{
 		}
 		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
-			this.capturar(edificio.getLadron());
-			Pista pist = new PistaFacil();
-			pist.setPista("Atrapaste al ladron: " + capturado.getNombre());
-			return pist;
+			return this.capturar(edificio.getLadron());
+			
 		}
 		return rango.pedirPista(edificio);
 	}
 	
-	public void capturar(Ladron ladron){
+	public Pista capturar(Ladron ladron){
 		// el ladron debe disparar o hacer algo, consumir tiempo y luego verificar que sea el mismo ladron que la orden de arrestro
 		// y almacenar al ladron en el atributo ladron capturado del policia
-		capturado = ladron;
+		Pista pist = new PistaFacil();
+		
+		if (this.orden.getNombre().equals(ladron.getNombre())){
+			capturado = ladron;
+			pist.setPista("Atrapaste al ladron: " + ladron.getNombre());
+		}
+		else{
+			pist.setPista("Encontraste al ladron: " + ladron.getNombre() + " pero la orden de arresto no es correcta");
+		}
+			
+		return pist;
 	}
 	
 	public boolean ladronCapturado(){

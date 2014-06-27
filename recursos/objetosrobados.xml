@@ -2,40 +2,79 @@
 
 <objetos>
 <objetocomun><objeto>manuscrito de una saga escandinava</objeto><ciudad>Reykjavik</ciudad></objetocomun>
+<objetocomun><objeto>el maso de apertura de sesion del Althing</objeto><ciudad>Reykjavik</ciudad></objetocomun>
+
 <objetocomun><objeto>las llaves de la torre de londres</objeto><ciudad>Londres</ciudad></objetocomun>
+
 <objetocomun><objeto>una estatua de Shiva</objeto><ciudad>Nueva Delhi</ciudad></objetocomun>
-<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Sydney</ciudad></objetocomun>
+
 <objetocomun><objeto>los mosaicos de Santa Sofia</objeto><ciudad>Estambul</ciudad></objetocomun>
+<objetocomun><objeto>las cruz engastada con joyas de Constantino</objeto><ciudad>Estambul</ciudad></objetocomun>
+
 <objetocomun><objeto>unas bolas de oro solido</objeto><ciudad>Buenos Aires</ciudad></objetocomun>
+
 <objetocomun><objeto>una valiosa carpa real</objeto><ciudad>Tokio</ciudad></objetocomun>
+
 <objetocomun><objeto>el elefante blanco sagrado del Rey</objeto><ciudad>Bangkok</ciudad></objetocomun>
+
 <objetocomun><objeto>una mascara de oro Inca</objeto><ciudad>Lima</ciudad></objetocomun>
+<objetocomun><objeto>la espada de pizarro</objeto><ciudad>Lima</ciudad></objetocomun>
+
 <objetocomun><objeto>el techo de la capilla sixtina</objeto><ciudad>Roma</ciudad></objetocomun>
-<objetocomun><objeto>la corona de Ivan el Terrible</objeto><ciudad>Moscu</ciudad></objetocomun>
-<objetocomun><objeto></objeto>Los mapas de la gran Piramide<ciudad>El Cairo</ciudad></objetocomun>
-<objetocomun><objeto>la reseta olvidada de un veneno de los pigmeos</objeto><ciudad>Kigali</ciudad></objetocomun>
-<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Atenas</ciudad></objetocomun>
-<objetocomun><objeto>Antorcha de la Estatua de la Libertad</objeto><ciudad>Nueva York</ciudad></objetocomun>
-<objetocomun><objeto>Leon de piedra Guardian del Danubio</objeto><ciudad>Budapest</ciudad></objetocomun>
-<objetocomun><objeto>frasco de perfume del presidente</objeto><ciudad>Moroni</ciudad></objetocomun>
-<objetocomun><objeto>Joya que data del imperio de Mali</objeto><ciudad>Bamako</ciudad></objetocomun>
-<objetocomun><objeto>La Giocconda</objeto><ciudad>Paris</ciudad></objetocomun>
-<objetocomun><objeto>el obelisco de la plaza de la Concordia</objeto><ciudad>Paris</ciudad></objetocomun>
-<objetocomun><objeto>estatuilla esquimal de marfil</objeto><ciudad>Montreal</ciudad></objetocomun>
-<objetocomun><objeto>un antiguo abanico de marfil</objeto><ciudad>Colombo</ciudad></objetocomun>
 <objetocomun><objeto>la corona del Cesar</objeto><ciudad>Roma</ciudad></objetocomun>
 <objetocomun><objeto>la sortija del Papa</objeto><ciudad>Roma</ciudad></objetocomun>
-<objetocomun><objeto>la corona de un rey Watusi</objeto><ciudad>Kigali</ciudad></objetocomun>
-<objetocomun><objeto>la coleccion de piedras reales</objeto><ciudad>Katmandu</ciudad></objetocomun>
+
+<objetocomun><objeto>la corona de Ivan el Terrible</objeto><ciudad>Moscu</ciudad></objetocomun>
+
+<objetocomun><objeto>Los mapas de la gran Piramide</objeto><ciudad>El Cairo</ciudad></objetocomun>
 <objetocomun><objeto>la mascara de Tutankamon</objeto><ciudad>El Cairo</ciudad></objetocomun>
+<objetocomun><objeto>la serpiente de Cleopatra</objeto><ciudad>El Cairo</ciudad></objetocomun>
+
+<objetocomun><objeto>la reseta olvidada de un veneno de los pigmeos</objeto><ciudad>Kigali</ciudad></objetocomun>
+<objetocomun><objeto>la corona de un rey Watusi</objeto><ciudad>Kigali</ciudad></objetocomun>
+
+<objetocomun><objeto>Antorcha de la Estatua de la Libertad</objeto><ciudad>Nueva York</ciudad></objetocomun>
+
+<objetocomun><objeto>Leon de piedra Guardian del Danubio</objeto><ciudad>Budapest</ciudad></objetocomun>
+<objetocomun><objeto>la silla de montar de Atila</objeto><ciudad>Budapest</ciudad></objetocomun>
+
+<objetocomun><objeto>frasco de perfume del presidente</objeto><ciudad>Moroni</ciudad></objetocomun>
+
+<objetocomun><objeto>Joya que data del imperio de Mali</objeto><ciudad>Bamako</ciudad></objetocomun>
+
+<objetocomun><objeto>La Giocconda</objeto><ciudad>Paris</ciudad></objetocomun>
+<objetocomun><objeto>el obelisco de la plaza de la Concordia</objeto><ciudad>Paris</ciudad></objetocomun>
+
+<objetocomun><objeto>estatuilla esquimal de marfil</objeto><ciudad>Montreal</ciudad></objetocomun>
+
+<objetocomun><objeto>un antiguo abanico de marfil</objeto><ciudad>Colombo</ciudad></objetocomun>
+<objetocomun><objeto>toda la cosecha de te de la isla</objeto><ciudad>Colombo</ciudad></objetocomun>
+
+<objetocomun><objeto>la coleccion de piedras reales</objeto><ciudad>Katmandu</ciudad></objetocomun>
+
+
 <objetocomun><objeto>la prestigiosa coleccion de sellos del capitan-regente</objeto><ciudad>San Marino</ciudad></objetocomun>
+
 <objetocomun><objeto>el Cristo de los Andes</objeto><ciudad>Rio de Janeiro</ciudad></objetocomun>
 <objetocomun><objeto>la corona de la reina del carnaval</objeto><ciudad>Rio de Janeiro</ciudad></objetocomun>
-<objetocomun><objeto>la espada de pizarro</objeto><ciudad>Lima</ciudad></objetocomun>
-<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Bagdad</ciudad></objetocomun>
+
+
+<objetocomun><objeto>un antiguo totem tribal</objeto><ciudad>Port Moresby</ciudad></objetocomun>
+<objetocomun><objeto>el collar mas valioso de la isla</objeto><ciudad>Port Moresby</ciudad></objetocomun>
+
+<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Singapur</ciudad></objetocomun>
+
+<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Sydney</ciudad></objetocomun>
+
+<objetocomun><objeto>una tabla babilonica</objeto><ciudad>Bagdad</ciudad></objetocomun>
+<objetocomun><objeto>una alfombra voladora</objeto><ciudad>Bagdad</ciudad></objetocomun>
+
 <objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Mexico</ciudad></objetocomun>
+
 <objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Oslo</ciudad></objetocomun>
-<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Pekin</ciudad></objetocomun>
-<objetocomun><objeto>el Cristo de los Andes</objeto><ciudad>Port Moresby</ciudad></objetocomun>
-<objetocomun><objeto>el Cristo de los Andes</objeto><ciudad>Singapur</ciudad></objetocomun>
+
+<objetocomun><objeto>el sepulcro de Mao Tse Tung</objeto><ciudad>Beijing</ciudad></objetocomun>
+
+<objetocomun><objeto>todavia no puse ninguno</objeto><ciudad>Atenas</ciudad></objetocomun>
+
 </objetos>
