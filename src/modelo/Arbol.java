@@ -46,5 +46,9 @@ public class Arbol<E> {
 		return arbol.exists(elemento);
 	}
 	
+	public int size(){
+		return arbol.getNumberOfNodes();
+	}
+	
 }
 

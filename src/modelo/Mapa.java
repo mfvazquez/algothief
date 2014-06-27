@@ -15,11 +15,14 @@ import java.io.File;
 
 public class Mapa {
 	private Arbol<Ciudad> arbol;
+	private ArrayList<Ciudad> ciudades;
 	private static Mapa INSTANCE = null;
+	private int cantHijos;
 	
 	private Mapa(){
-		ArrayList<Ciudad> lista = this.cargarCiudades();
-		this.enlazarCiudades(lista);
+		cantHijos = 3;
+		ciudades = this.cargarCiudades();
+		this.agregarCiudadesIniciales();
 	}
 
 	private synchronized static void createInstance() {
@@ -33,19 +36,9 @@ public class Mapa {
 	    	createInstance();
 	    return INSTANCE;
 	}
-	
-	public Ciudad ciudadAnterior(Ciudad ciudad){
-		return arbol.verPadre(ciudad);
-	}
-	
-	public List<Ciudad> ciudadesDestino(Ciudad ciudad){
-		 
-		return arbol.verHijos(ciudad);
-	}
 		
 	public List<Ciudad> ciudadesAdyacentes(Ciudad ciudad){
-		List<Ciudad> adyacentes = arbol.verHijos(ciudad);
-		if (adyacentes == null) return null;
+		List<Ciudad> adyacentes = this.ciudadesDestino(ciudad);
 		Ciudad anterior = arbol.verPadre(ciudad);
 		if (anterior != null) adyacentes.add(anterior);
 		return adyacentes;
@@ -55,8 +48,21 @@ public class Mapa {
 		return arbol.verRaiz();
 	}
 	
+	public List<Ciudad> ciudadesDestino(Ciudad ciudad){
+		List<Ciudad> destinos = arbol.verHijos(ciudad);
+		if (destinos == null) return null;
+		if (destinos.isEmpty()){
+			this.agregarDestinos(ciudad);
+			destinos = arbol.verHijos(ciudad);
+		}
+		return destinos;
+	}
+	
+	public Ciudad ciudadAnterior(Ciudad ciudad){
+		return arbol.verPadre(ciudad);
+	}
+	
 	private ArrayList<Ciudad> cargarCiudades(){
-		
 		ArrayList<Ciudad> listaCiudades= new ArrayList<Ciudad>();
 		
 		try {
@@ -90,28 +96,22 @@ public class Mapa {
 		return listaCiudades;
 	}
 	
-	private void enlazarCiudades(ArrayList<Ciudad> lista){
-		
-		Double subindice = Math.floor(Math.random()*lista.size());
-		Ciudad tmp = lista.remove(subindice.intValue());
-		ArrayList<Ciudad> padres = new ArrayList<Ciudad>();
-		ArrayList<Ciudad> proximos = new ArrayList<Ciudad>();
-		arbol = new Arbol<Ciudad>(tmp);
-		padres.add(tmp);
-		
-		while (!lista.isEmpty()){
-			while (!padres.isEmpty()){
-				Ciudad padre = padres.remove(0);
-				for (int i = 0; i < 2 && lista.size() > 0; i++){
-					subindice = Math.floor(Math.random()*lista.size());
-					Ciudad hijo = lista.remove(subindice.intValue());
-					arbol.agregarHijo(padre, hijo);
-					proximos.add(hijo);
-				}
-			}
-			padres = proximos;
-			proximos = new ArrayList<Ciudad>();
+	private void agregarCiudadesIniciales(){
+		Double subindice = Math.floor(Math.random()*ciudades.size());
+		Ciudad raiz = ciudades.remove(subindice.intValue());
+		arbol = new Arbol<Ciudad>(raiz);
+		this.agregarDestinos(raiz);
+	}
+	
+	private void agregarDestinos(Ciudad origen){
+		for (int i = 0; i < cantHijos && ciudades.size() > 0; i++){
+			Double subindice = Math.floor(Math.random()*ciudades.size());
+			Ciudad hijo = ciudades.remove(subindice.intValue());
+			arbol.agregarHijo(origen, hijo);
 		}
 	}
 	
+	public int cantidadCiudades(){
+		return arbol.size();
+	}
 }
