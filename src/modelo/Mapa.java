@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
@@ -18,8 +19,10 @@ public class Mapa {
 	private ArrayList<Ciudad> ciudades;
 	private static Mapa INSTANCE = null;
 	private int cantHijos;
+	private HashMap<String,Ciudad> referencias;
 	
 	private Mapa(){
+		referencias = new HashMap<String, Ciudad>();
 		cantHijos = 2;
 		ciudades = this.cargarCiudades();
 		this.agregarCiudadesIniciales();
@@ -62,6 +65,11 @@ public class Mapa {
 		return arbol.verPadre(ciudad);
 	}
 	
+	public Ciudad buscarCiudad(String nombreCiudad){
+		if (!referencias.containsKey(nombreCiudad)) return null;
+		return referencias.get(nombreCiudad);
+	}
+	
 	private ArrayList<Ciudad> cargarCiudades(){
 		ArrayList<Ciudad> listaCiudades= new ArrayList<Ciudad>();
 		
@@ -99,6 +107,7 @@ public class Mapa {
 	private void agregarCiudadesIniciales(){
 		Double subindice = Math.floor(Math.random()*ciudades.size());
 		Ciudad raiz = ciudades.remove(subindice.intValue());
+		referencias.put(raiz.getNombre(), raiz);
 		arbol = new Arbol<Ciudad>(raiz);
 		this.agregarDestinos(cantHijos + 1, raiz);
 	}
@@ -108,6 +117,7 @@ public class Mapa {
 			Double subindice = Math.floor(Math.random()*ciudades.size());
 			Ciudad hijo = ciudades.remove(subindice.intValue());
 			arbol.agregarHijo(origen, hijo);
+			referencias.put(hijo.getNombre(), hijo);
 		}
 	}
 	

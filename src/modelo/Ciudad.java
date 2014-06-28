@@ -40,6 +40,13 @@ public class Ciudad {
 	public double distancia(Ciudad ciudad){
 		return this.coordenadas.distancia(ciudad.coordenadas);
 	}
+	
+	@Override
+	public boolean equals(Object objeto){
+		Ciudad ciudad = (Ciudad) objeto;
+		if (nombre == ciudad.nombre) return true;
+		return false;
+	}
 
 	public void generarPistas(Ciudad destino, RangoStrategy rango) {
 //actualmente se cargan las pistas antes
