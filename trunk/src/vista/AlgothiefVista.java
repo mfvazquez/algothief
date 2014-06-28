@@ -18,7 +18,7 @@ public class AlgothiefVista extends JFrame{
 	
 	private JButton botonMapa;
 	private JButton botonEdificios;
-	private JButton botonOrdenDeArresto;
+	private JButton botonOrden;
 	
 	private ArrayList<JButton> opciones;
 	
@@ -30,53 +30,63 @@ public class AlgothiefVista extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().add(panel);
         panel.setLayout(null);
-	}
-	
-	public void iniciarSesion(){
+        
+        // inicio
         botonInicioSesion = new JButton("Iniciar Sesion");
         botonInicioSesion.setBounds(300, 425, 200, 25);
-        panel.add(botonInicioSesion);       
-        
         textbox = new JTextField();
         textbox.setBounds(300, 325, 200, 25);
-        panel.add(textbox);
-        panel.repaint();
-	}
-	
-	public void reiniciarPanel(){
-		panel.removeAll();
+        
+        // mision
+        tiempo = new JLabel();
+        tiempo.setBounds(300, 5, 200, 25);
+        botonMapa = new JButton("Mapa");
+        botonMapa.setBounds(10, 500, 200, 25);
+        botonEdificios = new JButton("Edificios");
+    	botonEdificios.setBounds(220, 500, 200, 25);
+        botonOrden = new JButton("Orden de Arresto");
+    	botonOrden.setBounds(430, 500, 200, 25);
+        
+        // opciones
+    	opciones = new ArrayList<JButton>();
+        for (int i = 0; i < 3; i++){
+        	JButton boton = new JButton();
+        	boton.setBounds(10 + i*210, 500, 200, 25);
+        	opciones.add(boton);
+        }
 	}
 	
 	public void mostrar(){
 		setVisible(true);
 	}
 	
-	public void addAccionBotonInicioSesion(ActionListener accion){
+	public void iniciarSesion(ActionListener accion){
 		botonInicioSesion.addActionListener(accion);
+        panel.add(botonInicioSesion);
+        panel.add(textbox);
+        panel.repaint();
 	}
 	
 	public String getUsuario(){
 		return textbox.getText();
 	}
-	
-	public void iniciarMision(){
-		tiempo = new JLabel();
-		tiempo.setBounds(300, 5, 200, 25);
+		
+	public void panelGeneral(ActionListener accionMapa, ActionListener accionEdificio, ActionListener accionOrden){
+		botonMapa.addActionListener(accionMapa);
+		botonEdificios.addActionListener(accionEdificio);
+		botonOrden.addActionListener(accionOrden);
+		panel.removeAll();
 		panel.add(tiempo);
-		
-		botonMapa = new JButton("Mapa");
-		botonMapa.setBounds(10, 500, 200, 25);
 		panel.add(botonMapa);
-		
-		botonEdificios = new JButton("Explorar Ciudad");
-		botonEdificios.setBounds(220, 500, 200, 25);
 		panel.add(botonEdificios);
-		
-		botonOrdenDeArresto = new JButton("Orden de Arrestro");
-		botonOrdenDeArresto.setBounds(430, 500, 200, 25);
-		panel.add(botonOrdenDeArresto);
-		
+		panel.add(botonOrden);
 		panel.repaint();
+	}
+	
+	public void agregarOpciones(){
+		for(int i = 0; i < opciones.size(); i++){
+			panel.add(opciones.get(i));
+		}
 	}
 	
 	public void setTiempo(String fecha){ // deberia lanzar excepcion si tiempo no existe
@@ -84,6 +94,15 @@ public class AlgothiefVista extends JFrame{
 	}
 	
 	public void mostrarMapa(List<Ciudad> destinos){
-		
+		for (int i = 0; i < destinos.size(); i++){
+			Ciudad actual = destinos.get(i);
+			System.out.format(actual.getNombre());
+			JButton boton = opciones.get(i);
+			boton.setText(actual.getNombre());
+		}
+		panel.removeAll();
+		this.agregarOpciones();
+		panel.add(tiempo);
+		panel.repaint();
 	}
 }

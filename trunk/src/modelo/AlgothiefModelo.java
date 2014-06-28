@@ -60,4 +60,12 @@ public class AlgothiefModelo {
 	public String getTiempoStr(){
 		return Tiempo.getInstance().fecha();
 	}
+	
+	public Ciudad getCiudad(String nombre){
+		return Mapa.getInstance().buscarCiudad(nombre);
+	}
+	
+	public void viajar(Ciudad ciudad){
+		policia.viajarACiudad(ciudad);
+	}
 }
