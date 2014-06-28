@@ -1,8 +1,11 @@
 package vista;
 
 import javax.swing.*;
-
+import modelo.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class AlgothiefVista extends JFrame{
 	private static final long serialVersionUID = 1L;
@@ -12,11 +15,12 @@ public class AlgothiefVista extends JFrame{
 	private JTextField textbox;
 	
 	private JLabel tiempo;
+	
 	private JButton botonMapa;
 	private JButton botonEdificios;
 	private JButton botonOrdenDeArresto;
 	
-	
+	private ArrayList<JButton> opciones;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -77,5 +81,9 @@ public class AlgothiefVista extends JFrame{
 	
 	public void setTiempo(String fecha){ // deberia lanzar excepcion si tiempo no existe
 		tiempo.setText(fecha);
+	}
+	
+	public void mostrarMapa(List<Ciudad> destinos){
+		
 	}
 }

@@ -3,6 +3,9 @@ package control;
 import vista.*;
 import modelo.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class AlgothiefControl {
 	private AlgothiefVista vista;
@@ -13,10 +16,10 @@ public class AlgothiefControl {
 		vista = nuevaVista;
 		modelo = nuevoModelo;
 		vista.iniciarSesion();
-		vista.addAccionBotonInicioSesion(new ObtenerUsuario());
+		vista.addAccionBotonInicioSesion(new BotonUsuario());
 	}
 	
-	class ObtenerUsuario implements ActionListener{
+	class BotonUsuario implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
             String usuario = vista.getUsuario();
             modelo.iniciarMision(usuario);
@@ -24,5 +27,12 @@ public class AlgothiefControl {
             vista.iniciarMision();
             vista.setTiempo(modelo.getTiempoStr());
         }
+	}
+	
+	class BotonMapa implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			List<Ciudad> destinos = modelo.getCiudadesDestino();
+			vista.mostrarMapa(destinos);
+		}
 	}
 }
