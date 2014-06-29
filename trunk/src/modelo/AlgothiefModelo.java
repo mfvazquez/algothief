@@ -68,4 +68,8 @@ public class AlgothiefModelo {
 	public void viajar(Ciudad ciudad){
 		policia.viajarACiudad(ciudad);
 	}
+	
+	public boolean tiempoTerminado(){
+		return Tiempo.getInstance().terminoTiempo();
+	}
 }

@@ -17,14 +17,17 @@ public class AlgothiefControl {
 	public AlgothiefControl(AlgothiefVista nuevaVista, AlgothiefModelo nuevoModelo){
 		vista = nuevaVista;
 		modelo = nuevoModelo;
-		vista.iniciarSesion(new BotonUsuario());
+		vista.iniciarSesion();
+		vista.botonUsuario(new BotonUsuario());
+		vista.botonMapa(new BotonMapa());
+		vista.botonCiudad(new BotonCiudad());
 	}
 	
 	class BotonUsuario implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
             String usuario = vista.getUsuario();
             modelo.iniciarMision(usuario);
-            vista.panelGeneral(new BotonMapa(), new BotonEdificio(), new BotonOrden());
+            vista.panelGeneral();
             vista.setTiempo(modelo.getTiempoStr());
         }
 	}
@@ -43,7 +46,11 @@ public class AlgothiefControl {
 			Ciudad ciudad = modelo.getCiudad(ciudadStr);
 			modelo.viajar(ciudad);
 			vista.setTiempo(modelo.getTiempoStr());
-			vista.panelGeneral(new BotonMapa(), new BotonEdificio(), new BotonOrden());
+			if (modelo.tiempoTerminado()){
+				
+			}else{
+				vista.panelGeneral();
+			}
 		}
 	}
 	
