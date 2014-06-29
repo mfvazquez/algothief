@@ -20,7 +20,7 @@ public class AlgothiefVista extends JFrame{
 	private JButton botonEdificios;
 	private JButton botonOrden;
 	
-	private ArrayList<JButton> opciones;
+	private ArrayList<JButton> ciudades;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -47,12 +47,12 @@ public class AlgothiefVista extends JFrame{
         botonOrden = new JButton("Orden de Arresto");
     	botonOrden.setBounds(430, 500, 200, 25);
         
-        // opciones
-    	opciones = new ArrayList<JButton>();
+        // ciudades
+    	ciudades = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
         	boton.setBounds(10 + i*210, 500, 200, 25);
-        	opciones.add(boton);
+        	ciudades.add(boton);
         }
 	}
 	
@@ -60,8 +60,22 @@ public class AlgothiefVista extends JFrame{
 		setVisible(true);
 	}
 	
-	public void iniciarSesion(ActionListener accion){
+	public void botonUsuario(ActionListener accion){
 		botonInicioSesion.addActionListener(accion);
+	}
+	
+	public void botonMapa(ActionListener accion){
+		botonMapa.addActionListener(accion);
+	}
+	
+	public void botonCiudad(ActionListener accion){
+		for (int i = 0; i < ciudades.size(); i++){
+			JButton boton = ciudades.get(i);
+			boton.addActionListener(accion);
+		}
+	}
+	
+	public void iniciarSesion(){
         panel.add(botonInicioSesion);
         panel.add(textbox);
         panel.repaint();
@@ -71,10 +85,7 @@ public class AlgothiefVista extends JFrame{
 		return textbox.getText();
 	}
 		
-	public void panelGeneral(ActionListener accionMapa, ActionListener accionEdificio, ActionListener accionOrden){
-		botonMapa.addActionListener(accionMapa);
-		botonEdificios.addActionListener(accionEdificio);
-		botonOrden.addActionListener(accionOrden);
+	public void panelGeneral(){
 		panel.removeAll();
 		panel.add(tiempo);
 		panel.add(botonMapa);
@@ -84,20 +95,19 @@ public class AlgothiefVista extends JFrame{
 	}
 	
 	public void agregarOpciones(){
-		for(int i = 0; i < opciones.size(); i++){
-			panel.add(opciones.get(i));
+		for(int i = 0; i < ciudades.size(); i++){
+			panel.add(ciudades.get(i));
 		}
 	}
 	
-	public void setTiempo(String fecha){ // deberia lanzar excepcion si tiempo no existe
+	public void setTiempo(String fecha){
 		tiempo.setText(fecha);
 	}
 	
 	public void mostrarMapa(List<Ciudad> destinos){
 		for (int i = 0; i < destinos.size(); i++){
 			Ciudad actual = destinos.get(i);
-			System.out.format(actual.getNombre());
-			JButton boton = opciones.get(i);
+			JButton boton = ciudades.get(i);
 			boton.setText(actual.getNombre());
 		}
 		panel.removeAll();

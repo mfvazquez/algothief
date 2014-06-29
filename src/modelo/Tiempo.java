@@ -36,6 +36,10 @@ public class Tiempo {
 		this.veoSiDuerme();
 		this.aumentoDia();
 		this.hora = this.hora % 24;
+		if (this.terminoTiempo()){
+			hora = 17;
+			dia = 6;
+		}
 	}
 	
 	public void aumentoDia(){
