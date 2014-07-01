@@ -80,4 +80,9 @@ public class AlgothiefModelo {
 		Pista pista = policia.visitarEdificio(edificio);
 		return pista.getPista();
 	}
+	
+	public String getRango(){
+		return policia.obtenerRangoStr();
+	}
+	
 }

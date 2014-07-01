@@ -3,15 +3,21 @@ package vista;
 import javax.swing.*;
 
 import modelo.*;
+
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 public class AlgothiefVista extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private JPanel panel;
 	
+	private JTextArea texto;
 	private JButton botonInicioSesion;
 	private JTextField textbox;
 	
@@ -22,10 +28,11 @@ public class AlgothiefVista extends JFrame{
 	private JButton botonOrden;
 	
 	private ArrayList<JButton> ciudades;
+	private JLabel mapaImagen;
 	
 	private ArrayList<JButton> edificios;
 	
-	private JLabel mensaje;
+	private JTextArea mensaje;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -37,10 +44,15 @@ public class AlgothiefVista extends JFrame{
         panel.setLayout(null);
         
         // inicio
-        botonInicioSesion = new JButton("Iniciar Sesion");
-        botonInicioSesion.setBounds(300, 425, 200, 25);
+        texto = new JTextArea();
+        texto.setBounds(40,40,200, 450);
+        texto.setEditable(false);
+        texto.setText("Policía al teclado. \nPor favor, identificate: \n");
+        texto.setLineWrap(true);
         textbox = new JTextField();
-        textbox.setBounds(300, 325, 200, 25);
+        textbox.setBounds(40, 500, 200, 25);       
+        botonInicioSesion = new JButton("OK");
+        botonInicioSesion.setBounds(250, 500, 100, 25);
         
         // mision
         tiempo = new JLabel();
@@ -53,10 +65,16 @@ public class AlgothiefVista extends JFrame{
     	botonOrden.setBounds(430, 500, 200, 25);
         
         // ciudades
+    	ImageIcon icon = new ImageIcon("recursos/mapa.png");
+    	Image img = icon.getImage();
+    	Image aux = img.getScaledInstance(600, 400, Image.SCALE_SMOOTH);
+		mapaImagen = new JLabel(new ImageIcon(aux));
+		mapaImagen.setBounds(20,50,600,400);
+    	
     	ciudades = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
-        	boton.setBounds(575, 30+50*i, 200, 25);
+        	boton.setBounds(625, 50+150*i, 150, 25);
         	ciudades.add(boton);
         }
         
@@ -64,13 +82,14 @@ public class AlgothiefVista extends JFrame{
     	edificios = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
-        	boton.setBounds(575, 30+50*i, 200, 25);
+        	boton.setBounds(575, 50+150*i, 200, 25);
         	edificios.add(boton);
         }
         
         // Mostar Pista
-        mensaje = new JLabel();
-        mensaje.setBounds(20, 100, 600, 25);
+        mensaje = new JTextArea();
+        mensaje.setLineWrap(true);
+        mensaje.setBounds(40,40,300, 450);
 	}
 	
 	public void mostrar(){
@@ -79,6 +98,17 @@ public class AlgothiefVista extends JFrame{
 	
 	public void botonUsuario(ActionListener accion){
 		botonInicioSesion.addActionListener(accion);
+	}
+	
+	public void reemplazarBotonUsuario(ActionListener accion){
+		ActionListener[] acciones = botonInicioSesion.getActionListeners();
+		botonInicioSesion.removeActionListener(acciones[0]);
+		botonInicioSesion.addActionListener(accion);
+	}
+	
+	public void agregarTextoInicio(String nuevoTexto){
+		String textoCompleto = texto.getText() + nuevoTexto;
+		texto.setText(textoCompleto);
 	}
 	
 	public void botonMapa(ActionListener accion){
@@ -107,6 +137,7 @@ public class AlgothiefVista extends JFrame{
 	public void iniciarSesion(){
         panel.add(botonInicioSesion);
         panel.add(textbox);
+        panel.add(texto);
         panel.repaint();
 	}
 	
@@ -139,6 +170,8 @@ public class AlgothiefVista extends JFrame{
 		panel.removeAll();
 		this.agregarOpciones(ciudades);
 		agregarPanelGeneral();
+
+		panel.add(mapaImagen);
 		panel.repaint();
 	}
 	
