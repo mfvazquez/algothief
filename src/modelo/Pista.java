@@ -26,7 +26,7 @@ public abstract class Pista {
 		this.ciudad = ciu;
 		this.edificio = edi;
 		try {
-			File fXmlFile = new File("archivos/pistas.xml");
+			File fXmlFile = new File("recursos/pistas.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

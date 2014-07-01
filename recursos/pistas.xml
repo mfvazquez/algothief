@@ -1,33 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pistas>
-<pistafacil><pista>Se fue en un avion de bandera azul y blanca</pista><ciudad>Buenos Aires</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera con estrellas</pista><ciudad>Nueva York</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y blanca</pista><ciudad>Singapur</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera blanca y roja</pista><ciudad>Montreal</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y azul</pista><ciudad>Reykjavik</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera azul y roja con estrellas blancas</pista><ciudad>Sydney</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera con un leon dorado</pista><ciudad>Colombo</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja</pista><ciudad>Pekin</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y verde</pista><ciudad>Budapest</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y verde</pista><ciudad>Roma</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y azul</pista><ciudad>Bangkok</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera con triangulo doble</pista><ciudad>Katmandu</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera blanca, azul y roja</pista><ciudad>Moscu</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y verde</pista><ciudad>Nueva Delhi</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y blanca con una cruz azul</pista><ciudad>Oslo</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja amarilla y negra</pista><ciudad>Port Moresby</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y blanca</pista><ciudad>Lima</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y blanca</pista><ciudad>Tokio</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera verde, blanca y roja</pista><ciudad>Mexico</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera verde, amarilla y roja</pista><ciudad>Bamako</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera verde, azul y amarilla</pista><ciudad>Rio de Janeiro</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja y blanca</pista><ciudad>Estambul</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, amarilla y verde</pista><ciudad>Kigali</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y azul</pista><ciudad>Moroni</ciudad><edificio></edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y negra</pista><ciudad>Bagdad</ciudad><edificio></edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y negra</pista><ciudad>El Cairo</ciudad><edificio></edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera azul y blanca</pista><ciudad>Atenas</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera azul y blanca</pista><ciudad>San Marino</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y azul</pista><ciudad>Londres</ciudad><edificio>Aeropuerto</edificio></pistafacil>
-<pistafacil><pista>Se fue en un avion de bandera roja, blanca y azul</pista><ciudad>Paris</ciudad><edificio>Aeropuerto</edificio></pistafacil>
+	<pistasfacil>
+		<aeropuerto>
+			<ciudad nombre="Port Moresby"><pista>Se fue en un avion de bandera roja y negra.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Se fue en un avion de bandera celeste y blanca.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Se fue en un avion de bandera roja y blanca.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Se fue en un avion con bandera verde y amarilla.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Se fue en un avion con bandera roja con estrellas amarillas.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Se fue en un avion con una bandera que tiene una media luna y franjas de varios colores.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Se fue en un avion con una bandera roja, blanca y negra.</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Se fue en un avion de bandera celeste, amarilla y verde.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Se fue en un avion de bandera roja, blanca y azul.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Se fue en un avion con una bandera azul con una cruz blanca.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Se fue en un avion con una bandera roja, blanca y verde</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Se fue en un avion cun una bandera azul con una cruz roja.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Se fue en un avion con una bandera con un leon dorado.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Se fue en un avion con una bandera roja con una lunay unas estrellas.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Se fue en un avion con una bandera azul, roja y con estrellas blancas.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Se fue en un avion con una bandera roja, azul y blanca.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Se fue en un avion con una bandera azul y roja.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Se fue en un avion con una bandera celeste y blanca.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Se fue en un avion con una bandera verde, blanca y roja.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Se fue en un avion con una bandera no rectangular.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Se fue en un avion con una bandera con una hoja de arce roja.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Se fue en un avion con una bandera roja con una luna y una estrella.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Se fue en un avion con una bandera verde, amarilla y roja.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Se fue en un avion con una bandera roja con una cruz blanca y azul.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Se fue en un avion con una bandera roja, blanca y negra.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Se fue en un avion con una bandera roja, blanca y verde.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Se fue en un avion con una bandera verde, blanca y roja.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Se fue en un avion con una bandera roja, blanca y azul.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Se fue en un avion con una bandera blanca con un ciculo rojo.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Se fue en un avion con una bandera azul, blanca roja.</pista></ciudad>
+		</aeropuerto>
+		<banco>
+			<ciudad nombre="Port Moresby"><pista>Cambio su dinero a kinas.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Cambio su moneda a pesos argentinos.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Cambio su dinero a soles.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Cambio su dinero a reales.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Cambio su dinero por yuanes.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Cambio su dinero a francos comoranos.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Cambio su dinero a libras egipcias</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Cambio su dinero a francos ruandeses.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Cambio su dinero a euros.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Cambio su dinero a euros.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Cambio su dinero a florines hungaros.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Cambio su dinero a coronas islandesas.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Cambio su dinero a rupias</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Cambio su dinero a dolares de Singapur.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Cambio su dinero a dolares australianos.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Cambio su dinero a baht.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Cambio su dinero a rublos.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Cambio su dinero a euros.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Cambio su dinero a pesos.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Cambio su dinero a rupias nepalesas.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Cambio su dinero a dolares canadienses.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Cambio su dinero a liras turcas.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Cambio su dinero a francos cfa.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Cambio su dinero a coronas noruegas.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Cambio su dinero a dinares.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Cambio su dinero a rupias.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Cambio su dinero a euros.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Cambio su dinero a dolares.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Cambio su dinero a yenes.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Cambio su dinero a libras esterlinas.</pista></ciudad>
+		</banco>
+		<biblioteca>
+			<ciudad nombre="Port Moresby"><pista>Leyo sobre la fauna en Oceania.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Pregunto sobre lecciones de tango.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Estuvo leyendo sobre los Incas.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Consulto un diccionario de portugues.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Estuvo leyendo sobre el comunismo.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Estuvo leyendo sobre la colonizacion francesa de	Africa.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Estuvo leyendo una historia de Cleopatra.</pista></ciudad>
+			<ciudad nombre="Kagali"><pista>Estuvo leyendo sobre la lucha entre tribus de Africa.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Leyo un libro sobre la historia de Napoleon.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Leyo un libro de Aristoteles.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Estuvo leyendo sobre el bloque comunista.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Estuvo leyendo historias nordicas.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Leyo sobre la historia Ceilan.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Leyo sobre la colonizacion britanica.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Averiguo sobre los canguros.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Leyo un libro de historia de Siam.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Pidio un libro de Lenin.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Pidio un diccionario italiano.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Leyo una historia de los Aztecas.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Estuvo leyendo sobre budismo.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Pidio un diccionario de ingles y uno de frances.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Leyo una historia del imerio Otomano.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Leyo sobre el islam.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Pidio una historia de los vikingos.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Leyo sobre la civilizacion sumeria.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Estuvo leyendo sobre Mahatma Gandhi.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Pidio un diccionario de italiano.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Pidio un libro sobre las colonias inglesas en America.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Estuvo leyendo sobre los samurais.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Estuvo leyendo sobre la historia de Enrique VIII.</pista></ciudad>
+		</biblioteca>
+	</pistasfacil>
+	<pistasmedia>
+		<aeropuerto>
+			<ciudad nombre="Port Moresby"><pista>Se fue en un avion de bandera con dos triangulos.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Dijo que queria escalar el Aconcagua.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Se fue en un avion hacia America del Sur.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Hablo sobre visitar el Pan de Azucar.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Dijo que queria conocer la famosa muralla.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Queria volar al sudeste de Africa.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Queria volar al noreste de Africa</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Se fue en un avion hacia Africa central.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Dijo que queria conocer la torre Eiffel</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Estuvo hablando sobre visitar el Partenon</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Queria viajar a Europa central</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Queria conocer los geiseres.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Queria conocer una isla de Asia.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Queria conocer la peninsula de Malasia.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Queria conocer oceania.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>La bandera del avion tenia cinco franjas horizontales.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>La bandera del avion tenia dos franjas verticales.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Se fue en un avion con una bandera con los colores del cielo.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Queria conocer Acapulco.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Queria conocer el Asia meridional.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Queria conocer las Cataratas del Niagara.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>La bandera del avion era roja con figuras blancas.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>La bandera del avion tenia tres franjas verticales.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Queria conocer la peninsula escandinava.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Queria conocer el Tigris y el Eufrates.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Queria conocer el Taj Mahal</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Dijo que queria concer la torre de Pisa.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Queria conocer la estatua de la Libertad.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Queria conocer la ciudad de Hiroshima.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Estuvo hablando sobre conocer el Big Ben.</pista></ciudad>
+		</aeropuerto>
+		<banco>
+			<ciudad nombre="Port Moresby"><pista>Abrio una cuenta en kinas.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Dijo estar preocupado por la posibilidad de default.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Cambio su dinero a soles.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Queria invertir en un hotel en Copacabana.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Averiguo sobre la inversion en fabricas de juguetes.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Pidio la cotizacion de los francos comornos.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Queria invertir en un hotel frente a las Piramides.</pista></ciudad>			
+			<ciudad nombre="Kigali"><pista>Abrio una cuenta en francos ruandeses.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Queria invertir en champagne</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Dijo que queria dedicarse al turismo.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Pidio la cotizacion de florines hungaros.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Pregunto sobre inversion en pesca.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Pregunto sobre inversion en te y cafe.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Pregunto sobre la economia de los tigres asiaticos.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Abrio una cuenta en dolares australianos.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Queria invertir en la reciente industrializacion</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Queria invertir en gas natural y petroleo.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Queria invertir en turismo.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Queria invertir en hoteles en cancun.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Queria invertir en la region de Terai.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Hizo una transferencia al banco de Quebec.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Queria invertir en una empresa de cruceros por el Mediterraneo.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Queria invertir en la produccion de algodon.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Pregunto por la inversion en pesca.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Queria invertir en petroleo.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Hizo una transferencia al banco de Bombay.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Hizo una transferencia al banco de Venecia.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Hizo una transferencia al banco de Washington.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Hizo una transferencia al banco de Kyoto.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Hizo una transferencia al banco de Manchester.</pista></ciudad>
+		</banco>
+		<biblioteca>
+			<ciudad nombre="Port Moresby"><pista>Leyo sobre las colonias britanicas.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Pregunto por las obras de Borges.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Leyo sobre la conquista de Pizarro.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Estuvo leyendo sobre la colonizacion portuguesa.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Estuvo leyendo sobre la dinastia Ming.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Estuvo leyendo sobre la pobreza en Africa.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Pidio libros sobre las invasiones arabes.</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Pidio libros sobre las luchas entre Hutus y Tutsis.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Pidio un libro de Sartre.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Leyo sobre el origen de los juegos olimpicos.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Leyo sobre el Rio Danubio.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Estuvo escuchando musica de Bjork</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Leyo sobre budismo.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Pidio articulos sobre los tsunami.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Leyo sobre el imperio britanico.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Estuvo leyendo sobre la gastronomia asiatica.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Pidio un libro de Tolstoi.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Queria la historia 'serenisima republica'.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Leyo sobre la historia de la conquista de Hernan Cortes.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Pidio un libro sobre el leopardo de las nieves.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Leyo un libro sobre deportes de invierno.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Pidio un libro de Orhan Pamuk.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Pidio un diccionario de frances.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Leyo sobre la historia de escandinavia.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Leyo sobre Sadam Husein.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Estuvo leyendo sobre hinduismo.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Estuvo leyendo sobre el imperio romano.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Estuvo leyendo sobre la guerra de Secesion.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Estuvo leyendo sobre la Restauracion Meiji</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Estuvo leyendo sobre la revolucion industrial.</pista></ciudad>
+		</biblioteca>
+	</pistasmedia>
+	<pistasdificil>
+		<aeropuerto>	
+			<ciudad nombre="Port Moresby"><pista>Se fue en un avion de bandera con cuatro estrellas blancas.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Dijo que queria conocer las Cataratas del Iguazu</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Dijo que queria conocer el Cuzco.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Queria visitar el Maracana.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>La bandera del avion tenia estrellas.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Dijo que queria conocer el volcan Karthala.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Dijo que queria navegar el Nilo.</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Se fue en un avion de bandera celeste amarilla y verde.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Dijo que queria visitar el Louvre.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>La bandera tenia una cruz blanca.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Hablo sobre navegar el rio Danubio.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Tenia mucha ropa de abrigo.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Queria conocer el golfo de Bengala.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Queria conocer el sudeste asiatico.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Queria conocer el mar de Timor.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Queria concer el sudeste asiatico.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Queria conocer San Petersburgo.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Queria conocer el monte Titano</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Queria conocer Chichen Itza</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>La bandera del avion era roja con figuras blancas.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>La bandera del avion era blanca y roja.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Queria conocer el mar de Marmara.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Queria conocer el Africa occidental.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Queria conocer el norte de Europa.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Queria conocer el golfo persico.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Queria conocer el oceano indico.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Estuvo hablando sobre conocer el Coliseo.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Estuvo hablando sobre conocer Disney.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Estuvo hablando sobre conocer el Monte Fuji.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Dijo que queria conocer el rio Tamesis</pista></ciudad>
+		</aeropuerto>
+		<banco>
+			<ciudad nombre="Port Moresby"><pista>Queria invertir en empresas de petroleo, cobre y oro.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Pregunto por la inversion en soja.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Queria invertir en mineria.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Pregunto por la cotizacion del real.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Averiguo la cotizacion del yuan.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Abrio una cuenta en francos camoranos.</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Queria abrir una cuenta en libras egipcias.</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Cambio dinero a francos ruandeses.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Pregunto por la inversion en vinos.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Pregunto sobre la crisis economica europea.</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Pregunto sobre la crisis economica europea.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Estaba interesado en la pesca</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Queria invertir en te y cafe.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Queria invertir en la industria electronica.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Pregunto por la industria turistica.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Pregunto por la industria turistica.</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Queria hacer inversiones en Siberia.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Pregunto sobre la inversion en sellos postales.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Hizo una transferencia al banco de Tijuana.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Hizo una transferencia al banco de Gandaki.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Queria cambiar dolares no estadounidenses.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Queria invertir en el mercado de especias.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Abrio una cuenta en francos cfa.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Pregunto sobre la inversion en petroleo.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Pregunto por la industria petrolera.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Queria hacer una transferencia al banco de Canpur.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Pregunto sobre la fabrica Fiat.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Pregunto acerca de Wall Street.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Pregunto sobre las acciones de Sony.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Pregunto sobre las acciones de Rolls-Royce.</pista></ciudad>
+		</banco>
+		<biblioteca>
+			<ciudad nombre="Port Moresby"><pista>Saco un libro sobre la cultura de los motuanos.</pista></ciudad>
+			<ciudad nombre="Buenos Aires"><pista>Pidio el 'Martin Fierro'.</pista></ciudad>
+			<ciudad nombre="Lima"><pista>Pidio libros sobre la Guerra del Pacifico.</pista></ciudad>
+			<ciudad nombre="Rio de Janeiro"><pista>Pidio libros sobre la flora del Amazonas.</pista></ciudad>
+			<ciudad nombre="Beijing"><pista>Pidio las obras de Mao.</pista></ciudad>
+			<ciudad nombre="Moroni"><pista>Leyo una historia de los Bantues</pista></ciudad>
+			<ciudad nombre="El Cairo"><pista>Leyo sobre la adoracion al gato.</pista></ciudad>
+			<ciudad nombre="Kigali"><pista>Pidio el libro 'Las nieblas de africa'.</pista></ciudad>
+			<ciudad nombre="Paris"><pista>Pidio un libro sobre la Universidad de la Sorbona.</pista></ciudad>
+			<ciudad nombre="Atenas"><pista>Estuvo leyendo 'La Iliada'</pista></ciudad>
+			<ciudad nombre="Budapest"><pista>Leyo un libro sobre el asentamiento celta.</pista></ciudad>
+			<ciudad nombre="Reykjavik"><pista>Pidio libros sobre la historia de la colonizacion escandinava.</pista></ciudad>
+			<ciudad nombre="Colombo"><pista>Leyo sobre hinduismo.</pista></ciudad>
+			<ciudad nombre="Singapur"><pista>Estuvo leyendo sobra la estructura de las ciudades estado.</pista></ciudad>
+			<ciudad nombre="Sydney"><pista>Pidio un diccionario de ingles.</pista></ciudad>
+			<ciudad nombre="Bangkok"><pista>Pregunto sobre el terremoto del oceano Indico del 2004</pista></ciudad>
+			<ciudad nombre="Moscu"><pista>Estuvo leyendo sobre grandes desiertos.</pista></ciudad>
+			<ciudad nombre="San Marino"><pista>Pidio libros sobre la republica mas antigua.</pista></ciudad>
+			<ciudad nombre="Mexico"><pista>Estuvo escuchando musica de mariachis.</pista></ciudad>
+			<ciudad nombre="Katmandu"><pista>Estuvo leyendo sobre hinduismo.</pista></ciudad>
+			<ciudad nombre="Montreal"><pista>Leyo sobre la colonizacion francesa en America.</pista></ciudad>
+			<ciudad nombre="Estambul"><pista>Leyo sobre el imperio Hitita.</pista></ciudad>
+			<ciudad nombre="Bamako"><pista>Leyo sobre la pobreza en Africa.</pista></ciudad>
+			<ciudad nombre="Oslo"><pista>Leyo la historia de Nordland.</pista></ciudad>
+			<ciudad nombre="Bagdad"><pista>Leyo sobre la 'cuna de la civilizacion'.</pista></ciudad>
+			<ciudad nombre="Nueva Delhi"><pista>Pidio un libro sobre budismo.</pista></ciudad>
+			<ciudad nombre="Roma"><pista>Pidio un libro sobre la historia de Julio Cesar.</pista></ciudad>
+			<ciudad nombre="Nueva York"><pista>Leyo un libro de Edgar Allan Poe.</pista></ciudad>
+			<ciudad nombre="Tokio"><pista>Leyo sobre el ataque a Pearl Harbor.</pista></ciudad>
+			<ciudad nombre="Londres"><pista>Estuvo leyendo obras de Shakespeare.</pista></ciudad>
+		</biblioteca>
+	</pistasdificil>
 </pistas>
