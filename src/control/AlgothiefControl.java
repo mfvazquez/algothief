@@ -23,21 +23,20 @@ public class AlgothiefControl {
 		vista.botonCiudad(new BotonCiudad());
 		vista.botonEdificio(new BotonEdificio());
 		vista.botonEntrarEdificio(new BotonEntrarEdificio());
-		vista.botonContinuar(new BotonContinuar());
 	}
 	
 	class BotonUsuario implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
             String usuario = vista.getUsuario();
             modelo.iniciarMision(usuario);
-            vista.panelGeneral();
+            vista.dibujarPanelGeneral();
             vista.setTiempo(modelo.getTiempoStr());
         }
 	}
 	
 	class BotonMapa implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			List<Ciudad> destinos = modelo.getCiudadesDestino();
+			List<String> destinos = modelo.getCiudadesDestino();
 			vista.mostrarMapa(destinos);
 		}
 	}
@@ -51,7 +50,7 @@ public class AlgothiefControl {
 			if (modelo.tiempoTerminado()){
 				// BLOQUEAR TODO Y ANUNCIAR QUE SE ACABO EL TIEMPO
 			}else{
-				vista.panelGeneral();
+				vista.dibujarPanelGeneral();
 			}
 		}
 	}
@@ -84,15 +83,8 @@ public class AlgothiefControl {
 		}
 	}
 	
-	class BotonContinuar implements ActionListener{
-		public void actionPerformed(ActionEvent e){
-			// Verificar que el ladron este atrapado, sino volver a edificio
-			mostrarEdificios();
-		}
-	}
-	
 	private void mostrarEdificios(){
-		List<Edificio> edificios = modelo.getEdificios();
+		List<String> edificios = modelo.getEdificios();
 		vista.mostrarEdificios(edificios);
 	}
 }
