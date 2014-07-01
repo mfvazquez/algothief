@@ -55,7 +55,7 @@ public class Pistas {
 					String ciudad = eElement.getElementsByTagName("ciudad").item(0).getTextContent();
 					String edi = eElement.getElementsByTagName("edificio").item(0).getTextContent();
 					
-					Pista temporal = new PistaFacil(pista, edi, ciudad);
+					Pista temporal = new PistaFacil(ciudad, edi);//cambie para que no tire error
 					listaPista.add(temporal);	 
 				}
 			}

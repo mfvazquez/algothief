@@ -6,14 +6,8 @@ public class PistaFacil extends Pista {
 		super();
 	}
 
-	public PistaFacil(String edificio, String ciudad){
-        this.pista = "del archivo";
-	}
-	
-	public PistaFacil(String pista, String edificio, String ciudad){
-		this.pista = pista;
-		this.edificio = edificio;
-		this.ciudad = ciudad;
+	public PistaFacil(String ciudad, String edificio){
+        super(ciudad, edificio, "pistasfacil");
 	}
 	
 	public boolean esPistaFacil() {

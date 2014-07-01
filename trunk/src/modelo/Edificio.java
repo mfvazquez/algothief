@@ -4,7 +4,6 @@ public abstract class Edificio {
 	protected Ciudad ciudad;
 	protected String tipo;
 	protected Ladron ladron;
-	//private EdificioStrategy strategy;
 	
 	protected Pista pistaF;
 	protected Pista pistaM;

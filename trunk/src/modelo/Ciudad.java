@@ -51,7 +51,19 @@ public class Ciudad {
 	public void generarPistas(Ciudad destino, RangoStrategy rango) {
 //actualmente se cargan las pistas antes
 //después podría cambiarlo para que se carguen cuando se pidan
-		Pista pistaFA = new PistaFacil();
+		this.aeropuerto.setPistaF(new PistaFacil(destino.getNombre(),"aeropuerto"));
+		this.aeropuerto.setPistaM(new PistaMedia(destino.getNombre(),"aeropuerto"));
+		this.aeropuerto.setPistaD(new PistaDificil(destino.getNombre(),"aeropuerto"));
+		
+		this.banco.setPistaF(new PistaFacil(destino.getNombre(),"banco"));
+		this.banco.setPistaM(new PistaMedia(destino.getNombre(),"banco"));
+		this.banco.setPistaD(new PistaDificil(destino.getNombre(),"banco"));
+		
+		this.biblioteca.setPistaF(new PistaFacil(destino.getNombre(),"biblioteca"));
+		this.biblioteca.setPistaM(new PistaMedia(destino.getNombre(),"biblioteca"));
+		this.biblioteca.setPistaD(new PistaDificil(destino.getNombre(),"biblioteca"));
+		
+		/*Pista pistaFA = new PistaFacil();
 		pistaFA.setPista("Se fue en un avion con bandera azul y blanca");
 		this.aeropuerto.setPistaF(pistaFA);
 		Pista pistaFB = new PistaFacil();
@@ -79,7 +91,7 @@ public class Ciudad {
 		this.banco.setPistaD(pistaDB);
 		Pista pistaDBi = new PistaDificil();
 		pistaDBi.setPista("Estuvo leyendo sobre la revolucion de mayo(dificil)");
-		this.biblioteca.setPistaD(pistaDBi);
+		this.biblioteca.setPistaD(pistaDBi);*/
 		
 	}
 
