@@ -7,7 +7,7 @@ import java.util.List;
 public class RutaDeEscape {
 	private ArrayList<Ciudad> ciudades;
 	
-	public RutaDeEscape(RangoStrategy rango) {
+	public RutaDeEscape(RangoStrategy rango, Ladron ladron) {
 		ciudades = new ArrayList<Ciudad>();
 		Ciudad actual = Mapa.getInstance().verCiudadInicial();
 		
@@ -17,17 +17,17 @@ public class RutaDeEscape {
 			Double subindice = Math.floor(Math.random()*destinos.size());
 			actual = destinos.get(subindice.intValue());
 		}
-		this.generarPistas(rango);
+		this.generarPistas(ladron);
 	}
 	
-	private void generarPistas(RangoStrategy rango){
+	private void generarPistas(Ladron ladron){
 		for(int i = 0; i < ciudades.size(); i++){
 			Ciudad actual = ciudades.get(i);
 			if (i == ciudades.size()-1){
-				actual.generarPistas(ciudades.get(i), rango);
+				actual.generarPistas(ciudades.get(i), ladron);
 				// poner pistas de qeu el ladron esta en la ciudad
 			}else{
-				actual.generarPistas(ciudades.get(i+1), rango);
+				actual.generarPistas(ciudades.get(i+1), ladron);
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class RutaDeEscape {
 		Edificio edificio = destino.getAeropuerto();
 		edificio.setLadron(ladron);
 		Pista pist = new PistaDificil();
-		pist.setPista("Cuidado, estas muy serca");
+		pist.setPista("Cuidado, estas muy cerca!");
 		destino.getBanco().setPistaD(pist);
 		destino.getBanco().setPistaF(pist);
 		destino.getBanco().setPistaM(pist);

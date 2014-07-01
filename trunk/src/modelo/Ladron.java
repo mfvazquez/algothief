@@ -56,5 +56,10 @@ public class Ladron {
     	return (this.vehiculo.equals(vehiculo));
     }
 
+	public String getPista() {
+		return "pista ladron";
+		
+	}
+
 
 }

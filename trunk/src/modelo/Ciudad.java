@@ -48,51 +48,28 @@ public class Ciudad {
 		return false;
 	}
 
-	public void generarPistas(Ciudad destino, RangoStrategy rango) {
-//actualmente se cargan las pistas antes
-//después podría cambiarlo para que se carguen cuando se pidan
-		this.aeropuerto.setPistaF(new PistaFacil(destino.getNombre(),"aeropuerto"));
-		this.aeropuerto.setPistaM(new PistaMedia(destino.getNombre(),"aeropuerto"));
-		this.aeropuerto.setPistaD(new PistaDificil(destino.getNombre(),"aeropuerto"));
-		
-		this.banco.setPistaF(new PistaFacil(destino.getNombre(),"banco"));
-		this.banco.setPistaM(new PistaMedia(destino.getNombre(),"banco"));
-		this.banco.setPistaD(new PistaDificil(destino.getNombre(),"banco"));
-		
-		this.biblioteca.setPistaF(new PistaFacil(destino.getNombre(),"biblioteca"));
-		this.biblioteca.setPistaM(new PistaMedia(destino.getNombre(),"biblioteca"));
-		this.biblioteca.setPistaD(new PistaDificil(destino.getNombre(),"biblioteca"));
-		
-		/*Pista pistaFA = new PistaFacil();
-		pistaFA.setPista("Se fue en un avion con bandera azul y blanca");
-		this.aeropuerto.setPistaF(pistaFA);
-		Pista pistaFB = new PistaFacil();
-		pistaFB.setPista("Tenia pelo rubio");
-		this.banco.setPistaF(pistaFB);
-		Pista pistaFBi = new PistaFacil();
-		pistaFBi.setPista("Estuvo leyendo sobre la revolucion de mayo");
-		this.biblioteca.setPistaF(pistaFBi);
-		
-		Pista pistaMA = new PistaMedia();
-		pistaMA.setPista("Se fue en un avion con bandera azul y blanca(media)");
-		this.aeropuerto.setPistaM(pistaMA);
-		Pista pistaMB = new PistaMedia();
-		pistaMB.setPista("Tenia pelo rubio(media)");
-		this.banco.setPistaM(pistaMB);
-		Pista pistaMBi = new PistaMedia();
-		pistaMBi.setPista("Estuvo leyendo sobre la revolucion de mayo(media)");
-		this.biblioteca.setPistaM(pistaMBi);
-		
-		Pista pistaDA = new PistaDificil();
-		pistaDA.setPista("Se fue en un avion con bandera azul y blanca(dificil)");
-		this.aeropuerto.setPistaD(pistaDA);
-		Pista pistaDB = new PistaDificil();
-		pistaDB.setPista("Tenia pelo rubio(dificil)");
-		this.banco.setPistaD(pistaDB);
-		Pista pistaDBi = new PistaDificil();
-		pistaDBi.setPista("Estuvo leyendo sobre la revolucion de mayo(dificil)");
-		this.biblioteca.setPistaD(pistaDBi);*/
-		
+	public void generarPistas(Ciudad destino, Ladron ladron) {
+		String pistaLadron = null;
+		if (Math.random()<0.5) {
+			pistaLadron = ladron.getPista();
+		}
+		this.aeropuerto.setPistaF(new PistaFacil(destino.getNombre(),"aeropuerto", pistaLadron));
+		this.aeropuerto.setPistaM(new PistaMedia(destino.getNombre(),"aeropuerto", pistaLadron));
+		this.aeropuerto.setPistaD(new PistaDificil(destino.getNombre(),"aeropuerto", pistaLadron));
+		pistaLadron = null;
+		if (Math.random()<0.5) {
+			pistaLadron = ladron.getPista();
+		}
+		this.banco.setPistaF(new PistaFacil(destino.getNombre(),"banco", pistaLadron));
+		this.banco.setPistaM(new PistaMedia(destino.getNombre(),"banco", pistaLadron));
+		this.banco.setPistaD(new PistaDificil(destino.getNombre(),"banco", pistaLadron));
+		pistaLadron = null;
+		if (Math.random()<0.5) {
+			pistaLadron = ladron.getPista();
+		}
+		this.biblioteca.setPistaF(new PistaFacil(destino.getNombre(),"biblioteca", pistaLadron));
+		this.biblioteca.setPistaM(new PistaMedia(destino.getNombre(),"biblioteca", pistaLadron));
+		this.biblioteca.setPistaD(new PistaDificil(destino.getNombre(),"biblioteca", pistaLadron));
 	}
 
 }

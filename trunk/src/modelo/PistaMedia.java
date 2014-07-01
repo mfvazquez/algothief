@@ -2,8 +2,8 @@ package modelo;
 
 public class PistaMedia extends Pista {
 	
-	public PistaMedia(String ciudad, String edificio) {
-		super(ciudad, edificio, "pistasmedia");
+	public PistaMedia(String ciudad, String edificio, String pistaLadron) {
+		super(ciudad, edificio, "pistasmedia", pistaLadron);
 	}
 
 	public PistaMedia() {
