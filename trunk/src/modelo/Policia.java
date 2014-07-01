@@ -147,4 +147,16 @@ public class Policia{
 	public Ladron getLadron(){
 		return this.capturado;
 	}
+	
+	public String obtenerRangoStr(){
+		if (rango.esDetective()){
+			return "Detective";
+		}else if (rango.esInvestigador()){
+			return "Investigador";
+		}else if (rango.esSargento()){
+			return "Sargento";
+		}else{
+			return "Novato";
+		}
+	}
 }

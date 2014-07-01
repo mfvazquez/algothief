@@ -29,9 +29,18 @@ public class AlgothiefControl {
 		public void actionPerformed(ActionEvent e) {
             String usuario = vista.getUsuario();
             modelo.iniciarMision(usuario);
-            vista.dibujarPanelGeneral();
-            vista.setTiempo(modelo.getTiempoStr());
+            vista.reemplazarBotonUsuario(new BotonIniciarMision());
+            vista.agregarTextoInicio(usuario +".\n");
+            vista.agregarTextoInicio("Policia identificado como " + usuario +".\n");
+            vista.agregarTextoInicio("Tu rango es " + modelo.getRango() + ". ");
         }
+	}
+	
+	class BotonIniciarMision implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			vista.dibujarPanelGeneral();
+            vista.setTiempo(modelo.getTiempoStr());
+		}
 	}
 	
 	class BotonMapa implements ActionListener{
