@@ -61,15 +61,36 @@ public class AlgothiefModelo {
 		return Tiempo.getInstance().fecha();
 	}
 	
-	public Ciudad getCiudad(String nombre){
+	private Ciudad getCiudad(String nombre){
 		return Mapa.getInstance().buscarCiudad(nombre);
 	}
 	
-	public void viajar(Ciudad ciudad){
+	private Edificio getEdificio(String nombre){
+		Ciudad actual = policia.obtenerCiudadActual();
+		if (nombre == actual.getAeropuerto().getTipo()){
+			return actual.getAeropuerto();
+		}
+		if (nombre == actual.getBiblioteca().getTipo()){
+			return actual.getBiblioteca();
+		}
+		if (nombre == actual.getBanco().getTipo()){
+			return actual.getBanco();
+		}
+		return null;
+	}
+	
+	public void viajar(String ciudadStr){
+		Ciudad ciudad = getCiudad(ciudadStr);
 		policia.viajarACiudad(ciudad);
 	}
 	
 	public boolean tiempoTerminado(){
 		return Tiempo.getInstance().terminoTiempo();
+	}
+	
+	public String visitarEdificio(String edificioStr){
+		Edificio edificio = getEdificio(edificioStr);
+		Pista pista = policia.visitarEdificio(edificio);
+		return pista.getPista();
 	}
 }

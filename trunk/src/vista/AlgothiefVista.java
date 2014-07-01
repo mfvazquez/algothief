@@ -1,6 +1,7 @@
 package vista;
 
 import javax.swing.*;
+
 import modelo.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -21,6 +22,11 @@ public class AlgothiefVista extends JFrame{
 	private JButton botonOrden;
 	
 	private ArrayList<JButton> ciudades;
+	
+	private ArrayList<JButton> edificios;
+	
+	private JLabel mensaje;
+	private JButton botonContinuar;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -54,6 +60,20 @@ public class AlgothiefVista extends JFrame{
         	boton.setBounds(10 + i*210, 500, 200, 25);
         	ciudades.add(boton);
         }
+        
+        // edificios
+    	edificios = new ArrayList<JButton>();
+        for (int i = 0; i < 3; i++){
+        	JButton boton = new JButton();
+        	boton.setBounds(10 + i*210, 500, 200, 25);
+        	edificios.add(boton);
+        }
+        
+        // Mostar Pista
+        mensaje = new JLabel();
+        mensaje.setBounds(20, 100, 600, 25);
+        botonContinuar = new JButton("Continuar");
+        botonContinuar.setBounds(400, 300, 200, 25);
 	}
 	
 	public void mostrar(){
@@ -69,8 +89,24 @@ public class AlgothiefVista extends JFrame{
 	}
 	
 	public void botonCiudad(ActionListener accion){
-		for (int i = 0; i < ciudades.size(); i++){
-			JButton boton = ciudades.get(i);
+		agregarAccionOpciones(accion, ciudades);
+	}
+	
+	public void botonEdificio(ActionListener accion){
+		botonEdificios.addActionListener(accion);
+	}
+	
+	public void botonEntrarEdificio(ActionListener accion){
+		agregarAccionOpciones(accion, edificios);
+	}
+	
+	public void botonContinuar(ActionListener accion){
+		botonContinuar.addActionListener(accion);
+	}
+	
+	private void agregarAccionOpciones(ActionListener accion, List<JButton> botones){
+		for (int i = 0; i < botones.size(); i++){
+			JButton boton = botones.get(i);
 			boton.addActionListener(accion);
 		}
 	}
@@ -94,9 +130,9 @@ public class AlgothiefVista extends JFrame{
 		panel.repaint();
 	}
 	
-	public void agregarOpciones(){
-		for(int i = 0; i < ciudades.size(); i++){
-			panel.add(ciudades.get(i));
+	private void agregarOpciones(List<JButton> botones ){
+		for(int i = 0; i < botones.size(); i++){
+			panel.add(botones.get(i));
 		}
 	}
 	
@@ -111,8 +147,28 @@ public class AlgothiefVista extends JFrame{
 			boton.setText(actual.getNombre());
 		}
 		panel.removeAll();
-		this.agregarOpciones();
+		this.agregarOpciones(ciudades);
 		panel.add(tiempo);
+		panel.repaint();
+	}
+	
+	public void mostrarEdificios(List<Edificio> destinos){
+		for (int i = 0; i < destinos.size(); i++){
+			Edificio actual = destinos.get(i);
+			JButton boton = edificios.get(i);
+			boton.setText(actual.getTipo());
+		}
+		panel.removeAll();
+		this.agregarOpciones(edificios);
+		panel.add(tiempo);
+		panel.repaint();
+	}
+	
+	public void mostrarMensaje(String mensajeStr){
+		mensaje.setText(mensajeStr);
+		panel.removeAll();
+		panel.add(mensaje);
+		panel.add(botonContinuar);
 		panel.repaint();
 	}
 }
