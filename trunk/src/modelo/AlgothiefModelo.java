@@ -25,36 +25,23 @@ public class AlgothiefModelo {
 		return actual.getNombre();
 	}
 	
-	public List<Ciudad> getCiudadesDestino(){
+	public List<String> getCiudadesDestino(){
 		Ciudad actual = policia.obtenerCiudadActual();
-		return  Mapa.getInstance().ciudadesAdyacentes(actual);
-		
-		/*
-		
-		List<Ciudad> destinos;
-		Ciudad actual = policia.obtenerCiudadActual();
-		destinos = Mapa.getInstance().ciudadesAdyacentes(actual);
-		
+		List<Ciudad> destinos = Mapa.getInstance().ciudadesAdyacentes(actual);
 		ArrayList<String> destinosStr = new ArrayList<String>();
 		for (int i = 0; i < destinos.size(); i++){
 			destinosStr.add(destinos.get(i).getNombre());
 		}
-		return destinosStr;*/
+		return destinosStr;
 	}
 	
-	public List<Edificio> getEdificios(){
-		ArrayList<Edificio> lista = new ArrayList<Edificio>();
+	public List<String> getEdificios(){
+		ArrayList<String> lista = new ArrayList<String>();
 		Ciudad ciudad = policia.obtenerCiudadActual();
-		lista.add(ciudad.getAeropuerto());
-		lista.add(ciudad.getBanco());
-		lista.add(ciudad.getBiblioteca());
+		lista.add(ciudad.getAeropuerto().getTipo());
+		lista.add(ciudad.getBanco().getTipo());
+		lista.add(ciudad.getBiblioteca().getTipo());
 		return lista;
-		/*
-		ArrayList<String> edificios = new ArrayList<String>();
-		edificios.add("Aeropuerto");
-		edificios.add("Banco");
-		edificios.add("Biblioteca");
-		return edificios;*/
 	}
 	
 	public String getTiempoStr(){

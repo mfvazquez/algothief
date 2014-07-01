@@ -26,7 +26,6 @@ public class AlgothiefVista extends JFrame{
 	private ArrayList<JButton> edificios;
 	
 	private JLabel mensaje;
-	private JButton botonContinuar;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -57,7 +56,7 @@ public class AlgothiefVista extends JFrame{
     	ciudades = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
-        	boton.setBounds(10 + i*210, 500, 200, 25);
+        	boton.setBounds(575, 30+50*i, 200, 25);
         	ciudades.add(boton);
         }
         
@@ -65,15 +64,13 @@ public class AlgothiefVista extends JFrame{
     	edificios = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
-        	boton.setBounds(10 + i*210, 500, 200, 25);
+        	boton.setBounds(575, 30+50*i, 200, 25);
         	edificios.add(boton);
         }
         
         // Mostar Pista
         mensaje = new JLabel();
         mensaje.setBounds(20, 100, 600, 25);
-        botonContinuar = new JButton("Continuar");
-        botonContinuar.setBounds(400, 300, 200, 25);
 	}
 	
 	public void mostrar(){
@@ -100,10 +97,6 @@ public class AlgothiefVista extends JFrame{
 		agregarAccionOpciones(accion, edificios);
 	}
 	
-	public void botonContinuar(ActionListener accion){
-		botonContinuar.addActionListener(accion);
-	}
-	
 	private void agregarAccionOpciones(ActionListener accion, List<JButton> botones){
 		for (int i = 0; i < botones.size(); i++){
 			JButton boton = botones.get(i);
@@ -121,13 +114,11 @@ public class AlgothiefVista extends JFrame{
 		return textbox.getText();
 	}
 		
-	public void panelGeneral(){
-		panel.removeAll();
+	private void agregarPanelGeneral(){
 		panel.add(tiempo);
 		panel.add(botonMapa);
 		panel.add(botonEdificios);
 		panel.add(botonOrden);
-		panel.repaint();
 	}
 	
 	private void agregarOpciones(List<JButton> botones ){
@@ -140,35 +131,40 @@ public class AlgothiefVista extends JFrame{
 		tiempo.setText(fecha);
 	}
 	
-	public void mostrarMapa(List<Ciudad> destinos){
+	public void mostrarMapa(List<String> destinos){
 		for (int i = 0; i < destinos.size(); i++){
-			Ciudad actual = destinos.get(i);
 			JButton boton = ciudades.get(i);
-			boton.setText(actual.getNombre());
+			boton.setText(destinos.get(i));
 		}
 		panel.removeAll();
 		this.agregarOpciones(ciudades);
-		panel.add(tiempo);
+		agregarPanelGeneral();
 		panel.repaint();
 	}
 	
-	public void mostrarEdificios(List<Edificio> destinos){
+	public void mostrarEdificios(List<String> destinos){
 		for (int i = 0; i < destinos.size(); i++){
-			Edificio actual = destinos.get(i);
 			JButton boton = edificios.get(i);
-			boton.setText(actual.getTipo());
+			boton.setText(destinos.get(i));
 		}
 		panel.removeAll();
 		this.agregarOpciones(edificios);
-		panel.add(tiempo);
+		agregarPanelGeneral();
 		panel.repaint();
 	}
 	
 	public void mostrarMensaje(String mensajeStr){
 		mensaje.setText(mensajeStr);
 		panel.removeAll();
+		agregarPanelGeneral();
 		panel.add(mensaje);
-		panel.add(botonContinuar);
 		panel.repaint();
 	}
+	
+	public void dibujarPanelGeneral(){
+		panel.removeAll();
+		agregarPanelGeneral();
+		panel.repaint();
+	}
+	
 }
