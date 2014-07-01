@@ -52,7 +52,7 @@ public class ObjetosRobados {
 					String objeto = eElement.getElementsByTagName("objeto").item(0).getTextContent();
 					String ciudad = eElement.getElementsByTagName("ciudad").item(0).getTextContent();
 					
-					ObjetoRobado temporal = new ObjetoComun(objeto, ciudad);
+					ObjetoRobado temporal = new ObjetoComun(ciudad);//lo pongo asi para que no haga error
 					listaObjetos.add(temporal);	 
 				}
 			}
