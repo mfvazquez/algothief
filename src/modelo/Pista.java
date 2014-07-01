@@ -22,7 +22,7 @@ public abstract class Pista {
 		this.pista = "No se vio a esa persona por aca";
 	}
 
-	public Pista(String ciu, String edi, String dificultad) {
+	public Pista(String ciu, String edi, String dificultad, String pistaLadron) {
 		this.ciudad = ciu;
 		this.edificio = edi;
 		try {
@@ -46,6 +46,10 @@ public abstract class Pista {
 				element = (Element) nodo;
 				if (ciu.equals(element.getAttribute("nombre"))){
 					this.pista = element.getTextContent();
+					if (pistaLadron != null) {
+						this.pista = this.pista + " " + pistaLadron;
+					}
+					break;
 				}
 			}
 						

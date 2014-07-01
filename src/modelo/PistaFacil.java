@@ -6,8 +6,8 @@ public class PistaFacil extends Pista {
 		super();
 	}
 
-	public PistaFacil(String ciudad, String edificio){
-        super(ciudad, edificio, "pistasfacil");
+	public PistaFacil(String ciudad, String edificio, String pistaLadron){
+        super(ciudad, edificio, "pistasfacil", pistaLadron);
 	}
 	
 	public boolean esPistaFacil() {

@@ -34,18 +34,18 @@ public class PistaTest {
 	
 	@Test
 	public void leerPista() {
-		PistaFacil pista = new PistaFacil("Buenos Aires", "aeropuerto");
+		PistaFacil pista = new PistaFacil("Buenos Aires", "aeropuerto", null);
 		assertEquals(pista.getPista(), "Se fue en un avion de bandera celeste y blanca.");
-		PistaMedia pistaM = new PistaMedia("Buenos Aires", "banco");
+		PistaMedia pistaM = new PistaMedia("Buenos Aires", "banco", null);
 		assertEquals(pistaM.getPista(), "Dijo estar preocupado por la posibilidad de default.");
-		PistaDificil pistaF = new PistaDificil("Buenos Aires", "biblioteca");
+		PistaDificil pistaF = new PistaDificil("Buenos Aires", "biblioteca", null);
 		assertEquals(pistaF.getPista(), "Pidio el 'Martin Fierro'.");
 	}
 
 	@Test
 	public void leerArchivo() {
 		try {
-			File fXmlFile = new File("archivos/pistas.xml");
+			File fXmlFile = new File("recursos/pistas.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

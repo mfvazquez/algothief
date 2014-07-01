@@ -14,7 +14,7 @@ public class RutaDeEscapeTests {
 	public void crearRuta() {
 		Mapa mapa = Mapa.getInstance();
 		RangoNovatoStrategy rango = new RangoNovatoStrategy();
-		RutaDeEscape ruta = new RutaDeEscape(rango);
+		RutaDeEscape ruta = new RutaDeEscape(rango, new Ladron());
 		assertEquals(ruta.size(),4);
 	}
 }

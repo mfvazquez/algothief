@@ -2,8 +2,8 @@ package modelo;
 
 public class PistaDificil extends Pista {
 	
-	public PistaDificil(String ciudad, String edificio) {
-		super(ciudad, edificio, "pistasdificil");
+	public PistaDificil(String ciudad, String edificio, String pistaLadron) {
+		super(ciudad, edificio, "pistasdificil", pistaLadron);
 	}
 
 	public PistaDificil() {

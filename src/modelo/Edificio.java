@@ -19,7 +19,6 @@ public abstract class Edificio {
 	}
 	
 	public Pista obtenerPistaFacil(){
-		//PistaFacil pistaFacil = new PistaFacil(this.tipo, ladron.siguienteCiudadEnRuta(ciudad));
 		return pistaF;
 	}
 	

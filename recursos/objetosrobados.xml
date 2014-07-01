@@ -10,12 +10,12 @@
 		<ciudad nombre="Moroni"><objeto>frasco de perfume del presidente</objeto></ciudad>
 		<ciudad nombre="El Cairo"><objeto>los mapas de la gran Piramide</objeto></ciudad>
 		<ciudad nombre="Paris"><objeto>La Giocconda</objeto></ciudad>
-		<ciudad nombre="Atenas"><objeto></objeto></ciudad>
+		<ciudad nombre="Atenas"><objeto>las columnas del Partenon</objeto></ciudad>
 		<ciudad nombre="Budapest"><objeto>Leon de piedra Guardian del Danubio</objeto></ciudad>
 		<ciudad nombre="Reykjavik"><objeto>manuscrito de una saga escandinava</objeto></ciudad>
 		<ciudad nombre="Colombo"><objeto>un antiguo abanico de marfil</objeto></ciudad>
 		<ciudad nombre="Singapur"><objeto></objeto></ciudad>
-		<ciudad nombre="Sydney"><objeto></objeto></ciudad>
+		<ciudad nombre="Sydney"><objeto>todos los canguros de Australia</objeto></ciudad>
 		<ciudad nombre="Bangkok"><objeto>el elefante blanco sagrado del Rey</objeto></ciudad>
 		<ciudad nombre="Moscu"><objeto>la corona de Ivan el Terrible</objeto></ciudad>
 		<ciudad nombre="San Marino"><objeto>la prestigiosa coleccion de sellos del capitan-regente</objeto></ciudad>
@@ -31,7 +31,7 @@
 		<ciudad nombre="Nueva York"><objeto>Antorcha de la Estatua de la Libertad</objeto></ciudad>
 		<ciudad nombre="Tokio"><objeto>una valiosa carpa real</objeto></ciudad>
 		<ciudad nombre="Londres"><objeto>las llaves de la torre de londres</objeto></ciudad>
-		<ciudad nombre="Kigali"><objeto>la reseta olvidada de un veneno de los pigmeos</objeto></ciudad>
+		<ciudad nombre="Kigali"><objeto>la receta olvidada de un veneno de los pigmeos</objeto></ciudad>
 	</objetocomun>
 	<objetovalioso>
 		<ciudad nombre="Port Moresby"><objeto>el collar mas valioso de la isla</objeto></ciudad>
@@ -62,7 +62,7 @@
 		<ciudad nombre="Roma"><objeto>la corona del Cesar</objeto></ciudad>
 		<ciudad nombre="Nueva York"><objeto></objeto></ciudad>
 		<ciudad nombre="Tokio"><objeto></objeto></ciudad>
-		<ciudad nombre="Londres"><objeto></objeto></ciudad>
+		<ciudad nombre="Londres"><objeto>las agujas del Big Ben</objeto></ciudad>
 		<ciudad nombre="Kigali"><objeto>la corona de un rey Watusi</objeto></ciudad>
 	</objetovalioso>
 	<objetomuyvalioso>
