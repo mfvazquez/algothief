@@ -1,5 +1,15 @@
 package modelo;
 
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 public class Ladron {
 	private String nombre;
 	private String sexo;
@@ -57,7 +67,34 @@ public class Ladron {
     }
 
 	public String getPista() {
-		return "pista ladron";
+		String pistaLadron = null;
+		try {
+			File fXmlFile = new File("recursos/pistasladrones.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+			doc.getDocumentElement().normalize();
+			
+			NodeList listaLadrones = doc.getElementsByTagName("ladron");			
+			Node nodo;
+			Element element;
+			
+			for (int temp = 0; temp < listaLadrones.getLength(); temp++) {
+				nodo = listaLadrones.item(temp);
+				element = (Element) nodo;
+				if (this.nombre.equals(element.getAttribute("nombre"))){
+					NodeList listaPista = element.getElementsByTagName("pista");
+					nodo = listaPista.item((int)(Math.floor(Math.random()*4)));
+					pistaLadron = nodo.getTextContent();
+					break;
+				}
+			}
+				
+						
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pistaLadron;
 		
 	}
 
