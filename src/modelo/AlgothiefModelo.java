@@ -85,4 +85,16 @@ public class AlgothiefModelo {
 		return policia.obtenerRangoStr();
 	}
 	
+	public String crearOrdenDeArresto(String[] array){
+		return policia.crearOrdenDeArresto(array[0], array[1], array[2], array[3], array[4]);
+	}
+	
+	public boolean ladronCapturadoConOrden(){
+		return policia.ladronCapturadoConOrden();
+	}
+	
+	public void reiniciar(){
+		Tiempo.getInstance().reiniciar();
+		Mapa.getInstance().reiniciar();
+	}
 }

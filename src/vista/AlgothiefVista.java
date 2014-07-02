@@ -21,7 +21,9 @@ public class AlgothiefVista extends JFrame{
 	private JPanel panel;
 	
 	private JTextArea texto;
-	private JButton botonInicioSesion;
+	
+	private JButton botonUsuario;
+	private JButton botonContinuar;
 	private JTextField textbox;
 	
 	private JLabel tiempo;
@@ -35,10 +37,13 @@ public class AlgothiefVista extends JFrame{
 	
 	private ArrayList<JButton> edificios;
 	
+	private ArrayList<JLabel> tipoCaracteristica;
 	private ArrayList<JComboBox<String>> caracteristicas;
 	private JButton botonBuscar;
 	
 	private JTextArea mensaje;
+	
+	private JButton botonFinalizar;
 	
 	public AlgothiefVista(){
 		panel = new JPanel();
@@ -53,16 +58,17 @@ public class AlgothiefVista extends JFrame{
         texto = new JTextArea();
         texto.setBounds(40,40,200, 450);
         texto.setEditable(false);
-        texto.setText("Policía al teclado. \nPor favor, identificate: \n");
         texto.setLineWrap(true);
         textbox = new JTextField();
         textbox.setBounds(40, 500, 200, 25);       
-        botonInicioSesion = new JButton("OK");
-        botonInicioSesion.setBounds(250, 500, 100, 25);
+        botonUsuario = new JButton("Ingresar");
+        botonUsuario.setBounds(250, 500, 150, 25);
+        botonContinuar = new JButton("Continuar");
+        botonContinuar.setBounds(250, 500, 150, 25);
         
         // mision
         tiempo = new JLabel();
-        tiempo.setBounds(335, 5, 100, 25);
+        tiempo.setBounds(325, 5, 150, 25);
         botonMapa = new JButton("Mapa");
         botonMapa.setBounds(10, 500, 200, 25);
         botonEdificios = new JButton("Edificios");
@@ -98,6 +104,12 @@ public class AlgothiefVista extends JFrame{
         mensaje.setBounds(40,40,300, 450);
         
         // Orden de Arresto
+        tipoCaracteristica = new ArrayList<JLabel>();
+        tipoCaracteristica.add(new JLabel("Sexo:"));
+        tipoCaracteristica.add(new JLabel("Hobby:"));
+        tipoCaracteristica.add(new JLabel("Cabello:"));
+        tipoCaracteristica.add(new JLabel("Senia:"));
+        tipoCaracteristica.add(new JLabel("Vehiculo:"));
         String[] sexo = {"","Masculino", "Femenino"};
         String[] hobby = {"","Alpinismo", "Tenis", "Croquet"};
         String[] cabello = {"","Rubio","Negro","Castanio","Rojo"};
@@ -107,11 +119,16 @@ public class AlgothiefVista extends JFrame{
         caracteristicas = new  ArrayList<JComboBox<String>>(); 
         for (int i = 0; i < 5; i++){
     	   JComboBox<String> combobox = new JComboBox<String>(caracteristicasStr[i]);
-    //	   combobox.setBounds(575, 50+75*i, 200, 25);
+    	   combobox.setBounds(575, 50+75*i, 200, 25);   	   
     	   caracteristicas.add(combobox);
+    	   JLabel label = tipoCaracteristica.get(i);
+    	   label.setBounds(500, 50+75*i, 75, 25);
         }
         botonBuscar = new JButton("Buscar");
         botonBuscar.setBounds(575,425, 200, 25 );
+        
+        botonFinalizar = new JButton("Finalizar");
+        botonFinalizar.setBounds(450,290,100,50);
 	}
 	
 	public void mostrar(){
@@ -119,13 +136,11 @@ public class AlgothiefVista extends JFrame{
 	}
 	
 	public void botonUsuario(ActionListener accion){
-		botonInicioSesion.addActionListener(accion);
+		botonUsuario.addActionListener(accion);
 	}
 	
-	public void reemplazarBotonUsuario(ActionListener accion){
-		ActionListener[] acciones = botonInicioSesion.getActionListeners();
-		botonInicioSesion.removeActionListener(acciones[0]);
-		botonInicioSesion.addActionListener(accion);
+	public void botonContinuar(ActionListener accion){
+		botonContinuar.addActionListener(accion);
 	}
 	
 	public void agregarTextoInicio(String nuevoTexto){
@@ -153,6 +168,14 @@ public class AlgothiefVista extends JFrame{
 		botonOrden.addActionListener(accion);
 	}
 	
+	public void botonBuscar(ActionListener accion){
+		botonBuscar.addActionListener(accion);
+	}
+	
+	public void botonFinalizar(ActionListener accion){
+		botonFinalizar.addActionListener(accion);
+	}
+	
 	private void agregarAccionOpciones(ActionListener accion, List<JButton> botones){
 		for (int i = 0; i < botones.size(); i++){
 			JButton boton = botones.get(i);
@@ -161,10 +184,19 @@ public class AlgothiefVista extends JFrame{
 	}
 	
 	public void iniciarSesion(){
-        panel.add(botonInicioSesion);
+		panel.removeAll();
+        panel.add(botonUsuario);
         panel.add(textbox);
         panel.add(texto);
+        texto.setText("Policía al teclado. \nPor favor, identificate: \n");
         panel.repaint();
+	}
+	
+	public void inicioMision(){
+		panel.removeAll();
+		panel.add(botonContinuar);
+		panel.add(texto);
+		panel.repaint();
 	}
 	
 	public String getUsuario(){
@@ -230,11 +262,34 @@ public class AlgothiefVista extends JFrame{
 		panel.removeAll();
 		for (int i = 0; i < caracteristicas.size(); i++){
 			JComboBox<String> aux = caracteristicas.get(i);
-			panel.add(aux,BorderLayout.CENTER);
+			panel.add(aux,BorderLayout.NORTH);
+			JLabel label = tipoCaracteristica.get(i);
+			panel.add(label);
 		}
+		panel.setBorder(BorderFactory.createEmptyBorder(0,0,800,600));
 		agregarPanelGeneral();
 		panel.add(botonBuscar);
+		emitirMensaje("");
 		panel.repaint();
 	}
 	
+	public String[] devolverCaracteristicas(){		
+		ArrayList<String> lista = new ArrayList<String>();
+		for (int i = 0; i < 5; i++){
+			lista.add(caracteristicas.get(i).getSelectedItem().toString());
+		}
+		return lista.toArray(new String[0]);
+	}
+	
+	public void emitirMensaje(String mensaje){
+		texto.setText(mensaje);
+		panel.add(texto);
+	}
+	
+	public void finalizarMision(String mensaje){
+		panel.removeAll();
+		emitirMensaje(mensaje);
+		panel.add(botonFinalizar);
+		panel.repaint();
+	}
 }
