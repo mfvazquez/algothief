@@ -49,6 +49,10 @@ public class Ladron {
     public boolean suSexoEs(String sexo){
     	return (this.sexo.equals(sexo));
     }
+    
+    public String getSexo(){
+    	return sexo;
+    }
 
     public boolean suHobbyEs(String hobby){
     	return (this.hobby.equals(hobby));
@@ -96,7 +100,6 @@ public class Ladron {
 			e.printStackTrace();
 		}
 		return pistaLadron;
-		
 	}
 
 

@@ -39,4 +39,8 @@ public class Juego {
 	    policia.asignarMision(mision);
 	    return mision;
 	}
+	
+	public String ciudadInicioStr(){
+		return Mapa.getInstance().verCiudadInicial().getNombre();
+	}
 }

@@ -2,15 +2,9 @@ package vista;
 
 import javax.swing.*;
 
-import modelo.*;
-
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +50,7 @@ public class AlgothiefVista extends JFrame{
         
         // inicio
         texto = new JTextArea();
-        texto.setBounds(40,40,200, 450);
+        texto.setBounds(40,40,360, 450);
         texto.setEditable(false);
         texto.setLineWrap(true);
         textbox = new JTextField();

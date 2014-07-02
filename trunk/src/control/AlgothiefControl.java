@@ -36,7 +36,12 @@ public class AlgothiefControl {
             vista.inicioMision();
             vista.agregarTextoInicio(usuario +".\n");
             vista.agregarTextoInicio("Policia identificado como " + usuario +".\n");
-            vista.agregarTextoInicio("Tu rango es " + modelo.getRango() + ". ");
+            vista.agregarTextoInicio("Tu rango es " + modelo.getRango() + ".\n");
+            vista.agregarTextoInicio("***NOTICIAS***\n");
+            vista.agregarTextoInicio("Tesoro nacional robado en " + modelo.ciudadInicio() + ".\n");
+            vista.agregarTextoInicio("El botin ha sido identificado como " + modelo.objetoRobado() + ".\n");
+            vista.agregarTextoInicio("Un sospechoso de sexo " + modelo.sexoLadron() + " ha sido visto en el lugar del crimen.\n");
+            vista.agregarTextoInicio("Tu mision: perseguir al ladron desde " + modelo.ciudadInicio() + " hasta su escondite y arrestarlo!\n");
         }
 	}
 	

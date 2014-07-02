@@ -153,4 +153,8 @@ public class Policia{
 			return true;
 		return false;
 	}
+	
+	public String sexoLadron(){
+		return mision.sexoLadron();
+	}
 }

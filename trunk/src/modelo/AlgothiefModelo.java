@@ -97,4 +97,16 @@ public class AlgothiefModelo {
 		Tiempo.getInstance().reiniciar();
 		Mapa.getInstance().reiniciar();
 	}
+	
+	public String objetoRobado(){
+		return policia.getMision().objetoRobadoStr();
+	}
+	
+	public String ciudadInicio(){
+		return juego.ciudadInicioStr();
+	}
+	
+	public String sexoLadron(){
+		return policia.sexoLadron();
+	}
 }
