@@ -4,7 +4,10 @@ import javax.swing.*;
 
 import modelo.*;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -32,7 +35,8 @@ public class AlgothiefVista extends JFrame{
 	
 	private ArrayList<JButton> edificios;
 	
-	private ArrayList<JComboBox> caracteristicas;
+	private ArrayList<JComboBox<String>> caracteristicas;
+	private JButton botonBuscar;
 	
 	private JTextArea mensaje;
 	
@@ -58,7 +62,7 @@ public class AlgothiefVista extends JFrame{
         
         // mision
         tiempo = new JLabel();
-        tiempo.setBounds(300, 5, 200, 25);
+        tiempo.setBounds(335, 5, 100, 25);
         botonMapa = new JButton("Mapa");
         botonMapa.setBounds(10, 500, 200, 25);
         botonEdificios = new JButton("Edificios");
@@ -94,12 +98,20 @@ public class AlgothiefVista extends JFrame{
         mensaje.setBounds(40,40,300, 450);
         
         // Orden de Arresto
-       caracteristicas = new  ArrayList<JComboBox>();
+        String[] sexo = {"","Masculino", "Femenino"};
+        String[] hobby = {"","Alpinismo", "Tenis", "Croquet"};
+        String[] cabello = {"","Rubio","Negro","Castanio","Rojo"};
+        String[] senia = {"","Anillo","Joyas","Tatuaje"};
+        String[] vehiculo = {"","Limusina","Moto","Descapotable","Deportivo"};
+        String[][] caracteristicasStr = {sexo, hobby, cabello, senia, vehiculo};        
+        caracteristicas = new  ArrayList<JComboBox<String>>(); 
         for (int i = 0; i < 5; i++){
-        	JComboBox combobox = new JComboBox();
-        	combobox.setBounds(625, 50+50*i, 200, 25);
-        	caracteristicas.add(combobox);
+    	   JComboBox<String> combobox = new JComboBox<String>(caracteristicasStr[i]);
+    //	   combobox.setBounds(575, 50+75*i, 200, 25);
+    	   caracteristicas.add(combobox);
         }
+        botonBuscar = new JButton("Buscar");
+        botonBuscar.setBounds(575,425, 200, 25 );
 	}
 	
 	public void mostrar(){
@@ -135,6 +147,10 @@ public class AlgothiefVista extends JFrame{
 	
 	public void botonEntrarEdificio(ActionListener accion){
 		agregarAccionOpciones(accion, edificios);
+	}
+	
+	public void botonOrdenDeArresto(ActionListener accion){
+		botonOrden.addActionListener(accion);
 	}
 	
 	private void agregarAccionOpciones(ActionListener accion, List<JButton> botones){
@@ -207,6 +223,17 @@ public class AlgothiefVista extends JFrame{
 	public void dibujarPanelGeneral(){
 		panel.removeAll();
 		agregarPanelGeneral();
+		panel.repaint();
+	}
+	
+	public void menuOrdenDeArresto(){
+		panel.removeAll();
+		for (int i = 0; i < caracteristicas.size(); i++){
+			JComboBox<String> aux = caracteristicas.get(i);
+			panel.add(aux,BorderLayout.CENTER);
+		}
+		agregarPanelGeneral();
+		panel.add(botonBuscar);
 		panel.repaint();
 	}
 	

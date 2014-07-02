@@ -23,6 +23,7 @@ public class AlgothiefControl {
 		vista.botonCiudad(new BotonCiudad());
 		vista.botonEdificio(new BotonEdificio());
 		vista.botonEntrarEdificio(new BotonEntrarEdificio());
+		vista.botonOrdenDeArresto(new BotonOrden());
 	}
 	
 	class BotonUsuario implements ActionListener{
@@ -88,7 +89,7 @@ public class AlgothiefControl {
 	
 	class BotonOrden implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			
+			vista.menuOrdenDeArresto();
 		}
 	}
 	
