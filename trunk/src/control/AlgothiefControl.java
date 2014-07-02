@@ -19,18 +19,21 @@ public class AlgothiefControl {
 		modelo = nuevoModelo;
 		vista.iniciarSesion();
 		vista.botonUsuario(new BotonUsuario());
+		vista.botonContinuar(new BotonIniciarMision());
 		vista.botonMapa(new BotonMapa());
 		vista.botonCiudad(new BotonCiudad());
 		vista.botonEdificio(new BotonEdificio());
 		vista.botonEntrarEdificio(new BotonEntrarEdificio());
 		vista.botonOrdenDeArresto(new BotonOrden());
+		vista.botonBuscar(new BotonBuscar());
+		vista.botonFinalizar(new BotonFinalizar());
 	}
 	
 	class BotonUsuario implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
             String usuario = vista.getUsuario();
             modelo.iniciarMision(usuario);
-            vista.reemplazarBotonUsuario(new BotonIniciarMision());
+            vista.inicioMision();
             vista.agregarTextoInicio(usuario +".\n");
             vista.agregarTextoInicio("Policia identificado como " + usuario +".\n");
             vista.agregarTextoInicio("Tu rango es " + modelo.getRango() + ". ");
@@ -58,7 +61,8 @@ public class AlgothiefControl {
 			modelo.viajar(ciudadStr);	
 			vista.setTiempo(modelo.getTiempoStr());
 			if (modelo.tiempoTerminado()){
-				// BLOQUEAR TODO Y ANUNCIAR QUE SE ACABO EL TIEMPO
+				vista.finalizarMision("Se acabo el tiempo");
+				modelo.reiniciar();
 			}else{
 				vista.dibujarPanelGeneral();
 			}
@@ -79,10 +83,13 @@ public class AlgothiefControl {
 			
 			vista.setTiempo(modelo.getTiempoStr());
 			if (modelo.tiempoTerminado()){
-				
+				vista.finalizarMision("Se acabó el tiempo");
+			}else if(modelo.ladronCapturadoConOrden()){
+				vista.finalizarMision("Ladron Capturado");
+				modelo.reiniciar();
+				vista.setTiempo(modelo.getTiempoStr());
 			}else{
 				vista.mostrarMensaje(pista);
-	//			vista.panelGeneral();
 			}
 		}
 	}
@@ -92,6 +99,26 @@ public class AlgothiefControl {
 			vista.menuOrdenDeArresto();
 		}
 	}
+	
+	class BotonBuscar implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			String[] caracteristicasLadron = vista.devolverCaracteristicas();
+			String mensaje = modelo.crearOrdenDeArresto(caracteristicasLadron);
+			vista.emitirMensaje(mensaje);
+			vista.setTiempo(modelo.getTiempoStr());
+			if (modelo.tiempoTerminado()){
+				vista.finalizarMision("Se acabo el tiempo");
+				modelo.reiniciar();
+			}
+		}
+	}
+	
+	class BotonFinalizar implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			vista.iniciarSesion();
+		}
+	}
+	
 	
 	private void mostrarEdificios(){
 		List<String> edificios = modelo.getEdificios();

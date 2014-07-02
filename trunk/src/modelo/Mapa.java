@@ -27,6 +27,10 @@ public class Mapa {
 		ciudades = this.cargarCiudades();
 		this.agregarCiudadesIniciales();
 	}
+	
+	public void reiniciar(){
+		INSTANCE = new Mapa();
+	}
 
 	private synchronized static void createInstance() {
 		if (INSTANCE == null) { 
