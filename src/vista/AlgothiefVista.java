@@ -32,6 +32,8 @@ public class AlgothiefVista extends JFrame{
 	
 	private ArrayList<JButton> edificios;
 	
+	private ArrayList<JComboBox> caracteristicas;
+	
 	private JTextArea mensaje;
 	
 	public AlgothiefVista(){
@@ -90,6 +92,14 @@ public class AlgothiefVista extends JFrame{
         mensaje = new JTextArea();
         mensaje.setLineWrap(true);
         mensaje.setBounds(40,40,300, 450);
+        
+        // Orden de Arresto
+       caracteristicas = new  ArrayList<JComboBox>();
+        for (int i = 0; i < 5; i++){
+        	JComboBox combobox = new JComboBox();
+        	combobox.setBounds(625, 50+50*i, 200, 25);
+        	caracteristicas.add(combobox);
+        }
 	}
 	
 	public void mostrar(){
