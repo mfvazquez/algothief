@@ -84,6 +84,7 @@ public class Ladron {
 				element = (Element) nodo;
 				if (this.nombre.equals(element.getAttribute("nombre"))){
 					NodeList listaPista = element.getElementsByTagName("pista");
+					//elige aleatoriamente entre las 4 pistas posibles
 					nodo = listaPista.item((int)(Math.floor(Math.random()*4)));
 					pistaLadron = nodo.getTextContent();
 					break;
