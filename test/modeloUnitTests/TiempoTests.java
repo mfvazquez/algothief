@@ -23,12 +23,10 @@ public class TiempoTests {
 		tiempo.reiniciar();
 		assertEquals(tiempo.getHora(), 07);
 		tiempo.consumirTiempo(10);
-		assertEquals(tiempo.getHora(), 17);
-		tiempo.consumirTiempo(12);
-		assertEquals(tiempo.getHora(), 13);
-		tiempo.consumirTiempo(24);
-		assertEquals(tiempo.getHora(), 21);
-		assertEquals(tiempo.getDia(), "Miercoles");
+		for(int i = 7; tiempo.enEspera(); i++){
+			assertEquals(tiempo.getHora(), i);
+			tiempo.esperarUnaHora();
+		}
 	}
 	
 	@Test
@@ -37,22 +35,26 @@ public class TiempoTests {
 		tiempo.reiniciar();
 		assertEquals(tiempo.getDia(), "Lunes");
 		tiempo.consumirTiempo(24);
+		int i = tiempo.getHora();
+		while (tiempo.enEspera()){
+			assertEquals(tiempo.getHora(), i);
+			tiempo.esperarUnaHora();
+			i++;
+			if (i >= 24) i = 0;
+		}
 		assertEquals(tiempo.getDia(), "Martes");
 		tiempo.consumirTiempo(30);
+		i = tiempo.getHora();
+		while (tiempo.enEspera()){
+			assertEquals(tiempo.getHora(), i);
+			tiempo.esperarUnaHora();
+			i++;
+			if (i >= 24) i = 0;
+		}
 		assertEquals(tiempo.getDia(), "Jueves");
 	}
 	
-	@Test
-	public void testAgregarMuchasHoras(){
-		Tiempo tiempo = Tiempo.getInstance();
-		tiempo.reiniciar();
-		tiempo.consumirTiempo(72);
-		assertEquals(tiempo.getDia(), "Jueves");
-		tiempo.consumirTiempo(72);
-		assertEquals(tiempo.getDia(), "Domingo");
-		tiempo.consumirTiempo(45);
-		assertTrue(tiempo.terminoTiempo());
-	}
+	
 	
 	@Test
 	public void testFecha(){
@@ -67,8 +69,19 @@ public class TiempoTests {
 		tiempo.reiniciar();
 		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
 		tiempo.consumirTiempo(16);
+		int i = tiempo.getHora();
+		while (tiempo.enEspera()){
+			assertEquals(tiempo.getHora(), i);
+			tiempo.esperarUnaHora();
+			i++;
+			if (i >= 24) i = 0;
+			if (i >= 23 && i < 7){
+				assertTrue(tiempo.durmiendo());
+			}else{
+				assertFalse(tiempo.durmiendo());
+			}
+		}
 		assertTrue("Martes 7hs".equals(tiempo.fecha()));
-		
 	}
 	
 	

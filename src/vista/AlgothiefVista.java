@@ -8,6 +8,7 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import modelo.*;
 
 
 public class AlgothiefVista extends JFrame{
@@ -16,11 +17,11 @@ public class AlgothiefVista extends JFrame{
 	
 	private JTextArea texto;
 	
+	private Reloj reloj;
+	
 	private JButton botonUsuario;
 	private JButton botonContinuar;
 	private JTextField textbox;
-	
-	private JLabel tiempo;
 	
 	private JButton botonMapa;
 	private JButton botonEdificios;
@@ -39,7 +40,7 @@ public class AlgothiefVista extends JFrame{
 	
 	private JButton botonFinalizar;
 	
-	public AlgothiefVista(){
+	public AlgothiefVista(AlgothiefModelo modelo){
 		panel = new JPanel();
 		setTitle("Algothienf");
         setSize(800, 600);
@@ -47,6 +48,9 @@ public class AlgothiefVista extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().add(panel);
         panel.setLayout(null);
+        
+        reloj = new Reloj(modelo, 300, 5, 200, 25);
+        panel.add(reloj);
         
         // inicio
         texto = new JTextArea();
@@ -61,8 +65,6 @@ public class AlgothiefVista extends JFrame{
         botonContinuar.setBounds(250, 500, 150, 25);
         
         // mision
-        tiempo = new JLabel();
-        tiempo.setBounds(325, 5, 150, 25);
         botonMapa = new JButton("Mapa");
         botonMapa.setBounds(10, 500, 200, 25);
         botonEdificios = new JButton("Edificios");
@@ -198,7 +200,7 @@ public class AlgothiefVista extends JFrame{
 	}
 		
 	private void agregarPanelGeneral(){
-		panel.add(tiempo);
+		panel.add(reloj);
 		panel.add(botonMapa);
 		panel.add(botonEdificios);
 		panel.add(botonOrden);
@@ -209,10 +211,7 @@ public class AlgothiefVista extends JFrame{
 			panel.add(botones.get(i));
 		}
 	}
-	
-	public void setTiempo(String fecha){
-		tiempo.setText(fecha);
-	}
+
 	
 	public void mostrarMapa(List<String> destinos){
 		for (int i = 0; i < destinos.size(); i++){
@@ -285,5 +284,10 @@ public class AlgothiefVista extends JFrame{
 		emitirMensaje(mensaje);
 		panel.add(botonFinalizar);
 		panel.repaint();
+	}
+
+	
+	public boolean enEspera(){
+		return reloj.enEspera();
 	}
 }

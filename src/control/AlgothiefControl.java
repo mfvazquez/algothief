@@ -48,12 +48,12 @@ public class AlgothiefControl {
 	class BotonIniciarMision implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			vista.dibujarPanelGeneral();
-            vista.setTiempo(modelo.getTiempoStr());
 		}
 	}
 	
 	class BotonMapa implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			List<String> destinos = modelo.getCiudadesDestino();
 			vista.mostrarMapa(destinos);
 		}
@@ -61,10 +61,10 @@ public class AlgothiefControl {
 	
 	class BotonCiudad implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			JButton boton = (JButton) e.getSource();
 			String ciudadStr = boton.getText();
 			modelo.viajar(ciudadStr);	
-			vista.setTiempo(modelo.getTiempoStr());
 			if (modelo.tiempoTerminado()){
 				vista.finalizarMision("Se acabo el tiempo");
 				modelo.reiniciar();
@@ -76,23 +76,23 @@ public class AlgothiefControl {
 	
 	class BotonEdificio implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			mostrarEdificios();
 		}
 	}
 	
 	class BotonEntrarEdificio implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			JButton boton = (JButton) e.getSource();
 			String edificioStr = boton.getText();
 			String pista = modelo.visitarEdificio(edificioStr);
 			
-			vista.setTiempo(modelo.getTiempoStr());
 			if (modelo.tiempoTerminado()){
 				vista.finalizarMision("Se acabó el tiempo");
 			}else if(modelo.ladronCapturadoConOrden()){
 				vista.finalizarMision("Ladron Capturado");
 				modelo.reiniciar();
-				vista.setTiempo(modelo.getTiempoStr());
 			}else{
 				vista.mostrarMensaje(pista);
 			}
@@ -101,16 +101,17 @@ public class AlgothiefControl {
 	
 	class BotonOrden implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			vista.menuOrdenDeArresto();
 		}
 	}
 	
 	class BotonBuscar implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
 			String[] caracteristicasLadron = vista.devolverCaracteristicas();
 			String mensaje = modelo.crearOrdenDeArresto(caracteristicasLadron);
 			vista.emitirMensaje(mensaje);
-			vista.setTiempo(modelo.getTiempoStr());
 			if (modelo.tiempoTerminado()){
 				vista.finalizarMision("Se acabo el tiempo");
 				modelo.reiniciar();
