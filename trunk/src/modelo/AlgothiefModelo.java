@@ -109,4 +109,12 @@ public class AlgothiefModelo {
 	public String sexoLadron(){
 		return policia.sexoLadron();
 	}
+	
+	public boolean enEspera(){
+		return Tiempo.getInstance().enEspera();
+	}
+	
+	public void esperarUnaHora(){
+		Tiempo.getInstance().esperarUnaHora();
+	}
 }
