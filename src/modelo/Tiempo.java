@@ -32,8 +32,11 @@ public class Tiempo {
 	}
 	
 	public void consumirTiempo (int tiemp){
-		this.hora = hora + tiemp;
-		this.veoSiDuerme();
+		while (tiemp > 0){
+			this.hora++;
+			tiemp--;
+			this.veoSiDuerme();
+		}
 		this.aumentoDia();
 		this.hora = this.hora % 24;
 		if (this.terminoTiempo()){
@@ -47,7 +50,7 @@ public class Tiempo {
 	}
 	
 	public void veoSiDuerme(){
-		if (this.hora >=23){
+		if (this.hora == 23){
 			this.hora += 8;
 		}
 	}

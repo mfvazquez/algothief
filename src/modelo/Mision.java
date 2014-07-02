@@ -31,4 +31,12 @@ public class Mision {
 		public void crearOrdenDeArresto() {
 			Tiempo.getInstance().consumirTiempo(3);
 		}
+		
+		public String objetoRobadoStr(){
+			return objeto.getObjeto();
+		}
+		
+		public String sexoLadron(){
+			return ladron.getSexo();
+		}
 }
