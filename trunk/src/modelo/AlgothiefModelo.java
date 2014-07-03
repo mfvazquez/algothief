@@ -21,6 +21,7 @@ public class AlgothiefModelo {
 			juego.agregarPolicia(policia);
 		}
 		juego.nuevaMision(policia);
+		System.out.format("misiones completadas %d\n",policia.cantidadMisionesResueltas());
 	}
 	
 	public String getCiudadActual(){

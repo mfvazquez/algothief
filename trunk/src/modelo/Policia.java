@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import modelo.Mision;
 
-public class Policia{
+public class Policia {
 	public String nombre;
 	private int casosResueltos;
 	private Ciudad ciudadActual;
@@ -25,7 +25,7 @@ public class Policia{
 		orden = new OrdenDeArresto();
 	}
 	
-	public String getNombre(){
+	public String getNombre() {
 		return this.nombre;
 	}
 
@@ -38,15 +38,15 @@ public class Policia{
 		this.asignarCiudad(m.ciudadComienzo());
 	}
 	
-	public void asignarCiudad(Ciudad city){
+	public void asignarCiudad(Ciudad city) {
 		ciudadActual = city;
 	}
 	
-	public boolean ciudadAsignada(){
+	public boolean ciudadAsignada() {
 		return ciudadActual != null;
 	}
  	
- 	public void viajarACiudad(Ciudad nuevaCiudad){
+ 	public void viajarACiudad(Ciudad nuevaCiudad) {
  		this.rango.viajarACiudad(this.ciudadActual, nuevaCiudad);
  		this.ciudadActual = nuevaCiudad;
  		
@@ -84,15 +84,15 @@ public class Policia{
 	}
 	
 	@Override
-	public boolean equals(Object objeto){
+	public boolean equals(Object objeto) {
 		Policia otro = (Policia) objeto;
 		return this.nombre.equals(otro.nombre);
 	}
 	
 	
-	public Pista visitarEdificio(Edificio edificio){
+	public Pista visitarEdificio(Edificio edificio) {
 		if (edificiosVisitados < 3){
-			edificiosVisitados = edificiosVisitados + 1;
+			edificiosVisitados++;
 		}
 		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
@@ -104,12 +104,16 @@ public class Policia{
 		return rango.pedirPista(edificio);
 	}
 	
-	public void capturar(Ladron ladron){
+	public void capturar(Ladron ladron) {
 		capturado = ladron;
 		ladron.defenderse();
+		Tiempo tiempo = Tiempo.getInstance();
+		if (ladronCapturadoConOrden() && !tiempo.terminaraUltimoDia()){
+			misionResuelta(true);
+		}
 	}
 	
-	public String armaDelLadron(){
+	public String armaDelLadron() {
 		if (capturado == null) return null;
 		return capturado.getArma();
 	}
@@ -129,7 +133,7 @@ public class Policia{
 		return pist;
 	}*/
 	
-	public boolean ladronCapturado(){
+	public boolean ladronCapturado() {
 		return capturado != null;
 	}
 
@@ -159,11 +163,11 @@ public class Policia{
 		return sospe; 
 	}
 	
-	public Ladron getLadron(){
+	public Ladron getLadron() {
 		return this.capturado;
 	}
 	
-	public String obtenerRangoStr(){
+	public String obtenerRangoStr() {
 		if (rango.esDetective()){
 			return "Detective";
 		}else if (rango.esInvestigador()){
