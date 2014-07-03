@@ -6,7 +6,6 @@ public class Tiempo {
 	private int dia;
 	private static Tiempo INSTANCE = null;
 	private int espera;
-	private boolean durmiendo;
 	
 	private Tiempo(){
 		this.hora=07;
@@ -39,20 +38,19 @@ public class Tiempo {
 	}
 	
 	public void esperarUnaHora(){
-		if (espera == 0) return;
+		if (espera == 0 || this.terminoTiempo()){
+			espera = 0;
+			return;
+		}
 		this.hora++;
 		this.espera--;
 		this.veoSiDuerme();
 		this.aumentoDia();
 		this.hora = this.hora % 24;
-		if (this.terminoTiempo()){
-			hora = 17;
-			dia = 6;
-		}
 	}
 	
 	public boolean durmiendo(){
-		return (this.hora >= 23 || this.hora < 7);
+		return (this.hora > 23 || this.hora < 7);
 	}
 	
 	public boolean enEspera(){
@@ -64,17 +62,16 @@ public class Tiempo {
 	}
 	
 	private void veoSiDuerme(){
-		if (this.hora == 23){
+		if (this.hora > 23){
 			this.consumirTiempo(8);
 		}
 	}
 	
 	public boolean terminoTiempo(){
-		if ((this.dia == 6 && hora >=17) || this.dia > 6){
+		if ((this.dia >= 6 && this.hora >=17) || this.dia > 6){
 			return true;
-		}else{
-			return false;
 		}
+		return false;
 	}
 	
 	public String getDia(){
@@ -86,7 +83,7 @@ public class Tiempo {
 	}
 	
 	public String fecha(){
-		String cadena = this.getDia()+" "+this.getHora()+"hs";
+		String cadena = this.getDia()+" "+this.getHora()+" hs";
 		if (this.durmiendo()) cadena += " - Durmiendo";
 		return cadena;
 	}
@@ -94,5 +91,6 @@ public class Tiempo {
 	public void reiniciar(){
 		dia = 0;
 		hora = 7;
+		espera = 0;
 	}
 }

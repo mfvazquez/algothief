@@ -66,7 +66,7 @@ public class Policia{
 	}
 	
 	public void misionResuelta(boolean atrapoLadron) {
-		if (atrapoLadron) this.casosResueltos = this.casosResueltos +1;
+		if (atrapoLadron) this.casosResueltos++;
 	}
 	
 	@Override
@@ -75,18 +75,27 @@ public class Policia{
 		return this.nombre.equals(otro.nombre);
 	}
 	
+	
 	public Pista visitarEdificio(Edificio edificio){
 		if (edificiosVisitados < 3){
 			edificiosVisitados = edificiosVisitados + 1;
 		}
 		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
-			return this.capturar(edificio.getLadron());
+			this.capturar(edificio.getLadron());
+			return null;
+			//return this.capturar(edificio.getLadron());
 			
 		}
 		return rango.pedirPista(edificio);
 	}
 	
+	public void capturar(Ladron ladron){
+		capturado = ladron;
+	}
+	
+	
+	/*
 	public Pista capturar(Ladron ladron){
 		Pista pist = new PistaFacil();
 		
@@ -97,9 +106,8 @@ public class Policia{
 		else{
 			pist.setPista("Encontraste al ladron: " + ladron.getNombre() + " pero la orden de arresto no es correcta");
 		}
-			
 		return pist;
-	}
+	}*/
 	
 	public boolean ladronCapturado(){
 		return capturado != null;
@@ -156,5 +164,15 @@ public class Policia{
 	
 	public String sexoLadron(){
 		return mision.sexoLadron();
+	}
+	
+	public String nombreLadron(){
+		if (capturado == null) return null;
+		return capturado.getNombre();
+	}
+	
+	public void entregarLadron(){
+		capturado = null;
+		orden = new OrdenDeArresto();
 	}
 }

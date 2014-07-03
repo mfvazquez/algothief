@@ -3,8 +3,6 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.*;
-
 public class AlgothiefModelo {
 
 	private Juego juego;
@@ -12,11 +10,16 @@ public class AlgothiefModelo {
 	
 	public AlgothiefModelo(){
 		juego = new Juego();
+		policia = null;
 	}
 	
 	public void iniciarMision(String nombrePolicia){
-		policia = new Policia("Pedro");
-		juego.agregarPolicia(policia);
+		policia = new Policia(nombrePolicia);
+		if (juego.policiaExistente(policia)){
+			policia = juego.obtenerPolicia(nombrePolicia);
+		}else{
+			juego.agregarPolicia(policia);
+		}
 		juego.nuevaMision(policia);
 	}
 	
@@ -78,6 +81,7 @@ public class AlgothiefModelo {
 	public String visitarEdificio(String edificioStr){
 		Edificio edificio = getEdificio(edificioStr);
 		Pista pista = policia.visitarEdificio(edificio);
+		if (pista == null) return null;
 		return pista.getPista();
 	}
 	
@@ -96,6 +100,7 @@ public class AlgothiefModelo {
 	public void reiniciar(){
 		Tiempo.getInstance().reiniciar();
 		Mapa.getInstance().reiniciar();
+		policia.entregarLadron();
 	}
 	
 	public String objetoRobado(){
@@ -116,5 +121,17 @@ public class AlgothiefModelo {
 	
 	public void esperarUnaHora(){
 		Tiempo.getInstance().esperarUnaHora();
+	}
+	
+	public boolean ladronCapturado(){
+		return policia.ladronCapturado();
+	}
+	
+	public String nombreLadronCapturado(){
+		return policia.nombreLadron();
+	}
+	
+	public void aumentarCasosResueltos(){
+		policia.misionResuelta(true);
 	}
 }
