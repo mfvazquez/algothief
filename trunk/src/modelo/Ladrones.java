@@ -76,6 +76,7 @@ public class Ladrones {
 
 	public ArrayList<Ladron> getLadronesConCaracteristicas(String sexo,
 			String hobby, String cabello, String senia, String vehiculo) {
+		@SuppressWarnings("unchecked")
 		ArrayList<Ladron> sospechosos = (ArrayList<Ladron>) this.ladrones.clone();
 		
 		if (!(sexo.equals(""))){
