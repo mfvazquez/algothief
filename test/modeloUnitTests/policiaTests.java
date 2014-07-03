@@ -1,8 +1,14 @@
 package modeloUnitTests;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.junit.Test;
+import org.w3c.dom.DOMException;
+import org.xml.sax.SAXException;
 
 import static org.junit.Assert.*;
 import modelo.*;
@@ -34,14 +40,6 @@ public class policiaTests {
 		assertEquals(poli1, poli2);
 	}
 	
-	@Test
-	public void dormirTest(){
-		Policia poli = new Policia("Carlos");
-		Tiempo.getInstance().reiniciar();
-		assertEquals("Lunes 7hs", Tiempo.getInstance().fecha());
-		poli.dormir();
-		assertEquals("Lunes 15hs", Tiempo.getInstance().fecha());
-	}
 	
 	@Test
 	public void crearOdenDeArrestoTest(){
@@ -53,7 +51,20 @@ public class policiaTests {
 		sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "Negro", "", "");
 		assertEquals("Se emitio una orden de arresto para: Nick Brunch", sospechoso);
 	
-		
 	}
+	
+	/*@Test
+	public void guardarTest(){
+		Policia poli = new Policia("pepe");
+		
+		try {
+			poli.guardarPolicia();
+		} catch (DOMException | IOException | ParserConfigurationException
+				| TransformerException e) {
+					e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		}
+	}*/
 	
 }

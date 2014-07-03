@@ -9,7 +9,7 @@ public class AlgothiefModelo {
 	private Policia policia;
 	
 	public AlgothiefModelo(){
-		juego = new Juego();
+		juego = Juego.cargarJuego();
 		policia = null;
 	}
 	
@@ -102,6 +102,7 @@ public class AlgothiefModelo {
 		Tiempo.getInstance().reiniciar();
 		Mapa.getInstance().reiniciar();
 		policia.entregarLadron();
+		
 	}
 	
 	public String objetoRobado(){

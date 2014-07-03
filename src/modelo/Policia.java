@@ -1,7 +1,26 @@
 package modelo;
 
+import java.io.File;
+import java.io.IOException;
 import java.lang.String;
 import java.util.ArrayList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import modelo.Mision;
 
@@ -14,6 +33,12 @@ public class Policia {
 	private RangoStrategy rango;
 	private Ladron capturado;
 	private int edificiosVisitados;
+	
+	public Policia(String nom, int casosResueltos){
+		this.nombre = nom;
+		this.casosResueltos = casosResueltos;
+		this.definirRango();
+	}
 
 	public Policia(String n) {
 		nombre = n;
@@ -137,9 +162,6 @@ public class Policia {
 		return capturado != null;
 	}
 
-	public void dormir() {
-		Tiempo.getInstance().consumirTiempo(8);
-	}
 
 	public String crearOrdenDeArresto(String sexo, String hobby,
 			String cabello, String senia, String vehiculo) {
@@ -200,4 +222,62 @@ public class Policia {
 		orden = new OrdenDeArresto();
 	}
 	
+/*	public void guardarPolicia()throws IOException, ParserConfigurationException, DOMException, TransformerException, SAXException {
+		
+		
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = factory.newDocumentBuilder();
+		
+		File archivo = new File("recursos/persistencia.xml");
+		
+		if (!archivo.exists()){
+			Document doc = db.newDocument();
+			Element element = doc.createElement("policia");
+			element.setAttribute("nombre", this.nombre);
+			element.setAttribute("casosResueltos", Integer.toString(this.casosResueltos));
+		
+			doc.appendChild(element);
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(doc);
+			StreamResult result = new StreamResult(archivo);
+			transformer.transform(source, result);
+		}
+		else {
+			Document doc = db.parse(archivo);
+			NodeList nList = doc.getElementsByTagName("policia");
+			Boolean existe = false;
+			int i= 0;
+			while (i<nList.getLength() && !existe){
+				if(this.nombre.equals(((Element)nList.item(i)).getAttribute("nombre"))){
+					existe= true;
+				}
+				else{
+					i ++;
+				}
+			}
+			if (!existe){
+			Element element = doc.createElement("policia");
+			element.setAttribute("nombre", this.nombre);
+			element.setAttribute("casosResueltos", Integer.toString(this.casosResueltos));
+			doc.appendChild(element);
+			}
+		}
+	}*/
+
+	public Element toXml(Document doc){
+		Element element = doc.createElement("policia");
+		element.setAttribute("nombre", this.nombre);
+		element.setAttribute("casosResueltos", Integer.toString(this.casosResueltos));
+		
+		return element;
+	}
+	public static Policia cargar(Node elementoPolicia) {
+		String nom = ((Element)elementoPolicia).getAttribute("nombre");
+		int casos = Integer.parseInt(((Element)elementoPolicia).getAttribute("casosResueltos"));
+		
+		Policia poli = new Policia(nom,casos);
+		
+		return poli;
+	}
 }
