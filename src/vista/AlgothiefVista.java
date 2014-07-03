@@ -124,7 +124,7 @@ public class AlgothiefVista extends JFrame{
         botonBuscar.setBounds(575,425, 200, 25 );
         
         botonFinalizar = new JButton("Finalizar");
-        botonFinalizar.setBounds(450,290,100,50);
+        botonFinalizar.setBounds(40, 500, 200, 25);
 	}
 	
 	public void mostrar(){
