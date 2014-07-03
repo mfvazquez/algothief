@@ -1,5 +1,6 @@
 package modelo;
 
+
 public class RangoNovatoStrategy implements RangoStrategy {
 	
 	private int velocidad = 900;
@@ -54,5 +55,6 @@ public class RangoNovatoStrategy implements RangoStrategy {
 	public boolean nivelObjetoRobadoCorrecto(ObjetoRobado objeto) {
 		return objeto.esObjetoComun();
 	}
+
 
 }
