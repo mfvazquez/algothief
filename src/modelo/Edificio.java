@@ -54,7 +54,8 @@ public abstract class Edificio {
 		return ladron;
 	}
 	
-	public String obtenerNombre(){
+	public String getTipo(){
 		return tipo;
-	}	
+	}
+	
 }

@@ -13,13 +13,13 @@ import modelo.*;
 public class juegoTest {
 
 	@Test
-	public void crearJuegoTest() {
+	public void crearJuegoTest() throws MapaSeQuedoSinCiudades {
 		Juego juego= new Juego();
 		assertTrue(juego.cantidadPolicias() == 0);
 	}
 	
 	@Test
-	public void agregarPoliciaTest(){
+	public void agregarPoliciaTest() throws MapaSeQuedoSinCiudades{
 		Policia poli = new Policia("Pepe");
 		Juego juego = new Juego();
 		juego.agregarPolicia(poli);
@@ -27,7 +27,7 @@ public class juegoTest {
 	}
 	
 	@Test
-	public void guardar() throws ParserConfigurationException{
+	public void guardar() throws ParserConfigurationException, MapaSeQuedoSinCiudades{
 		Policia poli = new Policia("pepe");
 		Juego jue = Juego.cargarJuego();
 		jue.agregarPolicia(poli);

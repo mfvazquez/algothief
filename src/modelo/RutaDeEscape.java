@@ -13,9 +13,15 @@ public class RutaDeEscape {
 		
 		for(int i = 0; i < rango.cantidadCiudadesRutaDeEscape(); i++){
 			ciudades.add(actual);
-			List<Ciudad> destinos = Mapa.getInstance().ciudadesDestino(actual);
-			Double subindice = Math.floor(Math.random()*destinos.size());
-			actual = destinos.get(subindice.intValue());
+			List<Ciudad> destinos;
+			try {
+				destinos = Mapa.getInstance().ciudadesDestino(actual);
+				Double subindice = Math.floor(Math.random()*destinos.size());
+				actual = destinos.get(subindice.intValue());
+			} catch (MapaSeQuedoSinCiudades e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		this.generarPistas(ladron);
 	}

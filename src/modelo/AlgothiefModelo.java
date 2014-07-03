@@ -11,8 +11,13 @@ public class AlgothiefModelo {
 	private Juego juego;
 	private Policia policia;
 	
-	public AlgothiefModelo(){
-		juego = Juego.cargarJuego();
+	public AlgothiefModelo() throws ErrorAlCrearElJuego{
+		try {
+			juego = Juego.cargarJuego();
+		} catch (MapaSeQuedoSinCiudades e) {
+			// TODO Auto-generated catch block
+			throw new ErrorAlCrearElJuego("Faltan Ciudades en ciudades.xml");
+		}
 		policia = null;
 	}
 	
@@ -34,20 +39,26 @@ public class AlgothiefModelo {
 	
 	public List<String> getCiudadesDestino(){
 		Ciudad actual = policia.obtenerCiudadActual();
-		List<Ciudad> destinos = Mapa.getInstance().ciudadesAdyacentes(actual);
+		List<Ciudad> destinos;
 		ArrayList<String> destinosStr = new ArrayList<String>();
-		for (int i = 0; i < destinos.size(); i++){
-			destinosStr.add(destinos.get(i).getNombre());
+		try {
+			destinos = Mapa.getInstance().ciudadesAdyacentes(actual);	
+			for (int i = 0; i < destinos.size(); i++){
+				destinosStr.add(destinos.get(i).getNombre());
+			}
+		} catch (MapaSeQuedoSinCiudades e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return destinosStr;
+		return destinosStr;		
 	}
 	
 	public List<String> getEdificios(){
 		ArrayList<String> lista = new ArrayList<String>();
 		Ciudad ciudad = policia.obtenerCiudadActual();
-		lista.add(ciudad.getAeropuerto().obtenerNombre());
-		lista.add(ciudad.getBanco().obtenerNombre());
-		lista.add(ciudad.getBiblioteca().obtenerNombre());
+		lista.add(ciudad.getAeropuerto().getTipo());
+		lista.add(ciudad.getBanco().getTipo());
+		lista.add(ciudad.getBiblioteca().getTipo());
 		return lista;
 	}
 	
@@ -61,13 +72,13 @@ public class AlgothiefModelo {
 	
 	private Edificio getEdificio(String nombre){
 		Ciudad actual = policia.obtenerCiudadActual();
-		if (nombre == actual.getAeropuerto().obtenerNombre()){
+		if (nombre == actual.getAeropuerto().getTipo()){
 			return actual.getAeropuerto();
 		}
-		if (nombre == actual.getBiblioteca().obtenerNombre()){
+		if (nombre == actual.getBiblioteca().getTipo()){
 			return actual.getBiblioteca();
 		}
-		if (nombre == actual.getBanco().obtenerNombre()){
+		if (nombre == actual.getBanco().getTipo()){
 			return actual.getBanco();
 		}
 		return null;
@@ -122,7 +133,14 @@ public class AlgothiefModelo {
 	}
 	
 	public String ciudadInicio(){
-		return juego.ciudadInicioStr();
+		String aux = null;
+		try {
+			aux =  juego.ciudadInicioStr();
+		} catch (MapaSeQuedoSinCiudades e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return aux;
 	}
 	
 	public String sexoLadron(){
