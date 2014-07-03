@@ -109,7 +109,6 @@ public class AlgothiefControl {
 			if(modelo.ladronCapturadoConOrden()){
 				String mensaje = "Felicidades. Has capturado a " + modelo.nombreLadronCapturado() + " ";
 				vista.finalizarMision(mensaje);
-				//modelo.aumentarCasosResueltos();
 				modelo.reiniciar();
 			}else if(modelo.ladronCapturado()){
 				String mensaje = "Has capturado a " + modelo.nombreLadronCapturado() + " pero no tienes una orden de arresto. No podemos arrestarlo.";
