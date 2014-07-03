@@ -66,7 +66,21 @@ public class Policia{
 	}
 	
 	public void misionResuelta(boolean atrapoLadron) {
-		if (atrapoLadron) this.casosResueltos++;
+		if (atrapoLadron) {
+			this.casosResueltos++;
+			this.definirRango();
+		}
+	}
+	
+	public void definirRango() {
+		if (this.casosResueltos <5) 
+			this.rango = new RangoNovatoStrategy();
+		else if (5 <= this.casosResueltos && this.casosResueltos < 10)
+			this.rango = new RangoDetectiveStrategy();
+		else if (10 <= this.casosResueltos && this.casosResueltos < 20)
+			this.rango = new RangoInvestigadorStrategy();
+		else if (20 <= this.casosResueltos)
+			this.rango = new RangoSargentoStrategy();
 	}
 	
 	@Override
