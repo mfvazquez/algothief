@@ -43,7 +43,7 @@ public class AlgothiefVista extends JFrame{
 	
 	public AlgothiefVista(AlgothiefModelo modelo){
 		panel = new JPanel();
-		setTitle("Algothienf");
+		setTitle("Algothief");
         setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
