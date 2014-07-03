@@ -3,6 +3,9 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 public class AlgothiefModelo {
 
 	private Juego juego;
@@ -99,6 +102,15 @@ public class AlgothiefModelo {
 	}
 	
 	public void reiniciar(){
+		try {
+			juego.guardarJuego();
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Tiempo.getInstance().reiniciar();
 		Mapa.getInstance().reiniciar();
 		policia.entregarLadron();
