@@ -1,20 +1,26 @@
-package vista;
+package control;
 
 
 import javax.swing.JLabel;
 import modelo.*;
+import vista.*;
 
 public class Reloj extends JLabel implements Runnable {
 	
 	private static final long serialVersionUID = 1L;
 	Thread hilo;
 	private AlgothiefModelo modelo;
-
-	public Reloj(AlgothiefModelo m, int x, int y, int p, int p1) {
+	private AlgothiefVista vista;
+	private final Object lock = new Object();
+	private boolean continuar;
+	
+	public Reloj(AlgothiefModelo m, AlgothiefVista v, int x, int y, int p, int p1) {
 		modelo = m;
+		vista = v;
 		setBounds(x, y, p, p1);
 		hilo = new Thread(this);
 		hilo.start();
+		continuar = true;
 	}
 
 	@ Override
@@ -23,7 +29,9 @@ public class Reloj extends JLabel implements Runnable {
 		while (ct == hilo) {
 			try {
 				actualiza();
-				
+				synchronized (lock) {
+					if (!continuar) return;
+				}
 				setText(modelo.getTiempoStr());
 				
 				Thread.sleep(300);
@@ -35,12 +43,19 @@ public class Reloj extends JLabel implements Runnable {
 	
 	}
 	
-	
 	public void actualiza() {
 		modelo.esperarUnaHora();
+		if (modelo.tiempoTerminado()){
+			vista.finalizarMision("Superaste el limite de tiempo. Has perdido el rastro del ladron.");
+			modelo.reiniciar();
+			synchronized (lock) {
+				continuar = false;
+			}
+		}
 	}
 	
 	public boolean enEspera(){
 		return modelo.enEspera();
 	}
+	
 } 

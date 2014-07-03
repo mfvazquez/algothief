@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.*;
+import control.*;
 
 
 public class AlgothiefVista extends JFrame{
@@ -49,8 +50,7 @@ public class AlgothiefVista extends JFrame{
 		getContentPane().add(panel);
         panel.setLayout(null);
         
-        reloj = new Reloj(modelo, 300, 5, 200, 25);
-        panel.add(reloj);
+        reloj = null;
         
         // inicio
         texto = new JTextArea();
@@ -66,11 +66,11 @@ public class AlgothiefVista extends JFrame{
         
         // mision
         botonMapa = new JButton("Mapa");
-        botonMapa.setBounds(10, 500, 200, 25);
+        botonMapa.setBounds(50, 500, 200, 25);
         botonEdificios = new JButton("Edificios");
-    	botonEdificios.setBounds(220, 500, 200, 25);
+    	botonEdificios.setBounds(300, 500, 200, 25);
         botonOrden = new JButton("Orden de Arresto");
-    	botonOrden.setBounds(430, 500, 200, 25);
+    	botonOrden.setBounds(550, 500, 200, 25);
         
         // ciudades
     	ImageIcon icon = new ImageIcon("recursos/mapa.png");
@@ -125,6 +125,11 @@ public class AlgothiefVista extends JFrame{
         
         botonFinalizar = new JButton("Finalizar");
         botonFinalizar.setBounds(40, 500, 200, 25);
+	}
+	
+	public void setReloj(Reloj r){
+		reloj = r;
+		panel.add(reloj);
 	}
 	
 	public void mostrar(){

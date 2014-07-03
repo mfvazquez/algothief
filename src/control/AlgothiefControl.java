@@ -46,6 +46,8 @@ public class AlgothiefControl {
 	
 	class BotonIniciarMision implements ActionListener{
 		public void actionPerformed(ActionEvent e){
+			Reloj reloj = new Reloj(modelo,vista, 300, 5, 200, 25);
+			vista.setReloj(reloj);
 			vista.dibujarPanelGeneral();
 		}
 	}
