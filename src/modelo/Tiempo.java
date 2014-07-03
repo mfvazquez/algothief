@@ -93,4 +93,8 @@ public class Tiempo {
 		hora = 7;
 		espera = 0;
 	}
+	
+	public boolean terminaraUltimoDia(){
+		return (dia >= 6 && hora + espera >= 17);
+	}
 }
