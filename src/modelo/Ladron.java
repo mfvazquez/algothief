@@ -17,7 +17,6 @@ public class Ladron {
 	private String cabello;
 	private String senia;
 	private String vehiculo;
-    private RutaDeEscape ruta;
     private Armas armas;
     
 
@@ -39,11 +38,6 @@ public class Ladron {
     	this.senia = senia;
     	this.vehiculo = vehiculo;
     	armas = new Armas();
-    }
-    
-    public Ladron(RutaDeEscape r) {
-    //La ruta la crea la mision que conoce el rango del policía
-    	this.ruta = r;
     }
     
     public String getNombre(){
