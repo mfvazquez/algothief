@@ -106,6 +106,12 @@ public class Policia{
 	
 	public void capturar(Ladron ladron){
 		capturado = ladron;
+		ladron.defenderse();
+	}
+	
+	public String armaDelLadron(){
+		if (capturado == null) return null;
+		return capturado.getArma();
 	}
 	
 	
@@ -189,4 +195,5 @@ public class Policia{
 		capturado = null;
 		orden = new OrdenDeArresto();
 	}
+	
 }

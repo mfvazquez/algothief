@@ -18,6 +18,8 @@ public class Ladron {
 	private String senia;
 	private String vehiculo;
     private RutaDeEscape ruta;
+    private Armas armas;
+    
 
     public Ladron(){
     	nombre = new String();
@@ -26,6 +28,7 @@ public class Ladron {
     	cabello = new String();
     	senia = new String();
     	vehiculo = new String();
+    	armas = new Armas();
     }
     
     public Ladron(String nombre, String sexo, String hobby, String cabello, String senia, String vehiculo){
@@ -35,6 +38,7 @@ public class Ladron {
     	this.cabello = cabello;
     	this.senia = senia;
     	this.vehiculo = vehiculo;
+    	armas = new Armas();
     }
     
     public Ladron(RutaDeEscape r) {
@@ -102,5 +106,13 @@ public class Ladron {
 		return pistaLadron;
 	}
 
+	public void defenderse(){
+		int demora = armas.getDemora();
+		Tiempo.getInstance().consumirTiempo(demora);
+	}
+	
+	public String getArma(){
+		return armas.getArma();
+	}
 
 }

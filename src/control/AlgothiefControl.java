@@ -26,6 +26,7 @@ public class AlgothiefControl {
 		vista.botonOrdenDeArresto(new BotonOrden());
 		vista.botonBuscar(new BotonBuscar());
 		vista.botonFinalizar(new BotonFinalizar());
+		vista.botonCapturar(new BotonCapturar());
 	}
 	
 	class BotonUsuario implements ActionListener{
@@ -90,20 +91,34 @@ public class AlgothiefControl {
 			String pista = modelo.visitarEdificio(edificioStr);
 			
 			if (modelo.tiempoTerminado()){
-				vista.finalizarMision("Superaste el limite de tiempo. Has perdido el rastro del ladron.");
-				modelo.reiniciar();
-			}else if(modelo.ladronCapturadoConOrden()){
-				vista.finalizarMision("Felicidades. Has capturado a " + modelo.nombreLadronCapturado() + " ");
-				modelo.aumentarCasosResueltos();
+				String mensaje = "Superaste el limite de tiempo. Has perdido el rastro del ladron.";
+				vista.finalizarMision(mensaje);
 				modelo.reiniciar();
 			}else if(modelo.ladronCapturado()){
-				vista.finalizarMision("Has capturado a " + modelo.nombreLadronCapturado() + " pero no tienes una orden de arresto. No podemos arrestarlo.");
-				modelo.reiniciar();
+				String direccion = "recursos/"+modelo.armaLadron()+".png";
+				vista.capturarLadron(direccion);
 			}else{
 				vista.mostrarMensaje(pista);
 			}
 		}
 	}
+	
+	class BotonCapturar implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			if (vista.enEspera()) return;
+			if(modelo.ladronCapturadoConOrden()){
+				String mensaje = "Felicidades. Has capturado a " + modelo.nombreLadronCapturado() + " ";
+				vista.finalizarMision(mensaje);
+				modelo.aumentarCasosResueltos();
+				modelo.reiniciar();
+			}else if(modelo.ladronCapturado()){
+				String mensaje = "Has capturado a " + modelo.nombreLadronCapturado() + " pero no tienes una orden de arresto. No podemos arrestarlo.";
+				vista.finalizarMision(mensaje);
+				modelo.reiniciar();
+			}
+		}
+	}
+	
 	
 	class BotonOrden implements ActionListener{
 		public void actionPerformed(ActionEvent e){
