@@ -45,9 +45,9 @@ public class AlgothiefModelo {
 	public List<String> getEdificios(){
 		ArrayList<String> lista = new ArrayList<String>();
 		Ciudad ciudad = policia.obtenerCiudadActual();
-		lista.add(ciudad.getAeropuerto().getTipo());
-		lista.add(ciudad.getBanco().getTipo());
-		lista.add(ciudad.getBiblioteca().getTipo());
+		lista.add(ciudad.getAeropuerto().obtenerNombre());
+		lista.add(ciudad.getBanco().obtenerNombre());
+		lista.add(ciudad.getBiblioteca().obtenerNombre());
 		return lista;
 	}
 	
@@ -61,13 +61,13 @@ public class AlgothiefModelo {
 	
 	private Edificio getEdificio(String nombre){
 		Ciudad actual = policia.obtenerCiudadActual();
-		if (nombre == actual.getAeropuerto().getTipo()){
+		if (nombre == actual.getAeropuerto().obtenerNombre()){
 			return actual.getAeropuerto();
 		}
-		if (nombre == actual.getBiblioteca().getTipo()){
+		if (nombre == actual.getBiblioteca().obtenerNombre()){
 			return actual.getBiblioteca();
 		}
-		if (nombre == actual.getBanco().getTipo()){
+		if (nombre == actual.getBanco().obtenerNombre()){
 			return actual.getBanco();
 		}
 		return null;

@@ -56,11 +56,5 @@ public abstract class Edificio {
 	
 	public String obtenerNombre(){
 		return tipo;
-	}
-
-	public String getTipo() {
-		
-		return this.tipo;
-	}
-	
+	}	
 }
