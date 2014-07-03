@@ -20,13 +20,13 @@ import org.w3c.dom.NodeList;
 public class Juego {
 	private ArrayList<Policia> policias;
 	
-	public Juego(){
+	public Juego() throws MapaSeQuedoSinCiudades{
 		policias = new ArrayList<Policia>();
 	    Ladrones.getInstance();
 	    Mapa.getInstance();
 	}
 	
-	public Juego(ArrayList<Policia> polis){
+	public Juego(ArrayList<Policia> polis) throws MapaSeQuedoSinCiudades{
 		this.policias = polis;
 		Ladrones.getInstance();
 		Mapa.getInstance();
@@ -59,7 +59,7 @@ public class Juego {
 	    return mision;
 	}
 	
-	public String ciudadInicioStr(){
+	public String ciudadInicioStr() throws MapaSeQuedoSinCiudades{
 		return Mapa.getInstance().verCiudadInicial().getNombre();
 	}
 
@@ -82,7 +82,7 @@ public class Juego {
 		StreamResult result = new StreamResult(archivo);
 		transformer.transform(source, result);
 	}
-	public static Juego cargarJuego(){
+	public static Juego cargarJuego() throws MapaSeQuedoSinCiudades{
 		ArrayList<Policia> listaPolicias = new ArrayList<Policia>();
 		try {
 			File fXmlFile = new File("recursos/persistencia.xml");

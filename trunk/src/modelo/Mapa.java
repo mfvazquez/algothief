@@ -44,7 +44,7 @@ public class Mapa {
 	    return INSTANCE;
 	}
 		
-	public List<Ciudad> ciudadesAdyacentes(Ciudad ciudad){
+	public List<Ciudad> ciudadesAdyacentes(Ciudad ciudad) throws MapaSeQuedoSinCiudades{
 		List<Ciudad> adyacentes = this.ciudadesDestino(ciudad);
 		Ciudad anterior = arbol.verPadre(ciudad);
 		if (anterior != null) adyacentes.add(anterior);
@@ -55,7 +55,7 @@ public class Mapa {
 		return arbol.verRaiz();
 	}
 	
-	public List<Ciudad> ciudadesDestino(Ciudad ciudad){
+	public List<Ciudad> ciudadesDestino(Ciudad ciudad) throws MapaSeQuedoSinCiudades{
 		List<Ciudad> destinos = arbol.verHijos(ciudad);
 		if (destinos == null) return null;
 		if (destinos.isEmpty()){
@@ -113,10 +113,16 @@ public class Mapa {
 		Ciudad raiz = ciudades.remove(subindice.intValue());
 		referencias.put(raiz.getNombre(), raiz);
 		arbol = new Arbol<Ciudad>(raiz);
-		this.agregarDestinos(cantHijos + 1, raiz);
+		try {
+			this.agregarDestinos(cantHijos + 1, raiz);
+		} catch (MapaSeQuedoSinCiudades e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	private void agregarDestinos(int cantidad, Ciudad origen){
+	private void agregarDestinos(int cantidad, Ciudad origen)throws MapaSeQuedoSinCiudades{
+		if (ciudades.size() == 0) throw new MapaSeQuedoSinCiudades("Faltan Ciudades en ciudades.xml");
 		for (int i = 0; i < cantidad && ciudades.size() > 0; i++){
 			Double subindice = Math.floor(Math.random()*ciudades.size());
 			Ciudad hijo = ciudades.remove(subindice.intValue());
