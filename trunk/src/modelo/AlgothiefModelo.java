@@ -134,4 +134,9 @@ public class AlgothiefModelo {
 	public void aumentarCasosResueltos(){
 		policia.misionResuelta(true);
 	}
+	
+	public String armaLadron(){
+		return policia.armaDelLadron();
+	}
+	
 }

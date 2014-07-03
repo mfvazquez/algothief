@@ -32,10 +32,13 @@ public class AlgothiefVista extends JFrame{
 	private JLabel mapaImagen;
 	
 	private ArrayList<JButton> edificios;
+	private JLabel testigoImagen;
 	
 	private ArrayList<JLabel> tipoCaracteristica;
 	private ArrayList<JComboBox<String>> caracteristicas;
 	private JButton botonBuscar;
+	
+	private JButton botonCapturar;
 	
 	private JTextArea mensaje;
 	
@@ -73,21 +76,21 @@ public class AlgothiefVista extends JFrame{
     	botonOrden.setBounds(550, 500, 200, 25);
         
         // ciudades
-    	ImageIcon icon = new ImageIcon("recursos/mapa.png");
-    	Image img = icon.getImage();
-    	Image aux = img.getScaledInstance(600, 400, Image.SCALE_SMOOTH);
-		mapaImagen = new JLabel(new ImageIcon(aux));
-		mapaImagen.setBounds(20,50,600,400);
-    	
+    	mapaImagen = cargarImagen("recursos/mapa.png", 600, 400);
+		mapaImagen.setBounds(20,50,600,400);    	
+		
     	ciudades = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
-        	boton.setBounds(625, 50+150*i, 150, 25);
+        	boton.setBounds(625, 50+187*i, 150, 25);
         	ciudades.add(boton);
         }
         
         // edificios
-    	edificios = new ArrayList<JButton>();
+    	testigoImagen = cargarImagen("recursos/testigo.png", 300, 400);
+        testigoImagen.setBounds(400,40,400,450);    	
+        
+        edificios = new ArrayList<JButton>();
         for (int i = 0; i < 3; i++){
         	JButton boton = new JButton();
         	boton.setBounds(575, 50+150*i, 200, 25);
@@ -125,6 +128,17 @@ public class AlgothiefVista extends JFrame{
         
         botonFinalizar = new JButton("Finalizar");
         botonFinalizar.setBounds(40, 500, 200, 25);
+        
+        botonCapturar = new JButton("Capturar");
+        botonCapturar.setBounds(350, 525, 100, 25);
+
+	}
+	
+	public JLabel cargarImagen(String direccion, int ancho, int alto){
+		ImageIcon icon = new ImageIcon(direccion);
+    	Image img = icon.getImage();
+    	Image aux = img.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+		return new JLabel(new ImageIcon(aux));    	
 	}
 	
 	public void setReloj(Reloj r){
@@ -138,6 +152,10 @@ public class AlgothiefVista extends JFrame{
 	
 	public void botonUsuario(ActionListener accion){
 		botonUsuario.addActionListener(accion);
+	}
+	
+	public void botonCapturar(ActionListener accion){
+		botonCapturar.addActionListener(accion);
 	}
 	
 	public void botonContinuar(ActionListener accion){
@@ -246,6 +264,7 @@ public class AlgothiefVista extends JFrame{
 		mensaje.setText(mensajeStr);
 		panel.removeAll();
 		agregarPanelGeneral();
+		panel.add(testigoImagen);
 		panel.add(mensaje);
 		panel.repaint();
 	}
@@ -291,6 +310,15 @@ public class AlgothiefVista extends JFrame{
 		panel.repaint();
 	}
 
+	public void capturarLadron(String imagenDir){
+		panel.removeAll();
+		panel.add(reloj);
+		JLabel armaImagen = cargarImagen(imagenDir, 600, 400);
+        armaImagen.setBounds(100,100,600,400);
+        panel.add(armaImagen);
+		panel.add(botonCapturar);
+		panel.repaint();
+	}
 	
 	public boolean enEspera(){
 		return reloj.enEspera();
