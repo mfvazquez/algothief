@@ -1,4 +1,4 @@
-<project name="tp-final-algo3" basedir="." default="test">
+<project name="tp-final-algo3" basedir="." default="ejecutar.aplicacion">
 	<property name="build" location="build" />
 	<property name="libs" location="libs" />
 	<property name="classes.dir" location="build" />
@@ -10,7 +10,7 @@
 	<property name="src.dir" location="src" />
 	<property name="coverage.xml.dir" location="${reports.dir}/cobertura-xml" />
 	<property name="coverage.summaryxml.dir" location="${reports.dir}/cobertura-summary-xml" />
-	<property name="coverage.html.dir" location="${reports.dir}/cobertura-html" />
+	<property name="coverage.html.dir" location="${reports.dir}/cobertura-html" />	   
 
 	<path id="classpath">
 		<fileset dir="${libs}">
@@ -36,20 +36,20 @@
 	</target>
 
 	<target name="compilar.aplicacion" depends="setup">
-		<javac srcdir="src" destdir="${build}" includeantruntime="false" debug="yes" target="1.6">
+		<javac srcdir="src" destdir="${build}" includeantruntime="false" debug="yes" target="1.7">
+			<classpath refid="classpath" />
 		</javac>
 	</target>
 	
 	<target name="compilar.tests" depends="instrumentar.aplicacion">
-		<javac srcdir="test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.6">
+		<javac srcdir="test" destdir="${build}/tests" includeantruntime="false" debug="yes" target="1.7">
 			<classpath refid="classpath" />
 		</javac>
 	</target>
 
-
 	<target name="ejecutar.tests" depends="compilar.tests">
-		<junit fork="yes" failureProperty="test.failure"  forkmode="once">
-			<!-- <classpath refid="classpath" /> -->
+<!--		<junit fork="yes" failureProperty="test.failure"  forkmode="once">
+			 <classpath refid="classpath" /> 
 			<sysproperty key="net.sourceforge.cobertura.datafile"
 					file="${build}/cobertura.ser" />
 			<classpath location="${instrumented.dir}" />
@@ -68,7 +68,7 @@
 				<include name="TEST-*.xml" />
 			</fileset>
 			<report format="frames" todir="${reports.html.dir}" />
-		</junitreport>
+		</junitreport> -->
 	</target>
 
 	<taskdef classpathref="cobertura.classpath" resource="tasks.properties"/>
@@ -124,14 +124,26 @@
 	<target name="test" depends="ejecutar.tests, coverage-report, alternate-coverage-report" description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
 	<target name="compilar.paquete" depends="test">
-		<javac srcdir="src" destdir="${build}/classes" debug="no"></javac>
-	</target>
-
-	<target name="empaquetar" depends="compilar.paquete">
-		<jar destfile="${build}/dist/titiritero.jar" basedir="${build}/classes"/>
+		<javac srcdir="src" destdir="${build}/classes" debug="no">
+			<classpath refid="classpath" />
+		</javac>
 	</target>
 
 	<target name="integracion-continua" depends="coverage-report" description="Ejecuta todas las tareas de integracion y genera los correspondientes reportes"/>
 
 
+	<target name="empaquetar" depends="compilar.paquete">
+	<copydir src="recursos"
+	dest="${build}/classes/Vista/imagenes"
+	includes="**/*.png " />
+	<jar destfile="${build}/dist/GPS.jar" basedir="${build}/classes"/>
+	</target>
+
+	<target name="ejecutar.aplicacion" depends="empaquetar">
+	<java classname="${build}/main/AlgoThief" fork="true">
+	<classpath refid="classpath"/>
+<!--	<classpath location="${build}/dist/GPS.jar" /> -->
+	</java>
+	</target>
+		
 </project>
