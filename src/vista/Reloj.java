@@ -6,6 +6,7 @@ import modelo.*;
 
 public class Reloj extends JLabel implements Runnable {
 	
+	private static final long serialVersionUID = 1L;
 	Thread hilo;
 	private AlgothiefModelo modelo;
 
@@ -25,7 +26,7 @@ public class Reloj extends JLabel implements Runnable {
 				
 				setText(modelo.getTiempoStr());
 				
-				Thread.sleep(500);
+				Thread.sleep(300);
 			} catch (InterruptedException ex) {
 				System.out.println(ex.getMessage());
 			}

@@ -4,7 +4,6 @@ import vista.*;
 import modelo.*;
 
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -89,9 +88,14 @@ public class AlgothiefControl {
 			String pista = modelo.visitarEdificio(edificioStr);
 			
 			if (modelo.tiempoTerminado()){
-				vista.finalizarMision("Se acabó el tiempo");
+				vista.finalizarMision("Superaste el limite de tiempo. Has perdido el rastro del ladron.");
+				modelo.reiniciar();
 			}else if(modelo.ladronCapturadoConOrden()){
-				vista.finalizarMision("Ladron Capturado");
+				vista.finalizarMision("Felicidades. Has capturado a " + modelo.nombreLadronCapturado() + " ");
+				modelo.aumentarCasosResueltos();
+				modelo.reiniciar();
+			}else if(modelo.ladronCapturado()){
+				vista.finalizarMision("Has capturado a " + modelo.nombreLadronCapturado() + " pero no tienes una orden de arresto. No podemos arrestarlo.");
 				modelo.reiniciar();
 			}else{
 				vista.mostrarMensaje(pista);

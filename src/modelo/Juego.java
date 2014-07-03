@@ -16,9 +16,7 @@ public class Juego {
 	}
 	
 	public void agregarPolicia(Policia poli) {
-		if (!policias.contains(poli)){
-			policias.add(poli);
-		}
+		policias.add(poli);
 	}
 		
 	public int cantidadPolicias(){
