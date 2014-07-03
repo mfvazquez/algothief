@@ -140,9 +140,9 @@
 	</target>
 
 	<target name="ejecutar.aplicacion" depends="empaquetar">
-	<java classname="${build}/main/AlgoThief" fork="true">
-	<classpath refid="classpath"/>
-<!--	<classpath location="${build}/dist/GPS.jar" /> -->
+	<java classname="main.AlgoThief" fork="true">
+		<classpath refid="classpath"/>
+		<classpath location="${build}/dist/GPS.jar" />
 	</java>
 	</target>
 		
