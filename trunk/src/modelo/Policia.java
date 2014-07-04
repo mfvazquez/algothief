@@ -106,9 +106,7 @@ public class Policia {
 		Tiempo.getInstance().consumirTiempo(edificiosVisitados);
 		if (edificio.ladronEncontrado()){
 			this.capturar(edificio.getLadron());
-			return null;
-			//return this.capturar(edificio.getLadron());
-			
+			return null;			
 		}
 		return rango.pedirPista(edificio);
 	}
