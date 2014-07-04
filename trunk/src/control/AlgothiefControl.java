@@ -69,7 +69,12 @@ public class AlgothiefControl {
 			modelo.viajar(ciudadStr);	
 			if (modelo.tiempoTerminado()){
 				vista.finalizarMision("Se acabo el tiempo");
-				modelo.reiniciar();
+				try {
+					modelo.reiniciar();
+				} catch (ArchivoFaltante e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}else{
 				vista.dibujarPanelGeneral();
 			}
@@ -93,7 +98,12 @@ public class AlgothiefControl {
 			if (modelo.tiempoTerminado()){
 				String mensaje = "Superaste el limite de tiempo. Has perdido el rastro del ladron.";
 				vista.finalizarMision(mensaje);
-				modelo.reiniciar();
+				try {
+					modelo.reiniciar();
+				} catch (ArchivoFaltante e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}else if(modelo.ladronCapturado()){
 				String direccion = "recursos/"+modelo.armaLadron()+".png";
 				vista.capturarLadron(direccion);
@@ -109,11 +119,21 @@ public class AlgothiefControl {
 			if(modelo.ladronCapturadoConOrden()){
 				String mensaje = "Felicidades. Has capturado a " + modelo.nombreLadronCapturado() + " ";
 				vista.finalizarMision(mensaje);
-				modelo.reiniciar();
+				try {
+					modelo.reiniciar();
+				} catch (ArchivoFaltante e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}else if(modelo.ladronCapturado()){
 				String mensaje = "Has capturado a " + modelo.nombreLadronCapturado() + " pero no tienes una orden de arresto. No podemos arrestarlo.";
 				vista.finalizarMision(mensaje);
-				modelo.reiniciar();
+				try {
+					modelo.reiniciar();
+				} catch (ArchivoFaltante e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}
@@ -134,7 +154,12 @@ public class AlgothiefControl {
 			vista.emitirMensaje(mensaje);
 			if (modelo.tiempoTerminado()){
 				vista.finalizarMision("Se acabo el tiempo");
-				modelo.reiniciar();
+				try {
+					modelo.reiniciar();
+				} catch (ArchivoFaltante e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		}
 	}

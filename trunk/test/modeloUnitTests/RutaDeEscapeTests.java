@@ -11,7 +11,7 @@ import java.util.List;
 
 public class RutaDeEscapeTests {
 	@Test
-	public void crearRuta() {
+	public void crearRuta() throws ArchivoFaltante {
 		Mapa mapa = Mapa.getInstance();
 		RangoNovatoStrategy rango = new RangoNovatoStrategy();
 		RutaDeEscape ruta = new RutaDeEscape(rango, new Ladron());

@@ -9,21 +9,26 @@ public class RutaDeEscape {
 	
 	public RutaDeEscape(RangoStrategy rango, Ladron ladron) {
 		ciudades = new ArrayList<Ciudad>();
-		Ciudad actual = Mapa.getInstance().verCiudadInicial();
-		
-		for(int i = 0; i < rango.cantidadCiudadesRutaDeEscape(); i++){
-			ciudades.add(actual);
-			List<Ciudad> destinos;
-			try {
-				destinos = Mapa.getInstance().ciudadesDestino(actual);
-				Double subindice = Math.floor(Math.random()*destinos.size());
-				actual = destinos.get(subindice.intValue());
-			} catch (MapaSeQuedoSinCiudades e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		Ciudad actual;
+		try {
+			actual = Mapa.getInstance().verCiudadInicial();
+			for(int i = 0; i < rango.cantidadCiudadesRutaDeEscape(); i++){
+				ciudades.add(actual);
+				List<Ciudad> destinos;
+				try {
+					destinos = Mapa.getInstance().ciudadesDestino(actual);
+					Double subindice = Math.floor(Math.random()*destinos.size());
+					actual = destinos.get(subindice.intValue());
+				} catch (MapaSeQuedoSinCiudades e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
+			this.generarPistas(ladron);
+		} catch (ArchivoFaltante e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-		this.generarPistas(ladron);
 	}
 	
 	private void generarPistas(Ladron ladron){

@@ -21,24 +21,24 @@ public class Mapa {
 	private int cantHijos;
 	private HashMap<String,Ciudad> referencias;
 	
-	private Mapa(){
+	private Mapa() throws ArchivoFaltante{
 		referencias = new HashMap<String, Ciudad>();
 		cantHijos = 2;
 		ciudades = this.cargarCiudades();
 		this.agregarCiudadesIniciales();
 	}
 	
-	public void reiniciar(){
+	public void reiniciar() throws ArchivoFaltante{
 		INSTANCE = new Mapa();
 	}
 
-	private synchronized static void createInstance() {
+	private synchronized static void createInstance() throws ArchivoFaltante {
 		if (INSTANCE == null) { 
 	       INSTANCE = new Mapa();
 	    }
 	}
 
-	public static Mapa getInstance() {
+	public static Mapa getInstance() throws ArchivoFaltante {
 	    if (INSTANCE == null) 
 	    	createInstance();
 	    return INSTANCE;
@@ -74,11 +74,12 @@ public class Mapa {
 		return referencias.get(nombreCiudad);
 	}
 	
-	private ArrayList<Ciudad> cargarCiudades(){
+	private ArrayList<Ciudad> cargarCiudades() throws ArchivoFaltante{
 		ArrayList<Ciudad> listaCiudades= new ArrayList<Ciudad>();
 		
 		try {
 			File fXmlFile = new File("recursos/ciudades.xml");
+			if (!fXmlFile.exists()) throw new ArchivoFaltante("Archivo ciudades.xml no encontrado");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);

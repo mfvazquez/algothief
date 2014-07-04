@@ -45,7 +45,7 @@ public class policiaTests {
 	public void crearOdenDeArrestoTest(){
 		Policia poli = new Policia("Carlos");
 		String sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "", "", "");
-		assertEquals("Sospechosos: Nick Brunch Len Bulk", sospechoso);
+		assertEquals("Sospechosos: Nick Brunch\n Len Bulk\n", sospechoso);
 		sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "Rubio", "", "");
 		assertEquals("No se encontraron sospechosos que respondan a esas carcteristicas", sospechoso);
 		sospechoso = poli.crearOrdenDeArresto("Masculino", "Alpinismo", "Negro", "", "");

@@ -20,13 +20,13 @@ import org.w3c.dom.NodeList;
 public class Juego {
 	private ArrayList<Policia> policias;
 	
-	public Juego() throws MapaSeQuedoSinCiudades{
+	public Juego() throws MapaSeQuedoSinCiudades, ArchivoFaltante{
 		policias = new ArrayList<Policia>();
 	    Ladrones.getInstance();
 	    Mapa.getInstance();
 	}
 	
-	public Juego(ArrayList<Policia> polis) throws MapaSeQuedoSinCiudades{
+	public Juego(ArrayList<Policia> polis) throws MapaSeQuedoSinCiudades, ArchivoFaltante{
 		this.policias = polis;
 		Ladrones.getInstance();
 		Mapa.getInstance();
@@ -60,7 +60,14 @@ public class Juego {
 	}
 	
 	public String ciudadInicioStr() throws MapaSeQuedoSinCiudades{
-		return Mapa.getInstance().verCiudadInicial().getNombre();
+		String aux = null;
+		try {
+			aux = Mapa.getInstance().verCiudadInicial().getNombre();
+		} catch (ArchivoFaltante e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return aux;
 	}
 
 	public void guardarJuego() throws ParserConfigurationException, TransformerException{
@@ -82,7 +89,7 @@ public class Juego {
 		StreamResult result = new StreamResult(archivo);
 		transformer.transform(source, result);
 	}
-	public static Juego cargarJuego() throws MapaSeQuedoSinCiudades{
+	public static Juego cargarJuego() throws MapaSeQuedoSinCiudades, ArchivoFaltante{
 		ArrayList<Policia> listaPolicias = new ArrayList<Policia>();
 		try {
 			File fXmlFile = new File("recursos/persistencia.xml");

@@ -23,11 +23,11 @@ public class CiudadTests {
 	
 	@Test
 	public void generadorDePistasTest(){
-		Ciudad ciudad = new Ciudad("Pekin", 0,1);
+		Ciudad ciudad = new Ciudad("Buenos Aires", 0,1);
 		ciudad.generarPistas(ciudad, new Ladron());
-		assertEquals("Tenia pelo rubio", ciudad.getBanco().obtenerPistaFacil().getPista());
-		assertEquals("Se fue en un avion con bandera azul y blanca", ciudad.getAeropuerto().obtenerPistaFacil().getPista());
-		assertEquals("Estuvo leyendo sobre la revolucion de mayo", ciudad.getBiblioteca().obtenerPistaFacil().getPista());
+		assertEquals("Cambio su moneda a pesos argentinos.", ciudad.getBanco().obtenerPistaFacil().getPista());
+		assertEquals("Se fue en un avion de bandera celeste y blanca.", ciudad.getAeropuerto().obtenerPistaFacil().getPista());
+		assertEquals("Pregunto sobre lecciones de tango.", ciudad.getBiblioteca().obtenerPistaFacil().getPista());
 		
 	}
 }
