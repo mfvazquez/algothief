@@ -128,19 +128,6 @@ public class Policia {
 	}
 	
 	
-	/*
-	public Pista capturar(Ladron ladron){
-		Pista pist = new PistaFacil();
-		
-		if (this.orden.getNombre().equals(ladron.getNombre())){
-			capturado = ladron;
-			pist.setPista("Atrapaste al ladron: " + ladron.getNombre());
-		}
-		else{
-			pist.setPista("Encontraste al ladron: " + ladron.getNombre() + " pero la orden de arresto no es correcta");
-		}
-		return pist;
-	}*/
 	
 	public boolean ladronCapturado() {
 		return capturado != null;
@@ -206,48 +193,6 @@ public class Policia {
 		orden = new OrdenDeArresto();
 	}
 	
-/*	public void guardarPolicia()throws IOException, ParserConfigurationException, DOMException, TransformerException, SAXException {
-		
-		
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = factory.newDocumentBuilder();
-		
-		File archivo = new File("recursos/persistencia.xml");
-		
-		if (!archivo.exists()){
-			Document doc = db.newDocument();
-			Element element = doc.createElement("policia");
-			element.setAttribute("nombre", this.nombre);
-			element.setAttribute("casosResueltos", Integer.toString(this.casosResueltos));
-		
-			doc.appendChild(element);
-			TransformerFactory transformerFactory = TransformerFactory.newInstance();
-			Transformer transformer = transformerFactory.newTransformer();
-			DOMSource source = new DOMSource(doc);
-			StreamResult result = new StreamResult(archivo);
-			transformer.transform(source, result);
-		}
-		else {
-			Document doc = db.parse(archivo);
-			NodeList nList = doc.getElementsByTagName("policia");
-			Boolean existe = false;
-			int i= 0;
-			while (i<nList.getLength() && !existe){
-				if(this.nombre.equals(((Element)nList.item(i)).getAttribute("nombre"))){
-					existe= true;
-				}
-				else{
-					i ++;
-				}
-			}
-			if (!existe){
-			Element element = doc.createElement("policia");
-			element.setAttribute("nombre", this.nombre);
-			element.setAttribute("casosResueltos", Integer.toString(this.casosResueltos));
-			doc.appendChild(element);
-			}
-		}
-	}*/
 
 	public Element toXml(Document doc){
 		Element element = doc.createElement("policia");
