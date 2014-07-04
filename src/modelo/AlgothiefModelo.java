@@ -17,6 +17,9 @@ public class AlgothiefModelo {
 		} catch (MapaSeQuedoSinCiudades e) {
 			// TODO Auto-generated catch block
 			throw new ErrorAlCrearElJuego("Faltan Ciudades en ciudades.xml");
+		} catch (ArchivoFaltante e) {
+			// TODO Auto-generated catch block
+			throw new ErrorAlCrearElJuego("Archivo faltante");
 		}
 		policia = null;
 	}
@@ -46,7 +49,7 @@ public class AlgothiefModelo {
 			for (int i = 0; i < destinos.size(); i++){
 				destinosStr.add(destinos.get(i).getNombre());
 			}
-		} catch (MapaSeQuedoSinCiudades e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -67,7 +70,14 @@ public class AlgothiefModelo {
 	}
 	
 	private Ciudad getCiudad(String nombre){
-		return Mapa.getInstance().buscarCiudad(nombre);
+		Ciudad aux = null;
+		try {
+			aux =  Mapa.getInstance().buscarCiudad(nombre);
+		} catch (ArchivoFaltante e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return aux;
 	}
 	
 	private Edificio getEdificio(String nombre){
@@ -112,7 +122,7 @@ public class AlgothiefModelo {
 		return policia.ladronCapturadoConOrden();
 	}
 	
-	public void reiniciar(){
+	public void reiniciar() throws ArchivoFaltante{
 		try {
 			juego.guardarJuego();
 		} catch (ParserConfigurationException e) {

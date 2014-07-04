@@ -2,6 +2,7 @@ package control;
 
 
 import javax.swing.JLabel;
+
 import modelo.*;
 import vista.*;
 
@@ -47,7 +48,12 @@ public class Reloj extends JLabel implements Runnable {
 		modelo.esperarUnaHora();
 		if (modelo.tiempoTerminado()){
 			vista.finalizarMision("Superaste el limite de tiempo. Has perdido el rastro del ladron.");
-			modelo.reiniciar();
+			try {
+				modelo.reiniciar();
+			} catch (ArchivoFaltante e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			synchronized (lock) {
 				continuar = false;
 			}

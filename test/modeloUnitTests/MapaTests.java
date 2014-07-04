@@ -12,13 +12,13 @@ import java.util.List;
 public class MapaTests {
 	
 	@Test
-	public void crearMapa() {
+	public void crearMapa() throws ArchivoFaltante {
 		Mapa mapa = Mapa.getInstance();
 		assertFalse(mapa == null);
 	}
 	
 	@Test
-	public void singletoneTest(){
+	public void singletoneTest() throws ArchivoFaltante{
 		Mapa mapa = Mapa.getInstance();
 		Mapa mapa2= Mapa.getInstance();
 		assertTrue(mapa == mapa2);
@@ -26,10 +26,10 @@ public class MapaTests {
 	}
 	
 	@Test
-	public void ciudadesDetinoTest() throws MapaSeQuedoSinCiudades{
+	public void ciudadesDetinoTest() throws MapaSeQuedoSinCiudades, ArchivoFaltante{
 		List<Ciudad> destinos = Mapa.getInstance().ciudadesDestino(Mapa.getInstance().verCiudadInicial());
 		for (int i = 0; i< destinos.size(); i++){
-		System.out.println(destinos.get(i).getNombre());
+			assertTrue(destinos.get(i).getNombre() instanceof String);
 		}
 	}
 }

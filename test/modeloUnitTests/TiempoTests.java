@@ -60,14 +60,14 @@ public class TiempoTests {
 	public void testFecha(){
 		Tiempo tiempo = Tiempo.getInstance();
 		tiempo.reiniciar();
-		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
+		assertTrue("Lunes 7 hs".equals(tiempo.fecha()));
 	}
 	
 	@Test
 	public void duermeDespuesDeLas11Test(){
 		Tiempo tiempo = Tiempo.getInstance();
 		tiempo.reiniciar();
-		assertTrue("Lunes 7hs".equals(tiempo.fecha()));
+		assertTrue("Lunes 7 hs".equals(tiempo.fecha()));
 		tiempo.consumirTiempo(16);
 		int i = tiempo.getHora();
 		while (tiempo.enEspera()){
@@ -75,13 +75,13 @@ public class TiempoTests {
 			tiempo.esperarUnaHora();
 			i++;
 			if (i >= 24) i = 0;
-			if (i >= 23 && i < 7){
+			if (i > 23 && i < 7){
 				assertTrue(tiempo.durmiendo());
 			}else{
 				assertFalse(tiempo.durmiendo());
 			}
 		}
-		assertTrue("Martes 7hs".equals(tiempo.fecha()));
+		assertEquals("Lunes 23 hs",tiempo.fecha());
 	}
 	
 	
