@@ -80,9 +80,6 @@ public class Juego {
 		}
 		doc.appendChild(juego);
 		File archivo = new File("recursos/persistencia.xml");
-		/*if(archivo.exists()){
-			archivo.delete();
-		}*/
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		Transformer transformer = transformerFactory.newTransformer();
 		DOMSource source = new DOMSource(doc);
